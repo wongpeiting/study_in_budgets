@@ -542,17 +542,16 @@ function initVisualization() {
         });
     });
 
-    // Year labels at center baseline (X-axis)
+    // Year labels at bottom of chart
     const labelYears = [1965, 1980, 2000, 2020, 2026];
-    const yearLabelOffset = config.isMobile ? 4 : 5;
+    const yearLabelOffset = config.isMobile ? 12 : 15;
     svg.selectAll('.year-label')
         .data(labelYears.filter(y => yearPositions[y]))
         .join('text')
         .attr('class', 'year-label')
         .attr('x', d => yearPositions[d].center)
-        .attr('y', baseline + yearLabelOffset)
+        .attr('y', height - margin.bottom + yearLabelOffset)
         .attr('text-anchor', 'middle')
-        .attr('dominant-baseline', 'hanging')
         .attr('fill', '#7a7a7a')
         .attr('font-size', config.fontSize.year)
         .attr('font-weight', '500')
@@ -567,33 +566,42 @@ function initVisualization() {
         .attr('x2', width - margin.right)
         .attr('y1', baseline)
         .attr('y2', baseline)
-        .attr('stroke', '#888')
-        .attr('stroke-width', 1.5)
+        .attr('stroke', '#aaa')
+        .attr('stroke-width', 1)
         .attr('stroke-dasharray', '4,2');
+
+    // Bottom baseline
+    svg.append('line')
+        .attr('x1', margin.left)
+        .attr('x2', width - margin.right)
+        .attr('y1', height - margin.bottom)
+        .attr('y2', height - margin.bottom)
+        .attr('stroke', '#d0cdc8')
+        .attr('stroke-width', 1);
 
     // Axis labels for diverging chart
     if (!config.isMobile) {
         // "Promises" label above baseline
         svg.append('text')
             .attr('class', 'axis-label')
-            .attr('x', margin.left - 10)
-            .attr('y', baseline - 20)
-            .attr('text-anchor', 'end')
+            .attr('x', margin.left + 5)
+            .attr('y', baseline - 15)
+            .attr('text-anchor', 'start')
             .attr('fill', '#C44F4F')
-            .attr('font-size', '11px')
+            .attr('font-size', '10px')
             .attr('font-weight', '600')
-            .text('PROMISES ↑');
+            .text('↑ PROMISES');
 
         // "Demands" label below baseline
         svg.append('text')
             .attr('class', 'axis-label')
-            .attr('x', margin.left - 10)
-            .attr('y', baseline + 30)
-            .attr('text-anchor', 'end')
+            .attr('x', margin.left + 5)
+            .attr('y', baseline + 22)
+            .attr('text-anchor', 'start')
             .attr('fill', '#3D5A80')
-            .attr('font-size', '11px')
+            .attr('font-size', '10px')
             .attr('font-weight', '600')
-            .text('DEMANDS ↓');
+            .text('↓ DEMANDS');
     }
 
     // Legend (subtle, on left side) - hide on mobile (CSS legend used instead)
