@@ -494,7 +494,11 @@ function initVisualization() {
         currentX += scaledWidth;
     });
 
-    // Position dots - Stack upward from bottom: obligations (bottom), promises (middle), grey (top)
+    // Position dots - Diverging chart: promises ABOVE baseline, demands BELOW baseline
+    // Calculate baseline position (middle of chart area)
+    const chartHeight = height - margin.top - margin.bottom;
+    const baseline = margin.top + chartHeight * 0.5; // Middle of chart
+
     years.forEach(year => {
         const yearParas = yearGroups.get(year);
         const yearPos = yearPositions[year];
@@ -503,39 +507,52 @@ function initVisualization() {
         const gridWidth = cols * (dotSize + dotGap);
         const offsetX = (effectiveWidth - gridWidth) / 2;
 
-        // Sort paragraphs by type and shade: darker on bottom, lighter on top
-        const sortedParas = [...yearParas].sort((a, b) => {
-            const getOrder = (p) => {
-                // Stack by shade: darker colors on bottom, lighter on top
-                if (p.primary_type === 'obligation' && p.primary_value === 'citizen') return 0; // darker blue
-                if (p.primary_type === 'obligation' && p.primary_value === 'firm') return 1; // lighter blue
-                if (p.primary_type === 'promise' && p.primary_value === 'citizen') return 2; // darker coral
-                if (p.primary_type === 'promise' && p.primary_value === 'firm') return 3; // lighter coral
-                return 4; // neutral/other on top
-            };
-            return getOrder(a) - getOrder(b);
+        // Separate promises and obligations
+        const promises = yearParas.filter(p => p.primary_type === 'promise');
+        const obligations = yearParas.filter(p => p.primary_type === 'obligation');
+
+        // Sort promises: darker (citizen) closer to baseline, lighter (firm) further up
+        promises.sort((a, b) => {
+            const order = (p) => p.primary_value === 'citizen' ? 0 : 1;
+            return order(a) - order(b);
         });
 
-        // Position each paragraph from bottom to top
-        sortedParas.forEach((p, idx) => {
+        // Sort obligations: darker (citizen) closer to baseline, lighter (firm) further down
+        obligations.sort((a, b) => {
+            const order = (p) => p.primary_value === 'citizen' ? 0 : 1;
+            return order(a) - order(b);
+        });
+
+        // Position promises ABOVE baseline (going upward)
+        promises.forEach((p, idx) => {
             const row = Math.floor(idx / cols);
             const col = idx % cols;
 
             p.xPos = yearPos.start + offsetX + col * (dotSize + dotGap) + dotSize / 2;
-            p.yPos = height - margin.bottom - dotSize - row * (dotSize + dotGap);
+            p.yPos = baseline - dotSize - row * (dotSize + dotGap); // Above baseline
+        });
+
+        // Position obligations BELOW baseline (going downward)
+        obligations.forEach((p, idx) => {
+            const row = Math.floor(idx / cols);
+            const col = idx % cols;
+
+            p.xPos = yearPos.start + offsetX + col * (dotSize + dotGap) + dotSize / 2;
+            p.yPos = baseline + dotSize + row * (dotSize + dotGap); // Below baseline
         });
     });
 
-    // Year labels at bottom (X-axis)
+    // Year labels at center baseline (X-axis)
     const labelYears = [1965, 1980, 2000, 2020, 2026];
-    const yearLabelOffset = config.isMobile ? 12 : 15;
+    const yearLabelOffset = config.isMobile ? 4 : 5;
     svg.selectAll('.year-label')
         .data(labelYears.filter(y => yearPositions[y]))
         .join('text')
         .attr('class', 'year-label')
         .attr('x', d => yearPositions[d].center)
-        .attr('y', height - margin.bottom + yearLabelOffset)
+        .attr('y', baseline + yearLabelOffset)
         .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'hanging')
         .attr('fill', '#7a7a7a')
         .attr('font-size', config.fontSize.year)
         .attr('font-weight', '500')
@@ -543,14 +560,41 @@ function initVisualization() {
         .text(d => d)
         .raise(); // Bring to front
 
-    // Baseline
+    // Central baseline (dividing promises above from demands below)
     svg.append('line')
+        .attr('class', 'center-baseline')
         .attr('x1', margin.left)
         .attr('x2', width - margin.right)
-        .attr('y1', height - margin.bottom)
-        .attr('y2', height - margin.bottom)
-        .attr('stroke', '#d0cdc8')
-        .attr('stroke-width', 1);
+        .attr('y1', baseline)
+        .attr('y2', baseline)
+        .attr('stroke', '#888')
+        .attr('stroke-width', 1.5)
+        .attr('stroke-dasharray', '4,2');
+
+    // Axis labels for diverging chart
+    if (!config.isMobile) {
+        // "Promises" label above baseline
+        svg.append('text')
+            .attr('class', 'axis-label')
+            .attr('x', margin.left - 10)
+            .attr('y', baseline - 20)
+            .attr('text-anchor', 'end')
+            .attr('fill', '#C44F4F')
+            .attr('font-size', '11px')
+            .attr('font-weight', '600')
+            .text('PROMISES ↑');
+
+        // "Demands" label below baseline
+        svg.append('text')
+            .attr('class', 'axis-label')
+            .attr('x', margin.left - 10)
+            .attr('y', baseline + 30)
+            .attr('text-anchor', 'end')
+            .attr('fill', '#3D5A80')
+            .attr('font-size', '11px')
+            .attr('font-weight', '600')
+            .text('DEMANDS ↓');
+    }
 
     // Legend (subtle, on left side) - hide on mobile (CSS legend used instead)
     if (!config.hideSvgLegend) {
