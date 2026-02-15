@@ -368,6 +368,8 @@ framing_signal: [crisis_framing, collective_future_framing, vulnerability_framin
 reason: [max 12 words OR "none" if neutral]
 ```
 
+</details>
+
 ---
 
 ## Classification Results
