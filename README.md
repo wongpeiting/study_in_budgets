@@ -1,8 +1,14 @@
-# A Study In Budgets
+# 💼 A Study In Budgets 💼
 
-This interactive scrollytelling site examines how the language of Singapore’s Budget speeches has evolved over six decades. Drawing on 61 years of speeches, it traces how responsibility is framed – what the government promises, what it asks of citizens and firms, and how that balance shifts over time.
+As a reporter who used to follow government speeches closely for [work](https://www.straitstimes.com/authors/wong-pei-ting), I do very so often detect some very slight shifts in messaging that I found interesting. As we can imagine such changes are usually gradual, so it would take an analysis of years-long of speeches before we can really pin down a pivot. This project is born from this place of curiosity, where I question if I could devise a text analysis pipeline that can open up a quantitative way of confirming (or disproving) some of these hunches.
 
-The project taps AI tools to analyse every paragraph in each speech and classifies whether it articulates a promise, a demand, or neither, as well as who the message is directed at. The goal is not to measure sentiment, but to examine how the state describes obligation, support and participation.
+Since Prime Minister Lawrence Wong was set to deliver the 2026 Budget speech on Feb 12, I hopped on a mission to collect all the 67 Budget speeches delivered in Singapore since independence in 1965, so I could begin testing if it was indeed possible for me to find patterns in a corpus of words. The journey was an iterative one fraught with experimental design flaws, data cleaning challenges and LLM classification inaccuracies. 
+
+After three weeks of mucking around, including testing if I could somehow find patterns with the use of a [semantic map](https://github.com/TowCenter/semantic-map), I got inspired by The Pudding's *[In Pursuit of Democracy](https://pudding.cool/2025/11/democracy/)* project, in which Alvin Chang focused on testing just one thing – how the idea of democracy shifted within a body of congressional speeches.
+
+Keen to replicate his project design, I got down to defining a scope, and the result is [this interactive scrollytelling article](https://wongpeiting.github.io/study_in_budgets/) where I drew on the Singapore Budget speeches to trace how responsibility is framed – what the government promises, what it asks of citizens and firms, and how that balance shifts over time. 
+
+The project analyses speeches at a paragraph level and classifies whether each paragraph articulate a promise, a demand, or neither, as well as whether the message is directed towards citizens or firms. The goal is not to measure sentiment, but to examine how the state describes obligation, support and participation.
 
 In all, 11,559 paragraphs were analysed from 67 Budget speeches between 1965 and 2026, and here are the broad findings:
 
@@ -39,7 +45,7 @@ Each paragraph was classified using Google's Gemini 2.0 Flash into five categori
 
 Before deploying AI for full classification, more than 100 paragraphs were manually labelled to establish a validation set. These hand-coded examples were used to iteratively refine and test the classification prompt.
 
-After 11 rounds of prompt revision and spot-checking, the framework achieved over 90% accuracy on the audited validation set. The ninth iteration of the prompt was selected for full-corpus classification, as subsequent revisions began to show declining performance.
+After 11 rounds of prompt revision, the framework peaked at an accuracy rate of 91.2% on the audited validation set on the ninth try. I manually checked the rows that were deemed to have classified wrongly in this ninth attempt, and realised that many were not straightforward errors, but borderline cases open to reasonable interpretation. I thus selected the ninth iteration of the prompt for full-corpus classification, knowing that it errs on cases of interpretive ambiguity rather than clear misclassification. In fact, this is to be expected. The residual disagreement rate reflects the limits of categorising political language into discrete buckets: some paragraphs contain both promise and demand, or imply obligation without stating it explicitly.
 
 <details>
 <summary><strong>View the classification prompt</strong></summary>
@@ -396,7 +402,7 @@ In calculating the finance minister "pet words", the corpus was grouped by minis
 
 ## Scrollytelling interface
 
-The website adopts a scrollytelling format inspired by Alvin Chang's project for The Pudding, *[In Pursuit of Democracy](https://pudding.cool/2025/11/democracy/)*. As readers scroll, narrative cards appear on the left while a sticky chart on the right responds to each section, highlighting relevant years, animating transitions, and updating context.
+Claude Code was used to build the interactive scrollytelling site, which is also inspired by the *[In Pursuit of Democracy](https://pudding.cool/2025/11/democracy/)* piece on The Pudding. As readers scroll, narrative cards appear on the left while a sticky chart on the right responds to each section, highlighting relevant years, animating transitions, and updating context.
 
 The chart itself is built with [D3.js](https://d3js.org). Each of the 5,879 classified paragraphs is rendered as a small square, coloured by category (coral for promises, blue for demands) and stacked by year. Scroll-triggered transitions use the Intersection Observer API to detect which story card is in view, then update the chart accordingly.
 
@@ -408,3 +414,13 @@ At the end of the narrative, the chart becomes interactive: readers can hover ov
 - **Scrollytelling:** Intersection Observer API with CSS sticky positioning
 - **Classification:** [Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/) (Google) for paragraph-level analysis
 - **Data processing:** Python for corpus cleaning, tokenisation, and frequency analysis
+
+--- 
+
+## Credits
+
+This project lived many lives during its three production weeks. In one of the earlier explorations, Sanjaay Babu (Duke '29) and Bhuvan Anantham (LSE '28) helped with data cleaning and metadata generation, contributing greatly to the polish of this final iteration.
+
+--- 
+
+Lastly, dear reader, if you noticed an error or have thoughts or suggestions, please feel free to reach out at [pw2635@columbia.edu](pw2635@columbia.edu).
