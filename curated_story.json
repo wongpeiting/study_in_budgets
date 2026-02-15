@@ -1,0 +1,417 @@
+{
+  "title": "How the Budget talks about us",
+  "subtitle": "An inquisitive look at what changed in Singapore's Budget speeches over 60 years",
+
+  "intro": {
+    "hook": "1966: \"The world does not owe us a living.\"",
+    "bridge": "2024: \"We will always have your backs.\"",
+    "question": "What changed?"
+  },
+
+  "legend": {
+    "prosperity": "Promise",
+    "help": "Promise",
+    "sharing": "Promise",
+    "stability": "Promise",
+    "recovery": "Promise",
+    "assurance": "Promise",
+    "discipline": "Ask",
+    "participation": "Ask",
+    "compliance": "Ask",
+    "implicit": "Ask",
+    "restraint": "Ask"
+  },
+  
+  "sections": [
+    {
+      "id": "intro_1",
+      "type": "prose",
+      "year_range": [1965, 2026],
+      "header_text": "Turns out, a lot has.",
+      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+      "setup": "A Budget speech isn't just an accounting exercise.<br><br>It's one of the few moments each year when the government explains how the country is supposed to work."
+    },
+    {
+      "id": "intro_2",
+      "type": "prose",
+      "year_range": [1965, 2026],
+      "header_text": "Turns out, a lot has.",
+      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+      "setup": "Behind each policy detail is an expectation of who must tighten belts, who must innovate, and who will be cushioned.<br><br>Stack all the speeches together, and <strong>a pattern emerges</strong>.<br><br>As the numbers change, so does the social contract."
+    },
+    {
+      "id": "how_to_read",
+      "year_range": [1965, 2026],
+      "header_text": "Turns out, a lot has.",
+      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+      "era_label": "How to read this",
+      "setup": "Each box is a paragraph in a Budget speech where the finance minister talked about what the government will do for its citizens and firms — and what's expected in return.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "<span class='color-ref' style='background:#C44F4F'></span> = Promises to you<br><span class='color-ref' style='background:#E89898'></span> = Promises to firms<br><br><span class='color-ref' style='background:#2B4460'></span> = What's asked of you<br><span class='color-ref' style='background:#6B8CAE'></span> = What's asked of firms"
+    },
+    {
+      "id": "pm_era_summary",
+      "year_range": [1965, 2026],
+      "era_label": "The big picture",
+      "title": "Four Prime Ministers, one clear trend",
+      "type": "pm_era_chart",
+      "setup": "The ratio of promises to demands has grown with each administration.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "Under Lee Kuan Yew, promises barely outweighed demands.<br>By Lawrence Wong's era, promises outnumber demands by more than 2 to 1.",
+      "pm_data": [
+        {"pm": "Lee Kuan Yew", "years": "1965-1990", "promises": 501, "demands": 418, "ratio": 54.5},
+        {"pm": "Goh Chok Tong", "years": "1991-2004", "promises": 623, "demands": 329, "ratio": 65.4},
+        {"pm": "Lee Hsien Loong", "years": "2005-2024", "promises": 2693, "demands": 1030, "ratio": 72.3},
+        {"pm": "Lawrence Wong", "years": "2025-present", "promises": 212, "demands": 73, "ratio": 74.4}
+      ]
+    },
+    {
+      "id": "early_decades_intro",
+      "type": "prose",
+      "year_range": [1965, 1975],
+      "era_label": "The early decades",
+      "title": " ",
+      "setup": "In the early decades, the speeches leaned hard on demands: Work harder. Tighten belts. Stay competitive. Don't get complacent."
+    },
+    {
+      "id": "survival",
+      "year_range": [1965, 1975],
+      "era_label": "1965–1975",
+      "title": "\"The world owes us nothing\"",
+      "setup": "Singapore had just been kicked out of Malaysia. There was no safety net. The message was clear:",
+      "quote": "This confidence must not lead our people, whether entrepreneurs, or trade unionists, into believing that the world owes us a living and that things will always be all right. They will be all right only if we are constantly alert, efficient and striving.",
+      "speaker": "Lim Kim San",
+      "year": 1966,
+      "reflection": "Every citizen was a soldier in an economic war."
+    },
+    {
+      "id": "discipline",
+      "year_range": [1965, 1970],
+      "era_label": "1965",
+      "title": "\"Kill the goose before the golden eggs are laid\"",
+      "setup": "Workers who asked for better pay were warned:",
+      "quote": "Our workers must also be prepared for factory discipline and hard work to make costs competitive. There must be restraint and discipline... Let our industrialisation be established first before we think of sharing the gains. Anti-nationalist elements are trying to dupe workers into prematurely demanding benefits which will kill the goose even before the golden eggs are laid.",
+      "speaker": "Lim Kim San",
+      "year": 1965,
+      "reflection": "Asking for help was almost unpatriotic."
+    },
+    {
+      "id": "pioneer_spirit",
+      "year_range": [1965, 1975],
+      "era_label": "1965",
+      "title": "\"An inhospitable swamp\"",
+      "setup": "The government invoked Singapore's pioneers:",
+      "quote": "What is now needed is a return to the pioneering spirit of our forefathers who by their dynamism, hard work, and self-sacrifice turned what was an inhospitable swamp into the largest port in South-East Asia.",
+      "speaker": "Lim Kim San",
+      "year": 1965,
+      "reflection": "Your grandparents survived worse. So can you."
+    },
+    {
+      "id": "nation_building",
+      "year_range": [1976, 1996],
+      "era_label": "1976–1996",
+      "title": "\"Nothing is for free\"",
+      "setup": "As Singapore got richer, the government worried citizens were getting soft:",
+      "quote": "Our survival depends, as then, upon a robust approach to life, that the world does not owe us a living. Nothing is for free. Hence, the virtues of thrift and hard work... The question is whether we have not already been softened by the increasing affluence.",
+      "speaker": "Hon Sui Sen",
+      "year": 1974,
+      "reflection": "Prosperity was a test of character, not a reward."
+    },
+    {
+      "id": "nirvana",
+      "year_range": [1976, 1985],
+      "era_label": "1979",
+      "title": "\"To achieve nirvana, you must first experience pain\"",
+      "setup": "Even good news came with a warning:",
+      "quote": "It is a completely painless budget, and even mildly pleasurable. But there is a moral to this, and that is, to achieve nirvana you must first experience pain. We have all worked hard in the past. We have all made sacrifices. We have never flinched from the harsh realities of the world.",
+      "speaker": "Goh Chok Tong",
+      "year": 1979,
+      "reflection": "Comfort had to be earned through suffering."
+    },
+    {
+      "id": "turning_point",
+      "year_range": [1997, 2009],
+      "era_label": "1997–2009",
+      "title": "The turning point",
+      "setup": "Then came the Asian Financial Crisis. For the first time, the government acknowledged people needed help:",
+      "quote": "Government is mindful of the difficulties faced by individuals and households in the current economic downturn. The cost-cutting package announced in November 1998 was focused mainly on reducing business costs. I will therefore be announcing several measures to help individuals.",
+      "speaker": "Richard Hu",
+      "year": 1999,
+      "reflection": "\"Help\" entered the vocabulary."
+    },
+    {
+      "id": "programs",
+      "year_range": [2010, 2019],
+      "era_label": "2010–2019",
+      "title": "\"A key feature\"",
+      "setup": "Help became systematic. Programmes got names. The generation once told to sacrifice was now being honoured:",
+      "quote": "A key feature in this year's Budget is the Pioneer Generation Package. As the Prime Minister has stated, we are honouring this unique generation of Singaporeans who built up the country.",
+      "speaker": "Tharman Shanmugaratnam",
+      "year": 2014,
+      "reflection": "In 1965, pioneers were told to sacrifice. By 2014, the government was thanking them with a package."
+    },
+    {
+      "id": "covid_crisis",
+      "year_range": [2020, 2021],
+      "era_label": "2020-2021",
+      "title": "\"We will leave no one behind\"",
+      "setup": "Covid changed everything. The government made a promise that would have been unthinkable in 1965:",
+      "quote": "We will protect and advance the well-being and livelihoods of Singaporeans. We will take care of our people. We will leave no one behind. And we will stand with Singaporeans from all walks of life to battle this crisis together.",
+      "speaker": "Heng Swee Keat",
+      "year": 2020,
+      "reflection": "The state now saw itself as protector, not just referee."
+    },
+    {
+      "id": "protect_workers",
+      "year_range": [2020, 2020],
+      "era_label": "2020",
+      "title": "\"We will protect every worker\"",
+      "setup": "The government went further:",
+      "quote": "While we will try to preserve jobs in the midst of this crisis, we cannot protect every job. However, you have my assurance that the Government will protect every worker.",
+      "speaker": "Heng Swee Keat",
+      "year": 2020,
+      "reflection": "Jobs might disappear. But you won't be abandoned."
+    },
+    {
+      "id": "new_normal_intro",
+      "type": "prose",
+      "year_range": [2022, 2026],
+      "era_label": "2022–2026",
+      "title": "The new normal",
+      "setup": "Was Covid just a one-time thing? Look at what came next."
+    },
+    {
+      "id": "year_2022",
+      "year_range": [2022, 2022],
+      "era_label": "2022",
+      "title": "\"Always have each other's back\"",
+      "setup": "",
+      "quote": "We want every Singaporean to know and feel that he or she has a stake in our society — that everyone's contributions matter and that they will not be left to fend for themselves when times are down. We want to uphold that sense of obligation to each other and strengthen the assurance that, whatever the challenges we face, we will always have each other's back.",
+      "speaker": "Lawrence Wong",
+      "year": 2022,
+      "reflection": ""
+    },
+    {
+      "id": "year_2023",
+      "year_range": [2023, 2023],
+      "era_label": "2023",
+      "title": "\"Strengthen our social compact\"",
+      "setup": "",
+      "quote": "We will strengthen our social compact and provide better support for families, seniors and vulnerable groups.",
+      "speaker": "Lawrence Wong",
+      "year": 2023,
+      "reflection": ""
+    },
+    {
+      "id": "year_2024",
+      "year_range": [2024, 2024],
+      "era_label": "2024",
+      "title": "\"We will always have your backs\"",
+      "setup": "",
+      "quote": "Let me assure everyone — we will always have your backs.",
+      "speaker": "Lawrence Wong",
+      "year": 2024,
+      "reflection": ""
+    },
+    {
+      "id": "year_2025",
+      "year_range": [2025, 2025],
+      "era_label": "2025",
+      "title": "\"We have each other's backs\"",
+      "setup": "",
+      "quote": "We want to build a Singapore where we have each other's backs, where no one is left behind and where we continue to stay strong and united as one people.",
+      "speaker": "Lawrence Wong",
+      "year": 2025,
+      "reflection": ""
+    },
+    {
+      "id": "year_2026",
+      "year_range": [2026, 2026],
+      "era_label": "2026",
+      "title": "\"Together we will secure a brighter future for all\"",
+      "setup": "The most recent Budget speech:",
+      "quote": "This is the conviction that underpins Budget 2026. It is a Budget to support Singaporeans today, prepare our society for tomorrow, and enable us to navigate this changed world with confidence. Together we will secure a stronger, fairer, and brighter future for all.",
+      "speaker": "Lawrence Wong",
+      "year": 2026,
+      "reflection": "Five years. Same message. This isn't a crisis response anymore. It's the new social contract."
+    },
+    {
+      "id": "decade_summary",
+      "year_range": [1965, 2026],
+      "era_label": "Decade by decade",
+      "title": "A gradual shift, then a pivot",
+      "type": "decade_chart",
+      "setup": "The 1960s started with more demands than promises. By the 2000s, the ratio had flipped.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "Notice the dip in the 2010s and 2020s? That's when demand language returned — but with a different tone.",
+      "decade_data": [
+        {"decade": "1960s", "promises": 31, "demands": 40, "ratio": 43.7},
+        {"decade": "1970s", "promises": 145, "demands": 133, "ratio": 52.2},
+        {"decade": "1980s", "promises": 295, "demands": 232, "ratio": 56.0},
+        {"decade": "1990s", "promises": 371, "demands": 196, "ratio": 65.4},
+        {"decade": "2000s", "promises": 764, "demands": 247, "ratio": 75.6},
+        {"decade": "2010s", "promises": 1194, "demands": 461, "ratio": 72.1},
+        {"decade": "2020s", "promises": 1229, "demands": 541, "ratio": 69.4}
+      ]
+    },
+    {
+      "id": "new_ask_1",
+      "year_range": [2015, 2015],
+      "era_label": "The new ask",
+      "title": "\"Empower each Singaporean to chart their own journey\"",
+      "setup": "In 2015, the government launched SkillsFuture — and with it, a new kind of demand:",
+      "quote": "We will build on these foundations to create a new environment for lifelong learning. It is critical to our future. It will develop the skills and mastery needed to take our economy to the next level. More fundamentally, it aims to empower each Singaporean to chart their own journey in life and gain fulfilment at work, even in their senior years.",
+      "speaker": "Tharman Shanmugaratnam",
+      "year": 2015,
+      "reflection": "In 1965, the ask was \"work harder for the nation\". By 2015, it was \"take up skills training we've designed for you\"."
+    },
+    {
+      "id": "new_ask_2",
+      "year_range": [2023, 2023],
+      "era_label": "The new ask",
+      "title": "\"Make the most of the support\"",
+      "setup": "",
+      "quote": "I encourage employers and workers to make the most of the support that the Government is offering. Upgrade your businesses; invest in innovation and training; reskill and upskill to stay competitive and seize new opportunities.",
+      "speaker": "Lawrence Wong",
+      "year": 2023,
+      "reflection": "The ask isn't sacrifice – it's \"use what we've built for you\"."
+    },
+    {
+      "id": "word_trends_intro",
+      "year_range": [1965, 2026],
+      "era_label": "As an aside",
+      "title": "We also checked how the vocabulary shifted with the times",
+      "type": "word_trends_intro",
+      "setup": "More specifically, the rise and fall in the use of nearly 700,000 words across 61 years.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": ""
+    },
+    {
+      "id": "words_rising",
+      "year_range": [1965, 2026],
+      "era_label": "↑ Rising",
+      "title": "Words that barely existed before",
+      "type": "word_trends",
+      "trend_type": "rising",
+      "setup": "Each sparkline shows how often a word appears by mentions per 10,000 words, from 1965 to 2026.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "Seniors. Singaporeans. Families. The language became specific – naming who gets helped."
+    },
+    {
+      "id": "support_stat",
+      "year_range": [1965, 2026],
+      "era_label": "A significant shift",
+      "title": "\"Support\" – from rare to everywhere",
+      "type": "stat_highlight",
+      "setup": "Between 1965 and 1975, the word appeared twice per 10,000 words.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "By 2016-2026, it appeared 70 times per 10,000 words. The government now talks about supporting you 36 times more often than it did at independence."
+    },
+    {
+      "id": "words_declining",
+      "year_range": [1965, 2026],
+      "era_label": "↓ Declining",
+      "title": "Words that used to be everywhere",
+      "type": "word_trends",
+      "trend_type": "declining",
+      "setup": "These words dominated early speeches. Now they've almost vanished.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "Expenditure. Development. Trade. Industrial. The vocabulary of building a nation has faded."
+    },
+    {
+      "id": "fm_fingerprints",
+      "year_range": [1965, 2026],
+      "era_label": "Each Finance Minister's fingerprint",
+      "type": "fm_table",
+      "title": "Ten ministers, ten vocabularies",
+      "setup": "Each Finance Minister left a linguistic signature – words they used far more than others.",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "From battalions to seniors. From unemployed to resilience. The language tells you what each era was building or bracing for.",
+      "fm_words": [
+        {"fm": "Lim Kim San", "era": "1960s", "words": "separation, malaysia, urban"},
+        {"fm": "Goh Keng Swee", "era": "1960s-70s", "words": "military, battalions, unemployed"},
+        {"fm": "Hon Sui Sen", "era": "1970s-80s", "words": "monetary, currency, entrepot"},
+        {"fm": "Tony Tan", "era": "1980s", "words": "computer, automation, software"},
+        {"fm": "Richard Hu", "era": "1980s-90s", "words": "competitiveness, incentive, regional"},
+        {"fm": "Tharman", "era": "2000s-10s", "words": "workfare, elderly, incomes"},
+        {"fm": "Heng Swee Keat", "era": "2010s-20s", "words": "digital, transformation, resilience"},
+        {"fm": "Lawrence Wong", "era": "2020s", "words": "assurance, shared, seniors"}
+      ]
+    },
+    {
+      "id": "persistent_words",
+      "year_range": [1965, 2026],
+      "era_label": "But some words never left",
+      "type": "persistent_words_chart",
+      "title": "The expectation persisted",
+      "setup": "These words appeared consistently across all six decades:",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "The tone softened. The expectation didn't. The contract was not erased. It was rephrased.",
+      "word_data": [
+        {"word": "effort", "rates": [8.0, 8.1, 10.5, 4.9, 7.5, 11.3, 11.0]},
+        {"word": "train", "rates": [15.5, 19.0, 19.6, 4.8, 8.0, 10.6, 14.7]},
+        {"word": "skill", "rates": [3.3, 11.3, 15.6, 6.7, 8.9, 20.3, 21.0]},
+        {"word": "competitive", "rates": [2.2, 2.1, 11.3, 13.6, 14.7, 5.2, 4.5]},
+        {"word": "improve", "rates": [4.2, 11.5, 10.5, 8.2, 6.3, 10.9, 5.1]},
+        {"word": "contribute", "rates": [1.1, 2.7, 1.5, 2.9, 3.8, 3.1, 3.2]}
+      ],
+      "decades": ["60s", "70s", "80s", "90s", "00s", "10s", "20s"]
+    },
+    {
+      "id": "conclusion",
+      "year_range": [1965, 2026],
+      "era_label": "A takeaway",
+      "type": "prose",
+      "title": " ",
+      "setup": "The government never really stopped asking things of society. It just stopped sounding so stern about it. There's support. There's reassurance. There are promises to cushion, to protect, to have your back.<br><br>But read between the lines and the old rhythm is still there. Keep up. Upgrade. Stay useful. Do your part.<br><br>The tone might have softened, but the expectations did not. <strong>The contract wasn't torn up. It just got better at sounding nice.</strong>"
+    },
+    {
+      "id": "explore",
+      "year_range": [1965, 2026],
+      "era_label": "Your turn",
+      "title": "Now explore for yourself",
+      "type": "explore",
+      "setup": "",
+      "quote": "",
+      "speaker": "",
+      "year": null,
+      "reflection": "Hover over any square to read what a Finance Minister said."
+    }
+  ],
+
+  "stats": {
+    "headline": {
+      "word": "support",
+      "then_rate": "2.0",
+      "now_rate": "70.4",
+      "multiplier": "36x",
+      "unit": "per 10,000 words"
+    },
+    "then": {
+      "year": "1965-1975",
+      "top_words": "expenditure, development, trade"
+    },
+    "now": {
+      "year": "2016-2026",
+      "top_words": "support, Singaporeans, help, workers"
+    }
+  }
+}
