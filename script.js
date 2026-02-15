@@ -10,6 +10,30 @@ let currentSection = null;
 let filteredParagraphs = null;
 let yearPositions = {};
 
+// Cached DOM elements (initialized after DOMContentLoaded)
+let domElements = {
+    currentEra: null,
+    currentContext: null,
+    progressFill: null,
+    timelineViz: null,
+    scrollSections: null,
+    hoverPanel: null,
+    quoteModal: null,
+    exploreSection: null
+};
+
+// Initialize cached DOM elements
+function initDomElements() {
+    domElements.currentEra = document.querySelector('.current-era');
+    domElements.currentContext = document.querySelector('.current-context');
+    domElements.progressFill = document.querySelector('.progress-fill');
+    domElements.timelineViz = domElements.timelineViz;
+    domElements.scrollSections = domElements.scrollSections;
+    domElements.hoverPanel = domElements.hoverPanel;
+    domElements.quoteModal = domElements.quoteModal;
+    domElements.exploreSection = document.querySelector('[data-step="explore"]');
+}
+
 // Responsive sizing helper
 function getResponsiveConfig() {
     const width = window.innerWidth;
@@ -43,27 +67,6 @@ function getDotSize() {
     return getResponsiveConfig().dotSize;
 }
 
-// Simplified to 2 categories: Government Promises vs Citizen Obligations
-const categoryColors = {
-    // Government promises (warm coral) - "What we'll do for you"
-    'prosperity': '#D35F5F',
-    'help': '#D35F5F',
-    'sharing': '#D35F5F',
-    'stability': '#D35F5F',
-    'recovery': '#D35F5F',
-    'assurance': '#D35F5F',
-    'support': '#D35F5F',
-    'protection': '#D35F5F',
-
-    // Citizen obligations (cool slate blue) - "What we ask of you"
-    'discipline': '#3D5A80',
-    'participation': '#3D5A80',
-    'compliance': '#3D5A80',
-    'implicit': '#3D5A80',
-    'restraint': '#3D5A80',
-
-    'none': '#b0b0b0'
-};
 
 // Prevent browser from restoring scroll position
 if ('scrollRestoration' in history) {
@@ -72,6 +75,9 @@ if ('scrollRestoration' in history) {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
+    // Cache DOM elements first
+    initDomElements();
+
     // Scroll to top on page load
     window.scrollTo(0, 0);
 
@@ -98,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         initVisualization();
         setupScrollTriggers();
         setupModal();
-        setupFallbackHover(); // Workaround for Chrome SVG hover bug
+        // Native D3 event handlers on dots handle hover/click
 
     } catch (error) {
         console.error('Error:', error);
@@ -107,7 +113,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Generate story sections from curated data
 function generateStorySections() {
-    const container = document.getElementById('scroll-sections');
+    const container = domElements.scrollSections;
 
     storyData.sections.forEach((section, index) => {
         const el = document.createElement('section');
@@ -435,7 +441,7 @@ function drawSparklines() {
 
 // Initialize visualization
 function initVisualization() {
-    const container = document.getElementById('timeline-viz');
+    const container = domElements.timelineViz;
     const width = container.clientWidth;
 
     // Get responsive configuration
@@ -698,8 +704,7 @@ function initVisualization() {
                 return d.primary_value === 'citizen' ? '#2B4460' : '#6B8CAE'; // darker blue : lighter blue
             }
 
-            // Fallback to old system for backwards compatibility
-            return categoryColors[d.primary_value] || '#b0b0b0';
+            return '#b0b0b0';
         })
         .attr('opacity', 0.9)
         .attr('stroke', 'none')
@@ -709,61 +714,41 @@ function initVisualization() {
             return (d.primary_value && d.primary_value !== 'none') ? 'pointer' : 'default';
         })
         .on('mouseenter', function(_event, d) {
-            // DEBUG: Always log, even outside interactive mode
-            console.log('DOT HOVER DETECTED:', d.year, 'interactive:', document.body.classList.contains('interactive-mode'));
+            if (!document.body.classList.contains('interactive-mode')) return;
+            if (!d.primary_value || d.primary_value === 'none') return;
 
-            // Only respond in interactive mode
-            if (!document.body.classList.contains('interactive-mode')) {
-                console.log('Not in interactive mode, ignoring hover');
-                return;
-            }
-
-            // Clear any pending hide timeout
+            // Clear pending hide timeout
             if (window.hoverPanelTimeout) {
                 clearTimeout(window.hoverPanelTimeout);
                 window.hoverPanelTimeout = null;
             }
 
-            // Highlight on hover for items with data
-            if (d.primary_value && d.primary_value !== 'none') {
-                d3.select(this)
-                    .attr('opacity', 1)
-                    .attr('stroke', '#000')
-                    .attr('stroke-width', 1.5)
-                    .raise();
+            // Clear previous selection, add new selection using class
+            d3.selectAll('.dot.selected').classed('selected', false);
+            d3.select(this).classed('selected', true).raise();
 
-                console.log('Calling showHoverPanel for:', d.year, d.text?.substring(0, 50));
-                showHoverPanel(d);
-            } else {
-                console.log('Dot has no primary_value, skipping panel');
-            }
+            showHoverPanel(d);
         })
         .on('mouseleave', function(_event, d) {
-            // Only respond in interactive mode
             if (!document.body.classList.contains('interactive-mode')) return;
+            if (!d.primary_value || d.primary_value === 'none') return;
 
-            // Remove highlight
-            if (d.primary_value && d.primary_value !== 'none') {
-                d3.select(this)
-                    .attr('opacity', 0.9)
-                    .attr('stroke', 'none')
-                    .attr('stroke-width', 0);
-
-                // Delay hiding the panel slightly
-                window.hoverPanelTimeout = setTimeout(() => {
-                    hideHoverPanel();
-                }, 150);
-            }
+            // Delay hiding panel and removing selection
+            window.hoverPanelTimeout = setTimeout(() => {
+                d3.selectAll('.dot.selected').classed('selected', false);
+                hideHoverPanel();
+            }, 150);
         })
         .on('click', function(_event, d) {
-            // Only respond in interactive mode
             if (!document.body.classList.contains('interactive-mode')) return;
+            if (!d.primary_value || d.primary_value === 'none') return;
 
-            if (d.primary_value && d.primary_value !== 'none') {
-                // Show and pin the quote
-                showHoverPanel(d);
-                pinQuote();
-            }
+            // Clear previous, select this one
+            d3.selectAll('.dot.selected').classed('selected', false);
+            d3.select(this).classed('selected', true);
+
+            showHoverPanel(d);
+            pinQuote();
         });
 
     // Highlight box
@@ -801,38 +786,24 @@ function setupScrollTriggers() {
 
     // Detect when explore section comes into view - enable interactive mode
     const exploreSection = document.querySelector('[data-step="explore"]');
-    console.log('Explore section found:', exploreSection); // Debug
 
     if (exploreSection) {
         const exploreObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                const rect = entry.boundingClientRect;
-                console.log('Explore section intersection:', {
-                    isIntersecting: entry.isIntersecting,
-                    intersectionRatio: entry.intersectionRatio,
-                    hasInteractiveMode: document.body.classList.contains('interactive-mode'),
-                    rect_top: rect.top,
-                    rect_bottom: rect.bottom,
-                    rect_height: rect.height,
-                    viewport_height: window.innerHeight
-                });
-
                 // Enable interactive mode when explore section is mostly visible (50%+)
                 // Add delay so readers can read the explore card first
                 // On mobile, interactive mode is enabled but CSS allows scrolling
                 const isMobileView = window.innerWidth <= 768;
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                     if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown && !userExitedInteractiveMode) {
-                        console.log('⏳ Explore card visible - triggering interactive mode...');
 
                         window.interactiveModeTimeout = setTimeout(() => {
                             document.body.classList.add('interactive-mode');
-                            console.log('✅ Interactive mode ENABLED');
 
                             // Update header to show explore instructions
-                            document.querySelector('.current-era').textContent = 'Your turn';
+                            domElements.currentEra.textContent = 'Your turn';
                             const isMobileHeader = window.innerWidth <= 768;
-                            document.querySelector('.current-context').textContent = isMobileHeader
+                            domElements.currentContext.textContent = isMobileHeader
                                 ? 'Tap any square to see the paragraph it represents.'
                                 : 'Hover over any square to see the paragraph it represents.';
 
@@ -879,7 +850,6 @@ function setupScrollTriggers() {
                                     void document.body.offsetWidth;
                                     document.body.classList.remove('force-repaint');
 
-                                    console.log('✅ Repaint complete via double RAF', rect);
                                 });
                             });
 
@@ -891,7 +861,6 @@ function setupScrollTriggers() {
                     if (window.interactiveModeTimeout) {
                         clearTimeout(window.interactiveModeTimeout);
                         window.interactiveModeTimeout = null;
-                        console.log('⏹ Cancelled interactive mode timeout');
                     }
 
                     const rect = entry.boundingClientRect;
@@ -905,16 +874,15 @@ function setupScrollTriggers() {
                         // On desktop, only disable if user explicitly exited (not from observer)
                         if (!interactiveModeCooldown && !isDesktop) {
                             document.body.classList.remove('interactive-mode');
-                            console.log('❌ Interactive mode DISABLED - before explore section');
                         }
                     } else {
                         // Scrolled past - enable interactive mode immediately (in case timeout was cancelled)
                         // On mobile, interactive mode is enabled but CSS allows scrolling
                         if (!document.body.classList.contains('interactive-mode') && !interactiveModeCooldown && !userExitedInteractiveMode) {
                             document.body.classList.add('interactive-mode');
-                            document.querySelector('.current-era').textContent = 'Your turn';
+                            domElements.currentEra.textContent = 'Your turn';
                             const isMobileHeader2 = window.innerWidth <= 768;
-                            document.querySelector('.current-context').textContent = isMobileHeader2
+                            domElements.currentContext.textContent = isMobileHeader2
                                 ? 'Tap any square to see the paragraph it represents.'
                                 : 'Hover over any square to see the paragraph it represents.';
 
@@ -933,9 +901,7 @@ function setupScrollTriggers() {
                                 dot.style.cursor = 'pointer';
                             });
 
-                            console.log('✅ Interactive mode ENABLED - scrolled past explore');
                         } else {
-                            console.log('✅ Interactive mode stays ON - scrolled past explore');
                         }
                     }
                 }
@@ -975,202 +941,28 @@ function updateHeader(stepEl) {
     const section = storyData.sections.find(s => s.id === stepEl.dataset.step);
     if (section) {
         // Use header_text if available, otherwise fall back to era_label
-        document.querySelector('.current-era').textContent = section.header_text || section.era_label;
-        document.querySelector('.current-context').textContent = section.title;
+        domElements.currentEra.textContent = section.header_text || section.era_label;
+        domElements.currentContext.textContent = section.title;
     }
 }
 
 function updateProgress(start, end) {
     const midpoint = (start + end) / 2;
     const progress = (midpoint - 1965) / (2026 - 1965);
-    document.querySelector('.progress-fill').style.width = `${Math.min(100, progress * 100)}%`;
+    domElements.progressFill.style.width = `${Math.min(100, progress * 100)}%`;
 }
 
 // Modal
 function setupModal() {
-    const modal = document.getElementById('quote-modal');
+    const modal = domElements.quoteModal;
     modal.querySelector('.modal-close').addEventListener('click', () => modal.classList.add('hidden'));
     modal.addEventListener('click', e => { if (e.target === modal) modal.classList.add('hidden'); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.add('hidden'); });
 }
 
-// Coordinate-based hover detection (completely bypasses Chrome SVG pointer-events bug)
-function setupFallbackHover() {
-    const container = document.getElementById('timeline-viz');
-    if (!container) return;
-
-    let lastHoveredDot = null;
-
-    // Find dot at given SVG coordinates using pure math
-    function findDotAtPosition(svgX, svgY) {
-        if (!filteredParagraphs) return null;
-
-        const hitRadius = getDotSize() * 1.5; // How close mouse/touch needs to be (slightly larger for touch)
-
-        for (const p of filteredParagraphs) {
-            if (!p.xPos || !p.yPos) continue;
-            if (!p.primary_value || p.primary_value === 'none') continue;
-
-            // Check if mouse is within the dot's bounds
-            const dx = Math.abs(svgX - p.xPos);
-            const dy = Math.abs(svgY - p.yPos);
-
-            if (dx <= hitRadius && dy <= hitRadius) {
-                return p;
-            }
-        }
-        return null;
-    }
-
-    container.addEventListener('mousemove', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-
-        // Get SVG element and convert mouse coords to SVG coords
-        const svgEl = container.querySelector('svg');
-        if (!svgEl) return;
-
-        const rect = svgEl.getBoundingClientRect();
-        const svgX = e.clientX - rect.left;
-        const svgY = e.clientY - rect.top;
-
-        // Find dot at this position using coordinates
-        const d = findDotAtPosition(svgX, svgY);
-
-        if (d && d !== lastHoveredDot) {
-            // Clear previous highlight
-            if (lastHoveredDot) {
-                d3.selectAll('.dot').filter(dd => dd === lastHoveredDot)
-                    .attr('opacity', 0.9)
-                    .attr('stroke', 'none');
-            }
-
-            lastHoveredDot = d;
-
-            // Highlight current dot - find it by matching data
-            d3.selectAll('.dot').filter(dd => dd === d)
-                .attr('opacity', 1)
-                .attr('stroke', '#000')
-                .attr('stroke-width', 1.5)
-                .raise();
-
-            // Show panel
-            showHoverPanel(d);
-
-            // Clear any pending hide timeout
-            if (window.hoverPanelTimeout) {
-                clearTimeout(window.hoverPanelTimeout);
-                window.hoverPanelTimeout = null;
-            }
-        } else if (!d && lastHoveredDot) {
-            // Mouse left all dots - hide panel after delay
-            if (!window.hoverPanelTimeout) {
-                window.hoverPanelTimeout = setTimeout(() => {
-                    const panel = document.getElementById('hover-panel');
-                    if (panel && !panel.classList.contains('pinned')) {
-                        panel.classList.add('hidden');
-                    }
-                    // Reset highlight
-                    d3.selectAll('.dot')
-                        .attr('opacity', 0.9)
-                        .attr('stroke', 'none');
-                    lastHoveredDot = null;
-                    window.hoverPanelTimeout = null;
-                }, 150);
-            }
-        }
-    });
-
-    // Handle clicks for pinning
-    container.addEventListener('click', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-
-        const svgEl = container.querySelector('svg');
-        if (!svgEl) return;
-
-        const rect = svgEl.getBoundingClientRect();
-        const svgX = e.clientX - rect.left;
-        const svgY = e.clientY - rect.top;
-
-        const d = findDotAtPosition(svgX, svgY);
-        if (d) {
-            showHoverPanel(d);
-            pinQuote();
-        }
-    });
-
-    // Touch support for mobile devices
-    container.addEventListener('touchstart', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-
-        const touch = e.touches[0];
-        const svgEl = container.querySelector('svg');
-        if (!svgEl) return;
-
-        const rect = svgEl.getBoundingClientRect();
-        const svgX = touch.clientX - rect.left;
-        const svgY = touch.clientY - rect.top;
-
-        const d = findDotAtPosition(svgX, svgY);
-        if (d) {
-            e.preventDefault(); // Prevent scroll when touching a dot
-
-            // Clear previous highlight
-            d3.selectAll('.dot')
-                .attr('opacity', 0.9)
-                .attr('stroke', 'none');
-
-            // Highlight current dot
-            d3.selectAll('.dot').filter(dd => dd === d)
-                .attr('opacity', 1)
-                .attr('stroke', '#000')
-                .attr('stroke-width', 1.5)
-                .raise();
-
-            showHoverPanel(d);
-            pinQuote(); // Auto-pin on touch for better mobile UX
-        }
-    }, { passive: false });
-
-    // Touch move for exploring dots
-    container.addEventListener('touchmove', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-
-        const touch = e.touches[0];
-        const svgEl = container.querySelector('svg');
-        if (!svgEl) return;
-
-        const rect = svgEl.getBoundingClientRect();
-        const svgX = touch.clientX - rect.left;
-        const svgY = touch.clientY - rect.top;
-
-        const d = findDotAtPosition(svgX, svgY);
-        if (d && d !== lastHoveredDot) {
-            e.preventDefault();
-
-            lastHoveredDot = d;
-
-            // Clear previous highlight
-            d3.selectAll('.dot')
-                .attr('opacity', 0.9)
-                .attr('stroke', 'none');
-
-            // Highlight current dot
-            d3.selectAll('.dot').filter(dd => dd === d)
-                .attr('opacity', 1)
-                .attr('stroke', '#000')
-                .attr('stroke-width', 1.5)
-                .raise();
-
-            showHoverPanel(d);
-        }
-    }, { passive: false });
-
-    console.log('✅ Coordinate-based hover detection set up (with touch support)');
-}
 
 function showModal(d) {
-    console.log('showModal called with:', d.year, d.text?.substring(0, 50));
-    const modal = document.getElementById('quote-modal');
+    const modal = domElements.quoteModal;
     if (!modal) {
         console.error('Modal element not found!');
         return;
@@ -1198,9 +990,8 @@ function showModal(d) {
 
 // Hover panel functions for interactive mode
 function showHoverPanel(d) {
-    console.log('showHoverPanel called:', d.year, d.text?.substring(0, 30));
 
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     if (!panel) {
         console.error('Hover panel not found!');
         return;
@@ -1224,11 +1015,10 @@ function showHoverPanel(d) {
     }
 
     panel.classList.remove('hidden');
-    console.log('Hover panel should now be visible');
 }
 
 function hideHoverPanel() {
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     // Don't hide if pinned
     if (panel && !panel.classList.contains('pinned')) {
         panel.classList.add('hidden');
@@ -1236,36 +1026,25 @@ function hideHoverPanel() {
 }
 
 function pinQuote() {
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     if (panel) {
         panel.classList.add('pinned');
-        console.log('Quote pinned');
     }
 }
 
 function unpinQuote() {
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     if (panel) {
         panel.classList.remove('pinned');
         panel.classList.add('hidden');
-        console.log('Quote unpinned');
     }
 }
 
-// Resize
+// Resize (also handles orientation change)
 window.addEventListener('resize', debounce(() => {
-    document.getElementById('timeline-viz').innerHTML = '';
+    domElements.timelineViz.innerHTML = '';
     initVisualization();
 }, 250));
-
-// Orientation change (mobile)
-window.addEventListener('orientationchange', () => {
-    // Wait for orientation to settle
-    setTimeout(() => {
-        document.getElementById('timeline-viz').innerHTML = '';
-        initVisualization();
-    }, 100);
-});
 
 function debounce(fn, wait) {
     let t;
@@ -1277,7 +1056,7 @@ function debounce(fn, wait) {
 
 // Close pinned panel when clicking outside
 document.addEventListener('click', function(e) {
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     // If panel is pinned and click is outside the panel and not on a dot
     if (panel && panel.classList.contains('pinned')) {
         if (!panel.contains(e.target) && !e.target.classList.contains('dot')) {
@@ -1292,7 +1071,6 @@ let interactiveModeCooldown = false;
 let userExitedInteractiveMode = false; // Track if user manually exited
 
 function exitInteractiveMode() {
-    console.log('exitInteractiveMode called');
 
     // Set cooldown to prevent immediate re-trigger
     interactiveModeCooldown = true;
@@ -1303,7 +1081,7 @@ function exitInteractiveMode() {
     document.body.classList.remove('interactive-mode');
 
     // Hide hover panel
-    const panel = document.getElementById('hover-panel');
+    const panel = domElements.hoverPanel;
     if (panel) panel.classList.add('hidden');
 
     // Reset dots opacity
@@ -1312,12 +1090,10 @@ function exitInteractiveMode() {
         dot.style.pointerEvents = 'none';
     });
 
-    console.log('Interactive mode exited - free scrolling enabled');
 
     // Clear cooldown after 3 seconds
     setTimeout(() => {
         interactiveModeCooldown = false;
-        console.log('Interactive mode cooldown cleared');
     }, 3000);
 }
 
