@@ -1268,12 +1268,42 @@ function exitInteractiveMode() {
     }, 3000);
 }
 
-// Allow scrolling up to exit interactive mode
+// Exit interactive mode and scroll to top (for mobile button)
+function exitInteractiveModeAndScrollTop() {
+    exitInteractiveMode();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Allow scrolling up to exit interactive mode (desktop)
 document.addEventListener('wheel', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
 
     // Scrolling up (negative deltaY) - exit interactive mode
     if (e.deltaY < -30) {
+        exitInteractiveMode();
+    }
+}, { passive: true });
+
+// Touch swipe to exit interactive mode (mobile)
+let touchStartY = 0;
+let touchStartTime = 0;
+
+document.addEventListener('touchstart', function(e) {
+    if (!document.body.classList.contains('interactive-mode')) return;
+    touchStartY = e.touches[0].clientY;
+    touchStartTime = Date.now();
+}, { passive: true });
+
+document.addEventListener('touchend', function(e) {
+    if (!document.body.classList.contains('interactive-mode')) return;
+
+    const touchEndY = e.changedTouches[0].clientY;
+    const touchEndTime = Date.now();
+    const deltaY = touchEndY - touchStartY;
+    const deltaTime = touchEndTime - touchStartTime;
+
+    // Detect swipe down (finger moves down = scroll up intent) - quick swipe of at least 50px
+    if (deltaY > 50 && deltaTime < 300) {
         exitInteractiveMode();
     }
 }, { passive: true });

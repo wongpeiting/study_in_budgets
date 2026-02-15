@@ -1002,7 +1002,30 @@ body.interactive-mode .step-explore {
 /* Responsive for sparkline grid */
 @media (max-width: 768px) {
     .sparkline-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
+        padding: 0.5rem;
+    }
+
+    .sparkline-item {
+        padding: 0.3rem;
+    }
+
+    .sparkline-word {
+        font-size: 0.6rem;
+    }
+
+    .sparkline {
+        width: 50px;
+        height: 16px;
+    }
+
+    .sparkline-change {
+        font-size: 0.55rem;
+    }
+
+    .sparkline-rate {
+        font-size: 0.5rem;
     }
 
     .trends-content {
@@ -1473,6 +1496,39 @@ body.interactive-mode .dot {
 body.interactive-mode .methodology-link {
     opacity: 1;
     pointer-events: auto;
+}
+
+/* Mobile back button - hidden by default */
+.mobile-back-btn {
+    display: none;
+}
+
+/* Show mobile back button only on mobile in interactive mode */
+@media (max-width: 768px) {
+    body.interactive-mode .mobile-back-btn {
+        display: block;
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        left: auto;
+        transform: none;
+        background: rgba(255,255,255,0.9);
+        color: var(--text-dim);
+        border: 1px solid #ddd;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.55rem;
+        font-weight: 500;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    body.interactive-mode .mobile-back-btn:active {
+        transform: scale(0.95);
+        background: #f0f0f0;
+    }
 }
 
 .methodology-link:hover {
