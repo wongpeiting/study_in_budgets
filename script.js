@@ -360,7 +360,7 @@ function generateStorySections() {
                             `).join('')}
                         </tbody>
                     </table>
-                    <p class="table-note">Rate per 10,000 words</p>
+                    <p class="table-note">Mentions per 10,000 words</p>
                     ${section.reflection ? `<p class="reflection">${section.reflection}</p>` : ''}
                 </div>
             `;
