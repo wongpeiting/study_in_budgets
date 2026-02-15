@@ -1343,6 +1343,7 @@ body.interactive-mode .dot {
 /* Scroll spacer - maintains scroll height for sticky chart transition */
 .scroll-spacer {
     height: 200vh;
+    background: var(--bg);
 }
 
 /* Credits and Methodology Section */

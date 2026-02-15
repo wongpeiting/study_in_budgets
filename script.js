@@ -672,9 +672,6 @@ function initVisualization() {
                 window.hoverPanelTimeout = null;
             }
 
-            // DEBUG: Change background color to confirm hover is working
-            document.body.style.backgroundColor = '#ffe0e0';
-
             // Highlight on hover for items with data
             if (d.primary_value && d.primary_value !== 'none') {
                 d3.select(this)
