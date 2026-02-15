@@ -41,9 +41,9 @@ function getResponsiveConfig() {
     return {
         dotSize: isSmallMobile ? 2.2 : (isMobile ? 2.8 : 3.3),
         dotGap: isSmallMobile ? 0.3 : (isMobile ? 0.4 : 0.6),
-        marginTop: isSmallMobile ? 10 : (isMobile ? 15 : 200),
+        marginTop: isSmallMobile ? 20 : (isMobile ? 30 : 240),
         marginRight: isMobile ? 10 : 25,
-        marginBottom: isSmallMobile ? 18 : (isMobile ? 20 : 20),
+        marginBottom: isSmallMobile ? 30 : (isMobile ? 40 : 50),
         marginLeft: isMobile ? 10 : 25,
         hideAnnotations: isMobile,
         maxCols: isSmallMobile ? 4 : (isMobile ? 5 : 6),
@@ -51,7 +51,7 @@ function getResponsiveConfig() {
         isSmallMobile: isSmallMobile,
         hideSvgLegend: isMobile, // Hide SVG legend on mobile, use CSS legend
         fontSize: {
-            year: isSmallMobile ? '8px' : (isMobile ? '9px' : '13px'),
+            year: isSmallMobile ? '7px' : (isMobile ? '8px' : '10px'),
             legend: isSmallMobile ? '8px' : (isMobile ? '9px' : '10.5px'),
             event: isSmallMobile ? '7px' : (isMobile ? '8px' : '9px')
         }
@@ -432,9 +432,8 @@ function initVisualization() {
     // Get responsive configuration
     const config = getResponsiveConfig();
 
-    // Use more height on mobile
-    const heightMultiplier = config.isMobile ? 0.98 : 0.92;
-    const height = (container.clientHeight || 500) * heightMultiplier;
+    // Use full height to ensure chart is never cut off
+    const height = container.clientHeight || 500;
     const margin = {
         top: config.marginTop,
         right: config.marginRight,
@@ -533,15 +532,27 @@ function initVisualization() {
         });
     });
 
-    // Year labels at bottom of chart
+    // Year labels positioned dynamically below where each year's boxes end
     const labelYears = [1965, 1980, 2000, 2020, 2026];
-    const yearLabelOffset = config.isMobile ? 18 : 22;
+    const yearLabelPadding = config.isMobile ? 12 : 15;
+
+    // Calculate max y position for each label year
+    const yearMaxY = {};
+    labelYears.forEach(year => {
+        const yearParas = filteredParagraphs.filter(p => p.year === year);
+        if (yearParas.length > 0) {
+            yearMaxY[year] = Math.max(...yearParas.map(p => p.yPos)) + dotSize / 2;
+        } else {
+            yearMaxY[year] = baseline; // fallback
+        }
+    });
+
     svg.selectAll('.year-label')
         .data(labelYears.filter(y => yearPositions[y]))
         .join('text')
         .attr('class', 'year-label')
         .attr('x', d => yearPositions[d].center)
-        .attr('y', height - margin.bottom + yearLabelOffset)
+        .attr('y', d => yearMaxY[d] + yearLabelPadding)
         .attr('text-anchor', 'middle')
         .attr('fill', '#7a7a7a')
         .attr('font-size', config.fontSize.year)
@@ -561,15 +572,6 @@ function initVisualization() {
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '4,2');
 
-    // Bottom baseline
-    svg.append('line')
-        .attr('x1', margin.left)
-        .attr('x2', width - margin.right)
-        .attr('y1', height - margin.bottom)
-        .attr('y2', height - margin.bottom)
-        .attr('stroke', '#d0cdc8')
-        .attr('stroke-width', 1);
-
     // Axis labels for diverging chart
     if (!config.isMobile) {
         // "Promises" label above baseline
@@ -587,7 +589,7 @@ function initVisualization() {
         svg.append('text')
             .attr('class', 'axis-label')
             .attr('x', margin.left + 5)
-            .attr('y', baseline + 35)
+            .attr('y', baseline + 50)
             .attr('text-anchor', 'start')
             .attr('fill', '#3D5A80')
             .attr('font-size', '10px')
@@ -630,41 +632,6 @@ function initVisualization() {
                 .attr('fill', '#999')
                 .attr('opacity', 0.8)
                 .text(item.label);
-        });
-    }
-
-    // Historical event annotations (subtle, at bottom) - hide on mobile
-    if (!config.hideAnnotations) {
-        const events = [
-            { year: 1997, label: 'Asian Financial Crisis' },
-            { year: 2020, label: 'COVID-19' }
-        ];
-
-        events.forEach(event => {
-            if (yearPositions[event.year]) {
-                const x = yearPositions[event.year].center;
-                const lineTop = height - margin.bottom - 30;
-
-                svg.append('line')
-                    .attr('x1', x)
-                    .attr('x2', x)
-                    .attr('y1', lineTop)
-                    .attr('y2', height - margin.bottom)
-                    .attr('stroke', '#c0c0c0')
-                    .attr('stroke-width', 1)
-                    .attr('stroke-dasharray', '2,2')
-                    .attr('opacity', 0.5);
-
-                svg.append('text')
-                    .attr('x', x)
-                    .attr('y', height - margin.bottom + 32)
-                    .attr('text-anchor', 'middle')
-                    .attr('font-size', config.fontSize.event)
-                    .attr('fill', '#888')
-                    .attr('opacity', 0.7)
-                    .attr('font-style', 'italic')
-                    .text(event.label);
-            }
         });
     }
 
