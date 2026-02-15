@@ -18,7 +18,6 @@ let domElements = {
     timelineViz: null,
     scrollSections: null,
     hoverPanel: null,
-    quoteModal: null,
     exploreSection: null
 };
 
@@ -30,17 +29,14 @@ function initDomElements() {
     domElements.timelineViz = document.getElementById('timeline-viz');
     domElements.scrollSections = document.getElementById('scroll-sections');
     domElements.hoverPanel = document.getElementById('hover-panel');
-    domElements.quoteModal = document.getElementById('quote-modal');
     domElements.exploreSection = document.querySelector('[data-step="explore"]');
 }
 
 // Responsive sizing helper
 function getResponsiveConfig() {
     const width = window.innerWidth;
-    const height = window.innerHeight;
     const isMobile = width <= 768;
     const isSmallMobile = width <= 480;
-    const isLandscape = width > height;
 
     return {
         dotSize: isSmallMobile ? 2.2 : (isMobile ? 2.8 : 3.3),
@@ -61,12 +57,6 @@ function getResponsiveConfig() {
         }
     };
 }
-
-// Get current DOT_SIZE (for hover detection)
-function getDotSize() {
-    return getResponsiveConfig().dotSize;
-}
-
 
 // Prevent browser from restoring scroll position
 if ('scrollRestoration' in history) {
@@ -103,7 +93,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         generateStorySections();
         initVisualization();
         setupScrollTriggers();
-        setupModal();
         // Native D3 event handlers on dots handle hover/click
 
     } catch (error) {
@@ -380,10 +369,6 @@ function generateStorySections() {
             `;
         } else {
             // Regular quote section
-            const reflectionHtml = section.reflection && section.reflection.includes('<')
-                ? section.reflection
-                : section.reflection;
-
             content = `
                 <div class="step-content">
                     <span class="era-badge">${section.era_label}</span>
@@ -392,7 +377,7 @@ function generateStorySections() {
                         <blockquote class="quote">"${section.quote}"</blockquote>
                         <p class="attribution">— ${section.speaker}, ${section.year}</p>
                     ` : ''}
-                    ${section.reflection ? `<p class="reflection">${reflectionHtml}</p>` : ''}
+                    ${section.reflection ? `<p class="reflection">${section.reflection}</p>` : ''}
                 </div>
             `;
         }
@@ -591,7 +576,7 @@ function initVisualization() {
         svg.append('text')
             .attr('class', 'axis-label')
             .attr('x', margin.left + 5)
-            .attr('y', baseline - 15)
+            .attr('y', baseline - 30)
             .attr('text-anchor', 'start')
             .attr('fill', '#C44F4F')
             .attr('font-size', '10px')
@@ -602,7 +587,7 @@ function initVisualization() {
         svg.append('text')
             .attr('class', 'axis-label')
             .attr('x', margin.left + 5)
-            .attr('y', baseline + 22)
+            .attr('y', baseline + 35)
             .attr('text-anchor', 'start')
             .attr('fill', '#3D5A80')
             .attr('font-size', '10px')
@@ -615,8 +600,8 @@ function initVisualization() {
         const legendData = [
             { label: 'Promises to you', color: '#C44F4F' },
             { label: 'Promises to firms', color: '#E89898' },
-            { label: "What's asked of you", color: '#2B4460' },
-            { label: "What's asked of firms", color: '#6B8CAE' }
+            { label: 'Asks of you', color: '#2B4460' },
+            { label: 'Asks of firms', color: '#6B8CAE' }
         ];
 
         const legendX = 30;
@@ -793,7 +778,6 @@ function setupScrollTriggers() {
                 // Enable interactive mode when explore section is mostly visible (50%+)
                 // Add delay so readers can read the explore card first
                 // On mobile, interactive mode is enabled but CSS allows scrolling
-                const isMobileView = window.innerWidth <= 768;
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                     if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown && !userExitedInteractiveMode) {
 
@@ -820,38 +804,6 @@ function setupScrollTriggers() {
                                     .duration(400)
                                     .attr('opacity', 0);
                             }
-
-                            // Use requestAnimationFrame for proper repaint sync
-                            requestAnimationFrame(() => {
-                                const allDots = document.querySelectorAll('.dot');
-                                const svgEl = document.querySelector('#timeline-viz svg');
-
-                                // Set pointer-events on SVG element itself
-                                if (svgEl) {
-                                    svgEl.style.pointerEvents = 'all';
-                                    // Add will-change to force GPU layer
-                                    svgEl.style.willChange = 'transform';
-                                }
-
-                                // Set on each dot using both style and attribute
-                                allDots.forEach(dot => {
-                                    dot.style.pointerEvents = 'auto';
-                                    dot.style.cursor = 'pointer';
-                                    dot.setAttribute('pointer-events', 'all');
-                                });
-
-                                // Second RAF to ensure paint happens
-                                requestAnimationFrame(() => {
-                                    // Force a style recalc by reading layout
-                                    const rect = svgEl ? svgEl.getBoundingClientRect() : null;
-
-                                    // Add and remove a dummy class to force style recalc
-                                    document.body.classList.add('force-repaint');
-                                    void document.body.offsetWidth;
-                                    document.body.classList.remove('force-repaint');
-
-                                });
-                            });
 
                             window.interactiveModeTimeout = null;
                         }, 300); // Quick trigger to prevent chart scrolling away
@@ -893,15 +845,6 @@ function setupScrollTriggers() {
                             if (svg) {
                                 svg.select('.highlight-box').attr('opacity', 0);
                             }
-
-                            // Set pointer events
-                            const allDots = document.querySelectorAll('.dot');
-                            allDots.forEach(dot => {
-                                dot.style.pointerEvents = 'auto';
-                                dot.style.cursor = 'pointer';
-                            });
-
-                        } else {
                         }
                     }
                 }
@@ -952,42 +895,6 @@ function updateProgress(start, end) {
     domElements.progressFill.style.width = `${Math.min(100, progress * 100)}%`;
 }
 
-// Modal
-function setupModal() {
-    const modal = domElements.quoteModal;
-    modal.querySelector('.modal-close').addEventListener('click', () => modal.classList.add('hidden'));
-    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.add('hidden'); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.add('hidden'); });
-}
-
-
-function showModal(d) {
-    const modal = domElements.quoteModal;
-    if (!modal) {
-        console.error('Modal element not found!');
-        return;
-    }
-    modal.querySelector('.modal-year').textContent = d.year;
-    modal.querySelector('.modal-fm').textContent = d.fm_name || '';
-    modal.querySelector('.modal-quote').textContent = d.text;
-
-    // Only show primary tag
-    const promTag = modal.querySelector('.promise-tag');
-    const oblTag = modal.querySelector('.obligation-tag');
-
-    if (d.primary_type === 'promise') {
-        promTag.textContent = d.primary_value === 'citizen' ? 'Promise (citizen)' : 'Promise (firm)';
-        promTag.style.background = d.primary_value === 'citizen' ? '#C44F4F' : '#E89898';
-        oblTag.textContent = '';
-    } else if (d.primary_type === 'obligation') {
-        oblTag.textContent = d.primary_value === 'citizen' ? 'Obligation (citizen)' : 'Obligation (firm)';
-        oblTag.style.background = d.primary_value === 'citizen' ? '#2B4460' : '#6B8CAE';
-        promTag.textContent = '';
-    }
-
-    modal.classList.remove('hidden');
-}
-
 // Hover panel functions for interactive mode
 function showHoverPanel(d) {
 
@@ -1003,11 +910,11 @@ function showHoverPanel(d) {
 
     const tag = panel.querySelector('.hover-panel-tag');
     if (d.primary_type === 'promise') {
-        tag.textContent = d.primary_value === 'citizen' ? 'Promise to citizens' : 'Promise to firms';
+        tag.textContent = d.primary_value === 'citizen' ? 'Promises to you' : 'Promises to firms';
         tag.style.background = d.primary_value === 'citizen' ? '#C44F4F' : '#E89898';
         tag.style.color = '#fff';
     } else if (d.primary_type === 'obligation') {
-        tag.textContent = d.primary_value === 'citizen' ? 'Asked of citizens' : 'Asked of firms';
+        tag.textContent = d.primary_value === 'citizen' ? 'Asks of you' : 'Asks of firms';
         tag.style.background = d.primary_value === 'citizen' ? '#2B4460' : '#6B8CAE';
         tag.style.color = '#fff';
     } else {
@@ -1083,13 +990,6 @@ function exitInteractiveMode() {
     // Hide hover panel
     const panel = domElements.hoverPanel;
     if (panel) panel.classList.add('hidden');
-
-    // Reset dots opacity
-    const allDots = document.querySelectorAll('.dot');
-    allDots.forEach(dot => {
-        dot.style.pointerEvents = 'none';
-    });
-
 
     // Clear cooldown after 3 seconds
     setTimeout(() => {
