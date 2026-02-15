@@ -27,10 +27,10 @@ function initDomElements() {
     domElements.currentEra = document.querySelector('.current-era');
     domElements.currentContext = document.querySelector('.current-context');
     domElements.progressFill = document.querySelector('.progress-fill');
-    domElements.timelineViz = domElements.timelineViz;
-    domElements.scrollSections = domElements.scrollSections;
-    domElements.hoverPanel = domElements.hoverPanel;
-    domElements.quoteModal = domElements.quoteModal;
+    domElements.timelineViz = document.getElementById('timeline-viz');
+    domElements.scrollSections = document.getElementById('scroll-sections');
+    domElements.hoverPanel = document.getElementById('hover-panel');
+    domElements.quoteModal = document.getElementById('quote-modal');
     domElements.exploreSection = document.querySelector('[data-step="explore"]');
 }
 
