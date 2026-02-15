@@ -279,11 +279,16 @@ function generateStorySections() {
         } else if (section.type === 'explore') {
             // Final explore section - scrolls away to reveal interactive chart
             el.classList.add('step-explore');
+            // Use different text for mobile (click) vs desktop (hover)
+            const isMobileDevice = window.innerWidth <= 768;
+            const exploreText = isMobileDevice
+                ? 'Tap any square to see the paragraph it represents.'
+                : section.reflection;
             content = `
                 <div class="step-content explore-content">
                     <span class="era-badge">${section.era_label}</span>
                     <h3>${section.title}</h3>
-                    <div class="explore-text">${section.reflection.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
+                    <div class="explore-text">${exploreText.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
                     <div class="explore-hint">
                         <span class="hint-icon">↓</span>
                         <span>Keep scrolling, then hover over any square</span>
@@ -765,8 +770,10 @@ function setupScrollTriggers() {
 
                 // Enable interactive mode when explore section is mostly visible (50%+)
                 // Add delay so readers can read the explore card first
+                // On mobile, interactive mode is enabled but CSS allows scrolling
+                const isMobileView = window.innerWidth <= 768;
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
+                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown && !userExitedInteractiveMode) {
                         console.log('⏳ Explore card visible - triggering interactive mode...');
 
                         window.interactiveModeTimeout = setTimeout(() => {
@@ -775,7 +782,10 @@ function setupScrollTriggers() {
 
                             // Update header to show explore instructions
                             document.querySelector('.current-era').textContent = 'Your turn';
-                            document.querySelector('.current-context').textContent = 'Hover over any square to read the paragraph it represents.';
+                            const isMobileHeader = window.innerWidth <= 768;
+                            document.querySelector('.current-context').textContent = isMobileHeader
+                                ? 'Tap any square to see the paragraph it represents.'
+                                : 'Hover over any square to see the paragraph it represents.';
 
                             // Make all dots fully visible and clickable
                             if (dots) {
@@ -836,7 +846,9 @@ function setupScrollTriggers() {
                     }
 
                     const rect = entry.boundingClientRect;
-                    if (rect.bottom > 0) {
+                    if (rect.bottom > 0 && rect.top > window.innerHeight * 0.5) {
+                        // User scrolled back up past explore section - reset the exit flag
+                        userExitedInteractiveMode = false;
                         // Haven't reached it yet - only disable if not in cooldown
                         if (!interactiveModeCooldown) {
                             document.body.classList.remove('interactive-mode');
@@ -844,10 +856,14 @@ function setupScrollTriggers() {
                         }
                     } else {
                         // Scrolled past - enable interactive mode immediately (in case timeout was cancelled)
-                        if (!document.body.classList.contains('interactive-mode') && !interactiveModeCooldown) {
+                        // On mobile, interactive mode is enabled but CSS allows scrolling
+                        if (!document.body.classList.contains('interactive-mode') && !interactiveModeCooldown && !userExitedInteractiveMode) {
                             document.body.classList.add('interactive-mode');
                             document.querySelector('.current-era').textContent = 'Your turn';
-                            document.querySelector('.current-context').textContent = 'Hover over any square to read the paragraph it represents.';
+                            const isMobileHeader2 = window.innerWidth <= 768;
+                            document.querySelector('.current-context').textContent = isMobileHeader2
+                                ? 'Tap any square to see the paragraph it represents.'
+                                : 'Hover over any square to see the paragraph it represents.';
 
                             // Make all dots visible
                             if (dots) {
@@ -1220,12 +1236,14 @@ document.addEventListener('click', function(e) {
 
 // Exit interactive mode and allow free scrolling
 let interactiveModeCooldown = false;
+let userExitedInteractiveMode = false; // Track if user manually exited
 
 function exitInteractiveMode() {
     console.log('exitInteractiveMode called');
 
     // Set cooldown to prevent immediate re-trigger
     interactiveModeCooldown = true;
+    userExitedInteractiveMode = true; // User manually exited, don't auto-enable again
 
     // Remove overflow:hidden so we can scroll
     document.body.style.overflow = '';
