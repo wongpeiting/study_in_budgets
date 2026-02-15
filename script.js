@@ -535,7 +535,7 @@ function initVisualization() {
 
     // Year labels at bottom of chart
     const labelYears = [1965, 1980, 2000, 2020, 2026];
-    const yearLabelOffset = config.isMobile ? 12 : 15;
+    const yearLabelOffset = config.isMobile ? 18 : 22;
     svg.selectAll('.year-label')
         .data(labelYears.filter(y => yearPositions[y]))
         .join('text')
