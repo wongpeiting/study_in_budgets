@@ -9,7 +9,39 @@ let dots = null;
 let currentSection = null;
 let filteredParagraphs = null;
 let yearPositions = {};
-const DOT_SIZE = 3.3; // Global constant for coordinate-based hover detection
+
+// Responsive sizing helper
+function getResponsiveConfig() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const isMobile = width <= 768;
+    const isSmallMobile = width <= 480;
+    const isLandscape = width > height;
+
+    return {
+        dotSize: isSmallMobile ? 2.2 : (isMobile ? 2.8 : 3.3),
+        dotGap: isSmallMobile ? 0.3 : (isMobile ? 0.4 : 0.6),
+        marginTop: isSmallMobile ? 10 : (isMobile ? 15 : 200),
+        marginRight: isMobile ? 10 : 25,
+        marginBottom: isSmallMobile ? 18 : (isMobile ? 20 : 20),
+        marginLeft: isMobile ? 10 : 25,
+        hideAnnotations: isMobile,
+        maxCols: isSmallMobile ? 4 : (isMobile ? 5 : 6),
+        isMobile: isMobile,
+        isSmallMobile: isSmallMobile,
+        hideSvgLegend: isMobile, // Hide SVG legend on mobile, use CSS legend
+        fontSize: {
+            year: isSmallMobile ? '8px' : (isMobile ? '9px' : '13px'),
+            legend: isSmallMobile ? '8px' : (isMobile ? '9px' : '10.5px'),
+            event: isSmallMobile ? '7px' : (isMobile ? '8px' : '9px')
+        }
+    };
+}
+
+// Get current DOT_SIZE (for hover detection)
+function getDotSize() {
+    return getResponsiveConfig().dotSize;
+}
 
 // Simplified to 2 categories: Government Promises vs Citizen Obligations
 const categoryColors = {
@@ -400,8 +432,19 @@ function drawSparklines() {
 function initVisualization() {
     const container = document.getElementById('timeline-viz');
     const width = container.clientWidth;
-    const height = (container.clientHeight || 500) * 0.92; // Maximize space usage
-    const margin = { top: 200, right: 25, bottom: 20, left: 25 }; // Extra top space for tallest column (2020)
+
+    // Get responsive configuration
+    const config = getResponsiveConfig();
+
+    // Use more height on mobile
+    const heightMultiplier = config.isMobile ? 0.98 : 0.92;
+    const height = (container.clientHeight || 500) * heightMultiplier;
+    const margin = {
+        top: config.marginTop,
+        right: config.marginRight,
+        bottom: config.marginBottom,
+        left: config.marginLeft
+    };
 
     svg = d3.select('#timeline-viz')
         .append('svg')
@@ -411,11 +454,11 @@ function initVisualization() {
     const yearGroups = d3.group(filteredParagraphs, d => d.year);
     const years = [...yearGroups.keys()].sort((a, b) => a - b);
 
-    // Variable width calculation
-    const dotSize = 3.3;  // Smaller dots to fit taller columns
-    const dotGap = 0.6; // Tighter spacing to reduce column height
+    // Variable width calculation - now responsive
+    const dotSize = config.dotSize;
+    const dotGap = config.dotGap;
     const yearGap = 2;
-    const maxCols = 6;
+    const maxCols = config.maxCols;
 
     const availableWidth = width - margin.left - margin.right;
 
@@ -480,15 +523,16 @@ function initVisualization() {
 
     // Year labels at bottom (X-axis)
     const labelYears = [1965, 1980, 2000, 2020, 2026];
+    const yearLabelOffset = config.isMobile ? 12 : 15;
     svg.selectAll('.year-label')
         .data(labelYears.filter(y => yearPositions[y]))
         .join('text')
         .attr('class', 'year-label')
         .attr('x', d => yearPositions[d].center)
-        .attr('y', height - margin.bottom + 20)
+        .attr('y', height - margin.bottom + yearLabelOffset)
         .attr('text-anchor', 'middle')
         .attr('fill', '#7a7a7a')
-        .attr('font-size', '13px')
+        .attr('font-size', config.fontSize.year)
         .attr('font-weight', '500')
         .style('pointer-events', 'none')
         .text(d => d)
@@ -503,71 +547,78 @@ function initVisualization() {
         .attr('stroke', '#d0cdc8')
         .attr('stroke-width', 1);
 
-    // Legend (subtle, on left side)
-    const legendData = [
-        { label: 'Promises to you', color: '#C44F4F' },
-        { label: 'Promises to firms', color: '#E89898' },
-        { label: "What's asked of you", color: '#2B4460' },
-        { label: "What's asked of firms", color: '#6B8CAE' }
-    ];
+    // Legend (subtle, on left side) - hide on mobile (CSS legend used instead)
+    if (!config.hideSvgLegend) {
+        const legendData = [
+            { label: 'Promises to you', color: '#C44F4F' },
+            { label: 'Promises to firms', color: '#E89898' },
+            { label: "What's asked of you", color: '#2B4460' },
+            { label: "What's asked of firms", color: '#6B8CAE' }
+        ];
 
-    const legend = svg.append('g')
-        .attr('class', 'legend')
-        .attr('transform', `translate(30, ${margin.top + 20})`);
+        const legendX = 30;
+        const legendY = margin.top + 20;
+        const legendSpacing = 18;
+        const legendRectSize = 9;
 
-    legendData.forEach((item, i) => {
-        const legendRow = legend.append('g')
-            .attr('transform', `translate(0, ${i * 18})`);
+        const legend = svg.append('g')
+            .attr('class', 'legend')
+            .attr('transform', `translate(${legendX}, ${legendY})`);
 
-        legendRow.append('rect')
-            .attr('width', 9)
-            .attr('height', 9)
-            .attr('fill', item.color)
-            .attr('opacity', 0.8);
+        legendData.forEach((item, i) => {
+            const legendRow = legend.append('g')
+                .attr('transform', `translate(0, ${i * legendSpacing})`);
 
-        legendRow.append('text')
-            .attr('x', 14)
-            .attr('y', 8)
-            .attr('font-size', '10.5px')
-            .attr('fill', '#999')
-            .attr('opacity', 0.8)
-            .text(item.label);
-    });
+            legendRow.append('rect')
+                .attr('width', legendRectSize)
+                .attr('height', legendRectSize)
+                .attr('fill', item.color)
+                .attr('opacity', 0.8);
 
-    // Historical event annotations (subtle, at bottom)
-    const events = [
-        { year: 1997, label: 'Asian Financial Crisis' },
-        { year: 2020, label: 'COVID-19' }
-    ];
+            legendRow.append('text')
+                .attr('x', legendRectSize + 5)
+                .attr('y', legendRectSize - 1)
+                .attr('font-size', config.fontSize.legend)
+                .attr('fill', '#999')
+                .attr('opacity', 0.8)
+                .text(item.label);
+        });
+    }
 
-    events.forEach(event => {
-        if (yearPositions[event.year]) {
-            const x = yearPositions[event.year].center;
-            const lineTop = height - margin.bottom - 30; // Start line 30px above baseline
+    // Historical event annotations (subtle, at bottom) - hide on mobile
+    if (!config.hideAnnotations) {
+        const events = [
+            { year: 1997, label: 'Asian Financial Crisis' },
+            { year: 2020, label: 'COVID-19' }
+        ];
 
-            // Subtle vertical line pointing to year
-            svg.append('line')
-                .attr('x1', x)
-                .attr('x2', x)
-                .attr('y1', lineTop)
-                .attr('y2', height - margin.bottom)
-                .attr('stroke', '#c0c0c0')
-                .attr('stroke-width', 1)
-                .attr('stroke-dasharray', '2,2')
-                .attr('opacity', 0.5);
+        events.forEach(event => {
+            if (yearPositions[event.year]) {
+                const x = yearPositions[event.year].center;
+                const lineTop = height - margin.bottom - 30;
 
-            // Text label at bottom
-            svg.append('text')
-                .attr('x', x)
-                .attr('y', height - margin.bottom + 32)
-                .attr('text-anchor', 'middle')
-                .attr('font-size', '9px')
-                .attr('fill', '#888')
-                .attr('opacity', 0.7)
-                .attr('font-style', 'italic')
-                .text(event.label);
-        }
-    });
+                svg.append('line')
+                    .attr('x1', x)
+                    .attr('x2', x)
+                    .attr('y1', lineTop)
+                    .attr('y2', height - margin.bottom)
+                    .attr('stroke', '#c0c0c0')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '2,2')
+                    .attr('opacity', 0.5);
+
+                svg.append('text')
+                    .attr('x', x)
+                    .attr('y', height - margin.bottom + 32)
+                    .attr('text-anchor', 'middle')
+                    .attr('font-size', config.fontSize.event)
+                    .attr('fill', '#888')
+                    .attr('opacity', 0.7)
+                    .attr('font-style', 'italic')
+                    .text(event.label);
+            }
+        });
+    }
 
     // Dots
     dots = svg.selectAll('.dot')
@@ -885,7 +936,7 @@ function setupFallbackHover() {
     function findDotAtPosition(svgX, svgY) {
         if (!filteredParagraphs) return null;
 
-        const hitRadius = DOT_SIZE; // How close mouse needs to be
+        const hitRadius = getDotSize() * 1.5; // How close mouse/touch needs to be (slightly larger for touch)
 
         for (const p of filteredParagraphs) {
             if (!p.xPos || !p.yPos) continue;
@@ -978,7 +1029,74 @@ function setupFallbackHover() {
         }
     });
 
-    console.log('✅ Coordinate-based hover detection set up (bypasses Chrome SVG bug)');
+    // Touch support for mobile devices
+    container.addEventListener('touchstart', function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+
+        const touch = e.touches[0];
+        const svgEl = container.querySelector('svg');
+        if (!svgEl) return;
+
+        const rect = svgEl.getBoundingClientRect();
+        const svgX = touch.clientX - rect.left;
+        const svgY = touch.clientY - rect.top;
+
+        const d = findDotAtPosition(svgX, svgY);
+        if (d) {
+            e.preventDefault(); // Prevent scroll when touching a dot
+
+            // Clear previous highlight
+            d3.selectAll('.dot')
+                .attr('opacity', 0.9)
+                .attr('stroke', 'none');
+
+            // Highlight current dot
+            d3.selectAll('.dot').filter(dd => dd === d)
+                .attr('opacity', 1)
+                .attr('stroke', '#000')
+                .attr('stroke-width', 1.5)
+                .raise();
+
+            showHoverPanel(d);
+            pinQuote(); // Auto-pin on touch for better mobile UX
+        }
+    }, { passive: false });
+
+    // Touch move for exploring dots
+    container.addEventListener('touchmove', function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+
+        const touch = e.touches[0];
+        const svgEl = container.querySelector('svg');
+        if (!svgEl) return;
+
+        const rect = svgEl.getBoundingClientRect();
+        const svgX = touch.clientX - rect.left;
+        const svgY = touch.clientY - rect.top;
+
+        const d = findDotAtPosition(svgX, svgY);
+        if (d && d !== lastHoveredDot) {
+            e.preventDefault();
+
+            lastHoveredDot = d;
+
+            // Clear previous highlight
+            d3.selectAll('.dot')
+                .attr('opacity', 0.9)
+                .attr('stroke', 'none');
+
+            // Highlight current dot
+            d3.selectAll('.dot').filter(dd => dd === d)
+                .attr('opacity', 1)
+                .attr('stroke', '#000')
+                .attr('stroke-width', 1.5)
+                .raise();
+
+            showHoverPanel(d);
+        }
+    }, { passive: false });
+
+    console.log('✅ Coordinate-based hover detection set up (with touch support)');
 }
 
 function showModal(d) {
@@ -1070,6 +1188,15 @@ window.addEventListener('resize', debounce(() => {
     document.getElementById('timeline-viz').innerHTML = '';
     initVisualization();
 }, 250));
+
+// Orientation change (mobile)
+window.addEventListener('orientationchange', () => {
+    // Wait for orientation to settle
+    setTimeout(() => {
+        document.getElementById('timeline-viz').innerHTML = '';
+        initVisualization();
+    }, 100);
+});
 
 function debounce(fn, wait) {
     let t;

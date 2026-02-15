@@ -186,6 +186,11 @@ body.interactive-mode {
     flex-wrap: wrap;
 }
 
+/* Mobile legend - hidden on desktop */
+.mobile-legend {
+    display: none;
+}
+
 .legend-item {
     display: flex;
     align-items: center;
@@ -1461,3 +1466,346 @@ body.interactive-mode .methodology-link {
     transform: translateY(-1px);
 }
 
+
+/* ===========================================
+   MOBILE RESPONSIVE STYLES
+   =========================================== */
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+    .sticky-viz {
+        padding: 2rem 2rem 1rem 2rem;
+    }
+    
+    .viz-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .viz-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    /* Hero adjustments */
+    .hero {
+        padding: 1.5rem;
+        min-height: 100vh;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .hero-content {
+        max-width: 95%;
+    }
+
+    .hero-quote {
+        font-size: 1.4rem;
+    }
+
+    .hero-attribution {
+        font-size: 0.8rem;
+    }
+
+    .hero-question {
+        font-size: 1.6rem;
+    }
+
+    .hero-spacer {
+        height: 1.5rem;
+    }
+
+    /* Scrolly container - less bottom padding */
+    .scrolly-container {
+        padding-bottom: 150vh;
+    }
+
+    /* Sticky viz container - minimal padding for max chart space */
+    .sticky-viz {
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .viz-header {
+        min-height: auto;
+        margin-bottom: 0.25rem;
+        margin-top: 0.5rem;
+    }
+
+    .viz-header h2 {
+        font-size: 0.85rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .viz-header p {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+
+    /* Timeline container - maximize height */
+    #timeline-viz {
+        min-height: 0;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    /* Mobile legend - compact horizontal */
+    .mobile-legend {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.2rem 0.6rem;
+        margin-bottom: 0.25rem;
+        font-size: 0.55rem;
+    }
+
+    .mobile-legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.15rem;
+        color: #888;
+    }
+
+    .mobile-legend-item .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 1px;
+    }
+
+    /* Hide desktop legend */
+    .viz-legend {
+        display: none;
+    }
+
+    /* Hide year progress bar on mobile - saves space */
+    .year-progress {
+        display: none;
+    }
+    
+    /* Step cards */
+    .step {
+        min-height: 90vh;
+        padding: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .step-content {
+        max-width: 95%;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .step-content h3 {
+        font-size: 0.85rem;
+    }
+
+    .step-content p {
+        font-size: 0.7rem;
+        line-height: 1.45;
+    }
+
+    .prose-text {
+        font-size: 0.7rem;
+        line-height: 1.45;
+    }
+
+    .prose-text p {
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Hover panel */
+    .hover-panel {
+        width: 90vw;
+        max-width: 350px;
+        padding: 1rem 1.25rem;
+        top: 1rem;
+    }
+    
+    .hover-panel-year {
+        font-size: 1.25rem;
+    }
+    
+    .hover-panel-quote {
+        font-size: 0.9rem;
+    }
+    
+    /* Methodology link */
+    .methodology-link {
+        bottom: 10px;
+        right: 10px;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Year progress bar */
+    .year-progress {
+        padding: 0 5%;
+    }
+    
+    /* Stats box */
+    .stats-box {
+        gap: 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero-quote {
+        font-size: 1.2rem;
+    }
+
+    .hero-question {
+        font-size: 1.4rem;
+    }
+
+    .hero-spacer {
+        height: 1rem;
+    }
+
+    .sticky-viz {
+        padding: 0.5rem 0.35rem 0 0.35rem;
+    }
+
+    .viz-header {
+        min-height: auto;
+        margin-bottom: 0.2rem;
+        margin-top: 0.35rem;
+    }
+
+    .viz-header h2 {
+        font-size: 0.8rem;
+    }
+
+    .viz-header p {
+        font-size: 0.6rem;
+        line-height: 1.25;
+    }
+
+    #timeline-viz {
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .mobile-legend {
+        gap: 0.25rem 0.5rem;
+        font-size: 0.55rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .mobile-legend-item .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .step {
+        min-height: 85vh;
+        padding: 0.75rem;
+    }
+
+    .step-content {
+        padding: 1rem;
+    }
+
+    .step-content h3 {
+        font-size: 0.8rem;
+    }
+
+    .step-content p,
+    .prose-text {
+        font-size: 0.65rem;
+        line-height: 1.4;
+    }
+
+    .hover-panel {
+        width: 95vw;
+        max-width: none;
+        left: 50%;
+        padding: 0.6rem 0.75rem;
+        top: 0.5rem;
+    }
+
+    .hover-panel-header {
+        flex-direction: column;
+        gap: 0.15rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .hover-panel-year {
+        font-size: 1rem;
+    }
+
+    .hover-panel-fm {
+        font-size: 0.75rem;
+    }
+
+    .hover-panel-quote {
+        font-size: 0.8rem;
+        line-height: 1.45;
+    }
+}
+
+/* Landscape mobile - prioritize chart width */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 1rem 2rem;
+    }
+    
+    .sticky-viz {
+        padding: 0.5rem 1rem;
+    }
+    
+    .viz-header {
+        min-height: 40px;
+        margin-bottom: 0.25rem;
+    }
+    
+    .viz-header h2 {
+        font-size: 1rem;
+    }
+    
+    .viz-header p {
+        font-size: 0.85rem;
+    }
+    
+    .step {
+        min-height: 100vh;
+    }
+    
+    .step-content {
+        max-width: 300px;
+    }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger tap targets */
+    .hover-panel-close {
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .methodology-link {
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Show hint about tapping */
+    .hover-panel-hint {
+        display: block;
+    }
+}
