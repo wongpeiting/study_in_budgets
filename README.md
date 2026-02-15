@@ -1,6 +1,6 @@
 # A Study In Budgets
 
-This interactive scrollytelling examines how the language of Singapore’s Budget speeches has evolved over six decades. Drawing on 61 years of speeches, it traces how responsibility is framed – what the government promises, what it asks of citizens and firms, and how that balance shifts over time.
+This interactive scrollytelling site examines how the language of Singapore’s Budget speeches has evolved over six decades. Drawing on 61 years of speeches, it traces how responsibility is framed – what the government promises, what it asks of citizens and firms, and how that balance shifts over time.
 
 The project taps AI tools to analyse every paragraph in each speech and classifies whether it articulates a promise, a demand, or neither, as well as who the message is directed at. The goal is not to measure sentiment, but to examine how the state describes obligation, support and participation.
 
