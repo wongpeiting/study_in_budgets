@@ -1,6 +1,10 @@
 /* Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+    background: #F5F3EF;
+}
+
 :root {
     --bg: #F5F3EF;
     --bg-warm: #F5F3EF;
@@ -1693,12 +1697,12 @@ body.interactive-mode .methodology-link {
     }
 
     .prose-text {
-        font-size: 0.8rem;
-        line-height: 1.5;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     .prose-text p {
-        margin-bottom: 0.85rem;
+        margin-bottom: 1rem;
     }
 
     /* FM Table - smaller on mobile */
@@ -1863,10 +1867,14 @@ body.interactive-mode .methodology-link {
         font-size: 0.85rem;
     }
 
-    .step-content p,
-    .prose-text {
+    .step-content p {
         font-size: 0.75rem;
         line-height: 1.45;
+    }
+
+    .prose-text {
+        font-size: 0.9rem;
+        line-height: 1.55;
     }
 
     .hover-panel {
