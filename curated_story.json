@@ -1,6 +1,6 @@
 {
   "title": "💼 A Study in Budgets 💼",
-  "subtitle": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+  "subtitle": "We dissect 67 Singapore Budget Statements delivered over the past 61 years to find out how the social compact has shifted",
 
   "intro": {
     "hook": "1966: \"The world does not owe us a living.\"",
@@ -28,7 +28,7 @@
       "type": "prose",
       "year_range": [1965, 2026],
       "header_text": "Turns out, a lot has.",
-      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+      "title": "We dissect 67 Singapore Budget Statements delivered over the past 61 years to find out how the social compact has shifted",
       "setup": "A Budget speech isn't just an accounting exercise.<br><br>It's one of the few moments each year when the government explains how the country is supposed to work."
     },
     {
@@ -36,20 +36,20 @@
       "type": "prose",
       "year_range": [1965, 2026],
       "header_text": "Turns out, a lot has.",
-      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
-      "setup": "Behind each policy detail is an expectation of who must tighten belts, who must innovate, and who will be cushioned.<br><br>Stack all the speeches together, and <strong>a pattern emerges</strong>.<br><br>As the numbers change, so does the social contract."
+      "title": "We dissect 67 Singapore Budget Statements delivered over the past 61 years to find out how the social compact has shifted",
+      "setup": "Behind each policy detail is an expectation of who must tighten belts, who must innovate, and who will be cushioned. Stack all the speeches together, and <strong>a pattern emerges from the language</strong>.<br><br>As the words change, so does the social contract."
     },
     {
       "id": "how_to_read",
       "year_range": [1965, 2026],
       "header_text": "Turns out, a lot has.",
-      "title": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
+      "title": "We dissect 67 Singapore Budget Statements delivered over the past 61 years to find out how the social compact has shifted",
       "era_label": "How to read this",
-      "setup": "Each box is a paragraph in a Budget speech where the Finance Minister talked about what the government will do for its citizens and firms — and what's expected in return.",
+      "setup": "Each box represents one paragraph from a Budget speech in which the Finance Minister described what the government will do – and what is expected in return.\n\nFor the purpose of this project, \"social compact\" is defined in a specific, limited way: it is the distribution of promises and demands the state assigns to citizens and firms in the language of Budget speeches.",
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "<span class='color-ref' style='background:#C44F4F'></span> = Promises to you<br><span class='color-ref' style='background:#E89898'></span> = Promises to firms<br><br><span class='color-ref' style='background:#2B4460'></span> = What's asked of you<br><span class='color-ref' style='background:#6B8CAE'></span> = What's asked of firms"
+      "reflection": "<span class='color-ref' style='background:#C44F4F'></span> = Promises to you<br><span class='color-ref' style='background:#E89898'></span> = Promises to firms<br><br><span class='color-ref' style='background:#2B4460'></span> = Asks of you<br><span class='color-ref' style='background:#6B8CAE'></span> = Asks of firms"
     },
     {
       "id": "pm_era_summary",
@@ -57,7 +57,7 @@
       "era_label": "The big picture",
       "title": "The trend across four Prime Ministers",
       "type": "pm_era_chart",
-      "setup": "The ratio of promises to demands has grown with each administration.",
+      "setup": "The ratio of promises to demands has grown with each tenure.",
       "quote": "",
       "speaker": "",
       "year": null,

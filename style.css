@@ -175,15 +175,10 @@ body.interactive-mode {
 #timeline-viz {
     flex: 1;
     position: relative;
-    min-height: 400px; /* Ensure minimum height */
-}
-
-#timeline-viz {
-    pointer-events: auto !important; /* Always allow interactions with chart */
+    min-height: 400px;
 }
 
 #timeline-viz svg {
-    pointer-events: all !important;
     position: relative;
     z-index: 101;
 }
@@ -872,13 +867,12 @@ body.interactive-mode {
 
 /* Explore Section in scrollytelling - points to interactive section below */
 .step-explore {
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 100vh; /* Full viewport height to ensure it scrolls properly */
-    pointer-events: none !important; /* Allow clicks to pass through to chart */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.explore-content {
+.step-explore .explore-content {
     max-width: 380px;
     text-align: center;
     margin: 0 auto;
@@ -886,7 +880,7 @@ body.interactive-mode {
     border: 2px solid var(--accent);
     border-radius: 8px;
     background: rgba(255,255,255,0.97);
-    pointer-events: none !important; /* Allow clicks to pass through to chart */
+    pointer-events: none; /* Allow clicks to pass through to chart */
     transition: opacity 0.5s ease;
 }
 
@@ -1154,103 +1148,6 @@ body.interactive-mode .step-explore {
     display: none;
 }
 
-/* Modal */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: opacity 0.2s;
-}
-
-.modal.hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
-
-.modal:not(.hidden) {
-    visibility: visible;
-}
-
-.modal-content {
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 8px;
-    max-width: 500px;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    margin: 1rem;
-    border: 1px solid #e0ddd8;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.modal-close {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    font-size: 1.5rem;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.modal-close:hover {
-    color: var(--text);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0ddd8;
-}
-
-.modal-year {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--accent);
-}
-
-.modal-fm {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-}
-
-.modal-quote {
-    font-family: 'Newsreader', serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin: 0;
-}
-
-.modal-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.tag {
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.7rem;
-    color: #000;
-    font-weight: 500;
-}
-
-.tag:empty {
-    display: none;
-}
-
 /* Dots - Non-interactive during story, enabled in interactive mode */
 .dot {
     transition: opacity 0.2s ease, transform 0.15s ease;
@@ -1259,7 +1156,7 @@ body.interactive-mode .step-explore {
 }
 
 .dot.selected {
-    opacity: 1 !important;
+    opacity: 1;
     stroke: #000;
     stroke-width: 1.5px;
 }
@@ -1269,7 +1166,8 @@ body.interactive-mode .scroll-sections {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    /* Keep in layout to maintain scroll height - don't use display: none */
+    position: fixed;
+    top: 100vh;
 }
 
 body.interactive-mode .step,
@@ -1284,55 +1182,22 @@ body.interactive-mode .sticky-viz {
     right: 0;
     bottom: 0;
     z-index: 300;
-    pointer-events: auto;
-}
-
-body.interactive-mode #timeline-viz {
-    pointer-events: auto !important;
-    z-index: 400;
-}
-
-body.interactive-mode #timeline-viz svg {
-    pointer-events: all !important;
-}
-
-body.interactive-mode #timeline-viz .dot {
-    pointer-events: auto !important;
-    cursor: pointer;
-}
-
-/* Force GPU layer for SVG to fix pointer-events repaint bug */
-body.interactive-mode #timeline-viz svg {
-    will-change: transform;
-    transform: translateZ(0);
-    pointer-events: all !important;
-}
-
-body.interactive-mode #timeline-viz svg .dot {
-    pointer-events: all !important;
 }
 
 body.interactive-mode .viz-header,
 body.interactive-mode .year-progress {
-    pointer-events: none !important;
-}
-
-/* Ensure scroll-sections doesn't block anything in interactive mode */
-body.interactive-mode .scroll-sections {
-    position: fixed;
-    top: 100vh;
-    pointer-events: none !important;
+    pointer-events: none;
 }
 
 body.interactive-mode .dot {
+    pointer-events: auto;
+    cursor: pointer;
     opacity: 0.9;
-    pointer-events: auto !important;
-    cursor: pointer !important;
 }
 
-.dot:hover {
-    opacity: 1 !important;
-    filter: brightness(1.1) !important;
+body.interactive-mode .dot:hover {
+    opacity: 1;
+    filter: brightness(1.1);
 }
 
 /* Responsive */
