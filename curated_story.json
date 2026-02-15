@@ -1,6 +1,6 @@
 {
-  "title": "How the Budget talks about us",
-  "subtitle": "An inquisitive look at what changed in Singapore's Budget speeches over 60 years",
+  "title": "A Study In Budgets",
+  "subtitle": "We dissect 67 Singapore Budget speeches delivered over the past 61 years to find how the government divided responsibility between state, citizen and firm",
 
   "intro": {
     "hook": "1966: \"The world does not owe us a living.\"",
@@ -75,7 +75,7 @@
       "year_range": [1965, 1975],
       "era_label": "The early decades",
       "title": " ",
-      "setup": "In the early decades, the speeches leaned hard on demands: Work harder. Tighten belts. Stay competitive. Don't get complacent."
+      "setup": "Earlier Budgets leaned heavily on demands: telling citizens to work harder, tighten their belts and stay competitive rather than expecting help."
     },
     {
       "id": "survival",
@@ -86,7 +86,7 @@
       "quote": "This confidence must not lead our people, whether entrepreneurs, or trade unionists, into believing that the world owes us a living and that things will always be all right. They will be all right only if we are constantly alert, efficient and striving.",
       "speaker": "Lim Kim San",
       "year": 1966,
-      "reflection": "Every citizen was a soldier in an economic war."
+      "reflection": "Security was conditional, and the burden was yours."
     },
     {
       "id": "discipline",
@@ -108,7 +108,7 @@
       "quote": "What is now needed is a return to the pioneering spirit of our forefathers who by their dynamism, hard work, and self-sacrifice turned what was an inhospitable swamp into the largest port in South-East Asia.",
       "speaker": "Lim Kim San",
       "year": 1965,
-      "reflection": "Your grandparents survived worse. So can you."
+      "reflection": "If the pioneers endured, so should you."
     },
     {
       "id": "nation_building",
@@ -119,7 +119,7 @@
       "quote": "Our survival depends, as then, upon a robust approach to life, that the world does not owe us a living. Nothing is for free. Hence, the virtues of thrift and hard work... The question is whether we have not already been softened by the increasing affluence.",
       "speaker": "Hon Sui Sen",
       "year": 1974,
-      "reflection": "Prosperity was a test of character, not a reward."
+      "reflection": "Affluence was treated as a risk."
     },
     {
       "id": "nirvana",
@@ -130,7 +130,7 @@
       "quote": "It is a completely painless budget, and even mildly pleasurable. But there is a moral to this, and that is, to achieve nirvana you must first experience pain. We have all worked hard in the past. We have all made sacrifices. We have never flinched from the harsh realities of the world.",
       "speaker": "Goh Chok Tong",
       "year": 1979,
-      "reflection": "Comfort had to be earned through suffering."
+      "reflection": "Even comfort required justification."
     },
     {
       "id": "turning_point",
@@ -152,7 +152,7 @@
       "quote": "A key feature in this year's Budget is the Pioneer Generation Package. As the Prime Minister has stated, we are honouring this unique generation of Singaporeans who built up the country.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2014,
-      "reflection": "In 1965, pioneers were told to sacrifice. By 2014, the government was thanking them with a package."
+      "reflection": "What was once framed as duty was now framed as something to be repaid."
     },
     {
       "id": "covid_crisis",
@@ -163,7 +163,7 @@
       "quote": "We will protect and advance the well-being and livelihoods of Singaporeans. We will take care of our people. We will leave no one behind. And we will stand with Singaporeans from all walks of life to battle this crisis together.",
       "speaker": "Heng Swee Keat",
       "year": 2020,
-      "reflection": "The state now saw itself as protector, not just referee."
+      "reflection": "The state wasn’t just managing the crisis. It was shielding people from it."
     },
     {
       "id": "protect_workers",
@@ -174,7 +174,7 @@
       "quote": "While we will try to preserve jobs in the midst of this crisis, we cannot protect every job. However, you have my assurance that the Government will protect every worker.",
       "speaker": "Heng Swee Keat",
       "year": 2020,
-      "reflection": "Jobs might disappear. But you won't be abandoned."
+      "reflection": "Jobs could go. Protection would not."
     },
     {
       "id": "new_normal_intro",
@@ -182,7 +182,7 @@
       "year_range": [2022, 2026],
       "era_label": "2022–2026",
       "title": "The new normal",
-      "setup": "Was Covid just a one-time thing? Look at what came next."
+      "setup": "Was this just crisis language – or the new baseline?"
     },
     {
       "id": "year_2022",
@@ -237,7 +237,7 @@
       "quote": "This is the conviction that underpins Budget 2026. It is a Budget to support Singaporeans today, prepare our society for tomorrow, and enable us to navigate this changed world with confidence. Together we will secure a stronger, fairer, and brighter future for all.",
       "speaker": "Lawrence Wong",
       "year": 2026,
-      "reflection": "Five years. Same message. This isn't a crisis response anymore. It's the new social contract."
+      "reflection": "Five years on, the language of support has settled in."
     },
     {
       "id": "decade_summary",
@@ -269,7 +269,7 @@
       "quote": "We will build on these foundations to create a new environment for lifelong learning. It is critical to our future. It will develop the skills and mastery needed to take our economy to the next level. More fundamentally, it aims to empower each Singaporean to chart their own journey in life and gain fulfilment at work, even in their senior years.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2015,
-      "reflection": "In 1965, the ask was \"work harder for the nation\". By 2015, it was \"take up skills training we've designed for you\"."
+      "reflection": "In 1965, the call was to work harder for the nation. By 2015, it was to upgrade yourself for it."
     },
     {
       "id": "new_ask_2",
@@ -280,15 +280,15 @@
       "quote": "I encourage employers and workers to make the most of the support that the Government is offering. Upgrade your businesses; invest in innovation and training; reskill and upskill to stay competitive and seize new opportunities.",
       "speaker": "Lawrence Wong",
       "year": 2023,
-      "reflection": "The ask isn't sacrifice – it's \"use what we've built for you\"."
+      "reflection": "The message? We’ll support you – now move."
     },
     {
       "id": "word_trends_intro",
       "year_range": [1965, 2026],
-      "era_label": "As an aside",
-      "title": "We also checked how the vocabulary shifted with the times",
+      "era_label": "Zooming out",
+      "title": "The language tells its own story",
       "type": "word_trends_intro",
-      "setup": "More specifically, the rise and fall in the use of nearly 700,000 words across 61 years.",
+      "setup": "Across 61 years and nearly 700,000 words, certain terms rose while others faded.",
       "quote": "",
       "speaker": "",
       "year": null,
@@ -298,14 +298,14 @@
       "id": "words_rising",
       "year_range": [1965, 2026],
       "era_label": "↑ Rising",
-      "title": "Words that barely existed before",
+      "title": "Words that were once rare",
       "type": "word_trends",
       "trend_type": "rising",
-      "setup": "Each sparkline shows how often a word appears by mentions per 10,000 words, from 1965 to 2026.",
+      "setup": "Each sparkline shows how often a word appears, measured as mentions per 10,000 words, from 1965 to 2026.",
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Seniors. Singaporeans. Families. The language became specific – naming who gets helped."
+      "reflection": "Seniors. Singaporeans. Families. The language began to name who support was for."
     },
     {
       "id": "support_stat",
@@ -317,7 +317,7 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "By 2016-2026, it appeared 70 times per 10,000 words. The government now talks about supporting you 36 times more often than it did at independence."
+      "reflection": "By 2016-2026, it appeared 70 times per 10,000 words. The government now uses the language of support 36 times more often than it did at independence."
     },
     {
       "id": "words_declining",
@@ -330,19 +330,19 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Expenditure. Development. Trade. Industrial. The vocabulary of building a nation has faded."
+      "reflection": "Expenditure. Development. Trade. Industrial. The nation-building language receded."
     },
     {
       "id": "fm_fingerprints",
       "year_range": [1965, 2026],
       "era_label": "Each Finance Minister's fingerprint",
       "type": "fm_table",
-      "title": "Ten ministers, ten vocabularies",
+      "title": "Vocabulary of each era",
       "setup": "Each Finance Minister left a linguistic signature – words they used far more than others.",
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "From battalions to seniors. From unemployed to resilience. The language tells you what each era was building or bracing for.",
+      "reflection": "From battalions to seniors. From unemployment to resilience. Each era spoke to its own anxieties.",
       "fm_words": [
         {"fm": "Lim Kim San", "era": "1960s", "words": "separation, malaysia, urban"},
         {"fm": "Goh Keng Swee", "era": "1960s-70s", "words": "military, battalions, unemployed"},
@@ -364,7 +364,7 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "The tone softened. The expectation didn't. The contract was not erased. It was rephrased.",
+      "reflection": "The tone changed. The demand did not.",
       "word_data": [
         {"word": "effort", "rates": [8.0, 8.1, 10.5, 4.9, 7.5, 11.3, 11.0]},
         {"word": "train", "rates": [15.5, 19.0, 19.6, 4.8, 8.0, 10.6, 14.7]},
@@ -381,13 +381,13 @@
       "era_label": "A takeaway",
       "type": "prose",
       "title": " ",
-      "setup": "The government never really stopped asking things of society. It just stopped sounding so stern about it. There's support. There's reassurance. There are promises to cushion, to protect, to have your back.<br><br>But read between the lines and the old rhythm is still there. Keep up. Upgrade. Stay useful. Do your part.<br><br>The tone might have softened, but the expectations did not. <strong>The contract wasn't torn up. It just got better at sounding nice.</strong>"
+      "setup": "The government never really stopped asking things of society. It just stopped sounding so stern about it. There's support. There's reassurance. There are promises to cushion, to protect, to have your back.<br><br>But beneath that reassurance, the old rhythm remains. Keep up. Upgrade. Stay useful. Do your part.<br><br>The world may no longer be said to owe us nothing. <strong>But we are still expected to earn our place in it.</strong>"
     },
     {
       "id": "explore",
       "year_range": [1965, 2026],
       "era_label": "Your turn",
-      "title": "Now explore for yourself",
+      "title": "Explore the data",
       "type": "explore",
       "setup": "",
       "quote": "",
