@@ -846,11 +846,15 @@ function setupScrollTriggers() {
                     }
 
                     const rect = entry.boundingClientRect;
+                    // On desktop, don't auto-disable interactive mode - user must explicitly exit
+                    // This prevents flickering when IntersectionObserver fires during interactive mode
+                    const isDesktop = window.innerWidth > 768;
                     if (rect.bottom > 0 && rect.top > window.innerHeight * 0.5) {
                         // User scrolled back up past explore section - reset the exit flag
                         userExitedInteractiveMode = false;
                         // Haven't reached it yet - only disable if not in cooldown
-                        if (!interactiveModeCooldown) {
+                        // On desktop, only disable if user explicitly exited (not from observer)
+                        if (!interactiveModeCooldown && !isDesktop) {
                             document.body.classList.remove('interactive-mode');
                             console.log('❌ Interactive mode DISABLED - before explore section');
                         }
@@ -1275,14 +1279,42 @@ function exitInteractiveModeAndScrollTop() {
 }
 
 // Allow scrolling up to exit interactive mode (desktop)
+// Track cumulative scroll to require sustained scrolling
+let cumulativeScrollUp = 0;
+let scrollResetTimeout = null;
+
 document.addEventListener('wheel', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
 
-    // Scrolling up (negative deltaY) - exit interactive mode
-    if (e.deltaY < -30) {
+    // Reset cumulative scroll after 500ms of no scrolling
+    if (scrollResetTimeout) {
+        clearTimeout(scrollResetTimeout);
+    }
+    scrollResetTimeout = setTimeout(() => {
+        cumulativeScrollUp = 0;
+    }, 500);
+
+    // Only track upward scrolling (negative deltaY)
+    if (e.deltaY < 0) {
+        cumulativeScrollUp += Math.abs(e.deltaY);
+    } else {
+        // Scrolling down resets the counter
+        cumulativeScrollUp = 0;
+    }
+
+    // Require significant sustained upward scroll to exit (300+ pixels worth)
+    if (cumulativeScrollUp > 300) {
+        cumulativeScrollUp = 0;
         exitInteractiveMode();
     }
 }, { passive: true });
+
+// Escape key to exit interactive mode (desktop)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.body.classList.contains('interactive-mode')) {
+        exitInteractiveMode();
+    }
+});
 
 // Touch swipe to exit interactive mode (mobile)
 let touchStartY = 0;
