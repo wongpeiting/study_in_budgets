@@ -338,7 +338,7 @@
       "era_label": "Each Finance Minister's fingerprint",
       "type": "fm_table",
       "title": "Vocabulary of each era",
-      "setup": "Each Finance Minister left a linguistic signature. By comparing word frequencies (per 10,000 words) across all ministers, we surfaced words each FM used at rates far higher than anyone else.",
+      "setup": "Each Finance Minister left a linguistic signature. By comparing word frequencies across all ministers, we surfaced words each minister used at rates far higher than anyone else.",
       "quote": "",
       "speaker": "",
       "year": null,
