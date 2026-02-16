@@ -1021,27 +1021,34 @@ document.addEventListener('touchend', function(e) {
 // Section Navigation
 (function() {
     const sectionNav = document.getElementById('section-nav');
-    if (!sectionNav) return;
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const mobileNavMenu = document.getElementById('mobile-nav-menu');
 
-    const navItems = sectionNav.querySelectorAll('.nav-item');
     const sectionIds = ['how_to_read', 'early_decades_intro', 'turning_point', 'new_normal_intro', 'word_trends_intro', 'explore'];
+
+    // Desktop nav items
+    const desktopNavItems = sectionNav ? sectionNav.querySelectorAll('.nav-item') : [];
+    // Mobile nav items
+    const mobileNavItems = mobileNavMenu ? mobileNavMenu.querySelectorAll('.mobile-nav-item') : [];
 
     // Show nav after scrolling past hero
     function updateNavVisibility() {
         const scrollY = window.scrollY;
         const heroHeight = document.querySelector('.hero')?.offsetHeight || 500;
+        const isVisible = scrollY > heroHeight * 0.5 && !document.body.classList.contains('interactive-mode');
 
-        if (scrollY > heroHeight * 0.5 && !document.body.classList.contains('interactive-mode')) {
-            sectionNav.classList.add('visible');
-        } else {
-            sectionNav.classList.remove('visible');
+        if (sectionNav) {
+            sectionNav.classList.toggle('visible', isVisible);
+        }
+        if (mobileNav) {
+            mobileNav.classList.toggle('visible', isVisible);
         }
     }
 
     // Update active section indicator
     function updateActiveSection() {
         const scrollY = window.scrollY + window.innerHeight * 0.4;
-
         let activeSection = null;
 
         // Find which section is currently in view
@@ -1053,32 +1060,58 @@ document.addEventListener('touchend', function(e) {
             }
         }
 
-        navItems.forEach(item => {
-            const section = item.dataset.section;
-            if (section === activeSection) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
+        // Update desktop nav
+        desktopNavItems.forEach(item => {
+            item.classList.toggle('active', item.dataset.section === activeSection);
+        });
+
+        // Update mobile nav
+        mobileNavItems.forEach(item => {
+            item.classList.toggle('active', item.dataset.section === activeSection);
         });
     }
 
-    // Smooth scroll to section
-    navItems.forEach(item => {
+    // Scroll to section helper
+    function scrollToSection(sectionId) {
+        const targetEl = document.querySelector(`[data-step="${sectionId}"]`);
+        if (targetEl) {
+            if (document.body.classList.contains('interactive-mode')) {
+                exitInteractiveMode();
+            }
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    // Desktop nav click handlers
+    desktopNavItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            const sectionId = item.dataset.section;
-            const targetEl = document.querySelector(`[data-step="${sectionId}"]`);
-
-            if (targetEl) {
-                // Exit interactive mode if active
-                if (document.body.classList.contains('interactive-mode')) {
-                    exitInteractiveMode();
-                }
-
-                targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+            scrollToSection(item.dataset.section);
         });
+    });
+
+    // Mobile nav toggle
+    if (mobileNavToggle && mobileNav) {
+        mobileNavToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileNav.classList.toggle('expanded');
+        });
+    }
+
+    // Mobile nav item clicks
+    mobileNavItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileNav.classList.remove('expanded');
+            scrollToSection(item.dataset.section);
+        });
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileNav && !mobileNav.contains(e.target)) {
+            mobileNav.classList.remove('expanded');
+        }
     });
 
     // Throttled scroll handler
@@ -1090,6 +1123,8 @@ document.addEventListener('touchend', function(e) {
         requestAnimationFrame(() => {
             updateNavVisibility();
             updateActiveSection();
+            // Close mobile nav on scroll
+            if (mobileNav) mobileNav.classList.remove('expanded');
             scrollThrottled = false;
         });
     }, { passive: true });

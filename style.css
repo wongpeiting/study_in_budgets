@@ -1450,6 +1450,99 @@ body.interactive-mode .section-nav {
     display: none;
 }
 
+/* Mobile Section Navigator */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 450;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav.visible {
+    opacity: 1;
+}
+
+.mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-toggle:active {
+    background: #f0f0f0;
+}
+
+.mobile-nav-arrow {
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav.expanded .mobile-nav-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-nav-menu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-nav.expanded .mobile-nav-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.mobile-nav-item {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.mobile-nav-item:active {
+    background: var(--bg-warm);
+}
+
+.mobile-nav-item.active {
+    color: var(--accent);
+}
+
+/* Show mobile nav only on mobile/tablet */
+@media (max-width: 1024px) {
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* Hide mobile nav in interactive mode */
+body.interactive-mode .mobile-nav {
+    display: none;
+}
+
 /* Fixed methodology link - only visible in interactive mode */
 .methodology-link {
     position: fixed;
