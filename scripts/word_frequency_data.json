@@ -1,6080 +1,6109 @@
 {
-  "periods": {
-    "early": "1965-1975",
-    "recent": "2017-2026"
+  "metadata": {
+    "total_speeches": 67,
+    "unique_years": 61,
+    "year_range": [
+      1965,
+      2026
+    ],
+    "early_period": [
+      1965,
+      1966,
+      1967,
+      1968,
+      1970,
+      1971,
+      1972,
+      1973,
+      1974,
+      1975
+    ],
+    "recent_period": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "metric": "mentions per 10,000 words"
   },
-  "rising": [
+  "rising_words": [
     {
       "word": "support",
-      "early_per_10k": 1.91,
-      "recent_per_10k": 60.32,
-      "multiplier": 31.5,
+      "trend": "rising",
+      "early_avg": 1.91,
+      "recent_avg": 60.32,
       "change": 58.41,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 1.09
+          "frequency": 1.09
         },
         {
           "year": 1966,
-          "per_10k": 1.05
+          "frequency": 1.05
         },
         {
           "year": 1967,
-          "per_10k": 3.91
+          "frequency": 3.91
         },
         {
           "year": 1968,
-          "per_10k": 3.07
+          "frequency": 3.07
         },
         {
           "year": 1970,
-          "per_10k": 3.19
+          "frequency": 3.19
         },
         {
           "year": 1971,
-          "per_10k": 3.02
+          "frequency": 3.02
         },
         {
           "year": 1972,
-          "per_10k": 0.72
+          "frequency": 0.72
         },
         {
           "year": 1973,
-          "per_10k": 1.88
+          "frequency": 1.88
         },
         {
           "year": 1974,
-          "per_10k": 1.2
+          "frequency": 1.2
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1976,
-          "per_10k": 4.71
+          "frequency": 4.71
         },
         {
           "year": 1977,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1979,
-          "per_10k": 4.13
+          "frequency": 4.13
         },
         {
           "year": 1980,
-          "per_10k": 1.21
+          "frequency": 1.21
         },
         {
           "year": 1981,
-          "per_10k": 3.89
+          "frequency": 3.89
         },
         {
           "year": 1982,
-          "per_10k": 0.98
+          "frequency": 0.98
         },
         {
           "year": 1983,
-          "per_10k": 3.02
+          "frequency": 3.02
         },
         {
           "year": 1984,
-          "per_10k": 4.03
+          "frequency": 4.03
         },
         {
           "year": 1985,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1986,
-          "per_10k": 1.56
+          "frequency": 1.56
         },
         {
           "year": 1987,
-          "per_10k": 4.98
+          "frequency": 4.98
         },
         {
           "year": 1988,
-          "per_10k": 9.26
+          "frequency": 9.26
         },
         {
           "year": 1989,
-          "per_10k": 3.67
+          "frequency": 3.67
         },
         {
           "year": 1990,
-          "per_10k": 9.68
+          "frequency": 9.68
         },
         {
           "year": 1991,
-          "per_10k": 6.75
+          "frequency": 6.75
         },
         {
           "year": 1992,
-          "per_10k": 2.5
+          "frequency": 2.5
         },
         {
           "year": 1993,
-          "per_10k": 3.03
+          "frequency": 3.03
         },
         {
           "year": 1994,
-          "per_10k": 8.53
+          "frequency": 8.53
         },
         {
           "year": 1995,
-          "per_10k": 4.86
+          "frequency": 4.86
         },
         {
           "year": 1996,
-          "per_10k": 2.96
+          "frequency": 2.96
         },
         {
           "year": 1997,
-          "per_10k": 5.54
+          "frequency": 5.54
         },
         {
           "year": 1998,
-          "per_10k": 10.5
+          "frequency": 10.5
         },
         {
           "year": 1999,
-          "per_10k": 6.47
+          "frequency": 6.47
         },
         {
           "year": 2000,
-          "per_10k": 1.98
+          "frequency": 1.98
         },
         {
           "year": 2001,
-          "per_10k": 6.2
+          "frequency": 6.2
         },
         {
           "year": 2002,
-          "per_10k": 2.51
+          "frequency": 2.51
         },
         {
           "year": 2003,
-          "per_10k": 10.63
+          "frequency": 10.63
         },
         {
           "year": 2004,
-          "per_10k": 11.9
+          "frequency": 11.9
         },
         {
           "year": 2005,
-          "per_10k": 16.13
+          "frequency": 16.13
         },
         {
           "year": 2006,
-          "per_10k": 14.84
+          "frequency": 14.84
         },
         {
           "year": 2007,
-          "per_10k": 6.26
+          "frequency": 6.26
         },
         {
           "year": 2008,
-          "per_10k": 9.32
+          "frequency": 9.32
         },
         {
           "year": 2009,
-          "per_10k": 21.2
+          "frequency": 21.2
         },
         {
           "year": 2010,
-          "per_10k": 30.16
+          "frequency": 30.16
         },
         {
           "year": 2011,
-          "per_10k": 28.81
+          "frequency": 28.81
         },
         {
           "year": 2012,
-          "per_10k": 27.82
+          "frequency": 27.82
         },
         {
           "year": 2013,
-          "per_10k": 31.78
+          "frequency": 31.78
         },
         {
           "year": 2014,
-          "per_10k": 41.79
+          "frequency": 41.79
         },
         {
           "year": 2015,
-          "per_10k": 66.55
+          "frequency": 66.55
         },
         {
           "year": 2016,
-          "per_10k": 97.28
+          "frequency": 97.28
         },
         {
           "year": 2017,
-          "per_10k": 56.06
+          "frequency": 56.06
         },
         {
           "year": 2018,
-          "per_10k": 50.77
+          "frequency": 50.77
         },
         {
           "year": 2019,
-          "per_10k": 55.12
+          "frequency": 55.12
         },
         {
           "year": 2020,
-          "per_10k": 96.13
+          "frequency": 96.13
         },
         {
           "year": 2021,
-          "per_10k": 73.16
+          "frequency": 73.16
         },
         {
           "year": 2022,
-          "per_10k": 55.78
+          "frequency": 55.78
         },
         {
           "year": 2023,
-          "per_10k": 53.63
+          "frequency": 53.63
         },
         {
           "year": 2024,
-          "per_10k": 52.49
+          "frequency": 52.49
         },
         {
           "year": 2025,
-          "per_10k": 54.94
+          "frequency": 54.94
         },
         {
           "year": 2026,
-          "per_10k": 55.18
+          "frequency": 55.18
+        }
+      ]
+    },
+    {
+      "word": "singaporeans",
+      "trend": "rising",
+      "early_avg": 0.19,
+      "recent_avg": 28.09,
+      "change": 27.9,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 1.09
+        },
+        {
+          "year": 1966,
+          "frequency": 0.0
+        },
+        {
+          "year": 1967,
+          "frequency": 0.0
+        },
+        {
+          "year": 1968,
+          "frequency": 0.0
+        },
+        {
+          "year": 1970,
+          "frequency": 0.8
+        },
+        {
+          "year": 1971,
+          "frequency": 0.0
+        },
+        {
+          "year": 1972,
+          "frequency": 0.0
+        },
+        {
+          "year": 1973,
+          "frequency": 0.0
+        },
+        {
+          "year": 1974,
+          "frequency": 0.0
+        },
+        {
+          "year": 1975,
+          "frequency": 0.0
+        },
+        {
+          "year": 1976,
+          "frequency": 2.36
+        },
+        {
+          "year": 1977,
+          "frequency": 0.0
+        },
+        {
+          "year": 1978,
+          "frequency": 0.0
+        },
+        {
+          "year": 1979,
+          "frequency": 2.07
+        },
+        {
+          "year": 1980,
+          "frequency": 9.7
+        },
+        {
+          "year": 1981,
+          "frequency": 10.37
+        },
+        {
+          "year": 1982,
+          "frequency": 6.89
+        },
+        {
+          "year": 1983,
+          "frequency": 5.03
+        },
+        {
+          "year": 1984,
+          "frequency": 4.03
+        },
+        {
+          "year": 1985,
+          "frequency": 5.24
+        },
+        {
+          "year": 1986,
+          "frequency": 1.56
+        },
+        {
+          "year": 1987,
+          "frequency": 1.24
+        },
+        {
+          "year": 1988,
+          "frequency": 0.0
+        },
+        {
+          "year": 1989,
+          "frequency": 0.0
+        },
+        {
+          "year": 1990,
+          "frequency": 1.21
+        },
+        {
+          "year": 1991,
+          "frequency": 5.4
+        },
+        {
+          "year": 1992,
+          "frequency": 9.99
+        },
+        {
+          "year": 1993,
+          "frequency": 15.15
+        },
+        {
+          "year": 1994,
+          "frequency": 30.92
+        },
+        {
+          "year": 1995,
+          "frequency": 19.43
+        },
+        {
+          "year": 1996,
+          "frequency": 22.66
+        },
+        {
+          "year": 1997,
+          "frequency": 15.5
+        },
+        {
+          "year": 1998,
+          "frequency": 7.64
+        },
+        {
+          "year": 1999,
+          "frequency": 5.39
+        },
+        {
+          "year": 2000,
+          "frequency": 6.93
+        },
+        {
+          "year": 2001,
+          "frequency": 14.87
+        },
+        {
+          "year": 2002,
+          "frequency": 35.18
+        },
+        {
+          "year": 2003,
+          "frequency": 39.48
+        },
+        {
+          "year": 2004,
+          "frequency": 15.86
+        },
+        {
+          "year": 2005,
+          "frequency": 41.21
+        },
+        {
+          "year": 2006,
+          "frequency": 23.08
+        },
+        {
+          "year": 2007,
+          "frequency": 42.42
+        },
+        {
+          "year": 2008,
+          "frequency": 48.17
+        },
+        {
+          "year": 2009,
+          "frequency": 17.41
+        },
+        {
+          "year": 2010,
+          "frequency": 15.08
+        },
+        {
+          "year": 2011,
+          "frequency": 41.78
+        },
+        {
+          "year": 2012,
+          "frequency": 51.55
+        },
+        {
+          "year": 2013,
+          "frequency": 46.91
+        },
+        {
+          "year": 2014,
+          "frequency": 33.27
+        },
+        {
+          "year": 2015,
+          "frequency": 42.4
+        },
+        {
+          "year": 2016,
+          "frequency": 15.84
+        },
+        {
+          "year": 2017,
+          "frequency": 14.01
+        },
+        {
+          "year": 2018,
+          "frequency": 21.54
+        },
+        {
+          "year": 2019,
+          "frequency": 42.65
+        },
+        {
+          "year": 2020,
+          "frequency": 29.09
+        },
+        {
+          "year": 2021,
+          "frequency": 17.83
+        },
+        {
+          "year": 2022,
+          "frequency": 24.57
+        },
+        {
+          "year": 2023,
+          "frequency": 30.75
+        },
+        {
+          "year": 2024,
+          "frequency": 34.99
+        },
+        {
+          "year": 2025,
+          "frequency": 31.85
+        },
+        {
+          "year": 2026,
+          "frequency": 33.62
         }
       ]
     },
     {
       "word": "help",
-      "early_per_10k": 2.79,
-      "recent_per_10k": 27.41,
-      "multiplier": 9.8,
+      "trend": "rising",
+      "early_avg": 2.79,
+      "recent_avg": 27.41,
       "change": 24.62,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 1.09
+          "frequency": 1.09
         },
         {
           "year": 1966,
-          "per_10k": 2.1
+          "frequency": 2.1
         },
         {
           "year": 1967,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1968,
-          "per_10k": 3.07
+          "frequency": 3.07
         },
         {
           "year": 1970,
-          "per_10k": 1.59
+          "frequency": 1.59
         },
         {
           "year": 1971,
-          "per_10k": 4.53
+          "frequency": 4.53
         },
         {
           "year": 1972,
-          "per_10k": 0.72
+          "frequency": 0.72
         },
         {
           "year": 1973,
-          "per_10k": 0.94
+          "frequency": 0.94
         },
         {
           "year": 1974,
-          "per_10k": 5.41
+          "frequency": 5.41
         },
         {
           "year": 1975,
-          "per_10k": 8.47
+          "frequency": 8.47
         },
         {
           "year": 1976,
-          "per_10k": 11.78
+          "frequency": 11.78
         },
         {
           "year": 1977,
-          "per_10k": 2.24
+          "frequency": 2.24
         },
         {
           "year": 1978,
-          "per_10k": 7.46
+          "frequency": 7.46
         },
         {
           "year": 1979,
-          "per_10k": 8.27
+          "frequency": 8.27
         },
         {
           "year": 1980,
-          "per_10k": 3.64
+          "frequency": 3.64
         },
         {
           "year": 1981,
-          "per_10k": 9.08
+          "frequency": 9.08
         },
         {
           "year": 1982,
-          "per_10k": 3.94
+          "frequency": 3.94
         },
         {
           "year": 1983,
-          "per_10k": 6.04
+          "frequency": 6.04
         },
         {
           "year": 1984,
-          "per_10k": 9.06
+          "frequency": 9.06
         },
         {
           "year": 1985,
-          "per_10k": 5.24
+          "frequency": 5.24
         },
         {
           "year": 1986,
-          "per_10k": 6.25
+          "frequency": 6.25
         },
         {
           "year": 1987,
-          "per_10k": 8.71
+          "frequency": 8.71
         },
         {
           "year": 1988,
-          "per_10k": 3.97
+          "frequency": 3.97
         },
         {
           "year": 1989,
-          "per_10k": 7.35
+          "frequency": 7.35
         },
         {
           "year": 1990,
-          "per_10k": 2.42
+          "frequency": 2.42
         },
         {
           "year": 1991,
-          "per_10k": 8.1
+          "frequency": 8.1
         },
         {
           "year": 1992,
-          "per_10k": 6.24
+          "frequency": 6.24
         },
         {
           "year": 1993,
-          "per_10k": 23.22
+          "frequency": 23.22
         },
         {
           "year": 1994,
-          "per_10k": 14.93
+          "frequency": 14.93
         },
         {
           "year": 1995,
-          "per_10k": 6.07
+          "frequency": 6.07
         },
         {
           "year": 1996,
-          "per_10k": 8.87
+          "frequency": 8.87
         },
         {
           "year": 1997,
-          "per_10k": 8.86
+          "frequency": 8.86
         },
         {
           "year": 1998,
-          "per_10k": 14.32
+          "frequency": 14.32
         },
         {
           "year": 1999,
-          "per_10k": 21.55
+          "frequency": 21.55
         },
         {
           "year": 2000,
-          "per_10k": 6.93
+          "frequency": 6.93
         },
         {
           "year": 2001,
-          "per_10k": 39.66
+          "frequency": 39.66
         },
         {
           "year": 2002,
-          "per_10k": 18.43
+          "frequency": 18.43
         },
         {
           "year": 2003,
-          "per_10k": 24.29
+          "frequency": 24.29
         },
         {
           "year": 2004,
-          "per_10k": 15.86
+          "frequency": 15.86
         },
         {
           "year": 2005,
-          "per_10k": 40.32
+          "frequency": 40.32
         },
         {
           "year": 2006,
-          "per_10k": 39.57
+          "frequency": 39.57
         },
         {
           "year": 2007,
-          "per_10k": 25.73
+          "frequency": 25.73
         },
         {
           "year": 2008,
-          "per_10k": 24.86
+          "frequency": 24.86
         },
         {
           "year": 2009,
-          "per_10k": 39.37
+          "frequency": 39.37
         },
         {
           "year": 2010,
-          "per_10k": 29.32
+          "frequency": 29.32
         },
         {
           "year": 2011,
-          "per_10k": 39.62
+          "frequency": 39.62
         },
         {
           "year": 2012,
-          "per_10k": 58.1
+          "frequency": 58.1
         },
         {
           "year": 2013,
-          "per_10k": 45.4
+          "frequency": 45.4
         },
         {
           "year": 2014,
-          "per_10k": 25.59
+          "frequency": 25.59
         },
         {
           "year": 2015,
-          "per_10k": 27.09
+          "frequency": 27.09
         },
         {
           "year": 2016,
-          "per_10k": 27.9
+          "frequency": 27.9
         },
         {
           "year": 2017,
-          "per_10k": 49.59
+          "frequency": 49.59
         },
         {
           "year": 2018,
-          "per_10k": 24.62
+          "frequency": 24.62
         },
         {
           "year": 2019,
-          "per_10k": 27.56
+          "frequency": 27.56
         },
         {
           "year": 2020,
-          "per_10k": 35.48
+          "frequency": 35.48
         },
         {
           "year": 2021,
-          "per_10k": 18.75
+          "frequency": 18.75
         },
         {
           "year": 2022,
-          "per_10k": 19.26
+          "frequency": 19.26
         },
         {
           "year": 2023,
-          "per_10k": 30.03
+          "frequency": 30.03
         },
         {
           "year": 2024,
-          "per_10k": 22.27
+          "frequency": 22.27
         },
         {
           "year": 2025,
-          "per_10k": 20.7
+          "frequency": 20.7
         },
         {
           "year": 2026,
-          "per_10k": 25.86
+          "frequency": 25.86
+        }
+      ]
+    },
+    {
+      "word": "provide",
+      "trend": "rising",
+      "early_avg": 6.89,
+      "recent_avg": 27.41,
+      "change": 20.52,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 5.46
+        },
+        {
+          "year": 1966,
+          "frequency": 5.24
+        },
+        {
+          "year": 1967,
+          "frequency": 11.74
+        },
+        {
+          "year": 1968,
+          "frequency": 8.17
+        },
+        {
+          "year": 1970,
+          "frequency": 7.17
+        },
+        {
+          "year": 1971,
+          "frequency": 12.08
+        },
+        {
+          "year": 1972,
+          "frequency": 8.67
+        },
+        {
+          "year": 1973,
+          "frequency": 2.82
+        },
+        {
+          "year": 1974,
+          "frequency": 1.2
+        },
+        {
+          "year": 1975,
+          "frequency": 6.35
+        },
+        {
+          "year": 1976,
+          "frequency": 9.43
+        },
+        {
+          "year": 1977,
+          "frequency": 15.69
+        },
+        {
+          "year": 1978,
+          "frequency": 7.46
+        },
+        {
+          "year": 1979,
+          "frequency": 6.2
+        },
+        {
+          "year": 1980,
+          "frequency": 7.28
+        },
+        {
+          "year": 1981,
+          "frequency": 2.59
+        },
+        {
+          "year": 1982,
+          "frequency": 6.89
+        },
+        {
+          "year": 1983,
+          "frequency": 4.02
+        },
+        {
+          "year": 1984,
+          "frequency": 10.06
+        },
+        {
+          "year": 1985,
+          "frequency": 9.17
+        },
+        {
+          "year": 1986,
+          "frequency": 7.81
+        },
+        {
+          "year": 1987,
+          "frequency": 8.71
+        },
+        {
+          "year": 1988,
+          "frequency": 5.29
+        },
+        {
+          "year": 1989,
+          "frequency": 3.67
+        },
+        {
+          "year": 1990,
+          "frequency": 12.09
+        },
+        {
+          "year": 1991,
+          "frequency": 9.45
+        },
+        {
+          "year": 1992,
+          "frequency": 6.24
+        },
+        {
+          "year": 1993,
+          "frequency": 6.06
+        },
+        {
+          "year": 1994,
+          "frequency": 11.73
+        },
+        {
+          "year": 1995,
+          "frequency": 3.64
+        },
+        {
+          "year": 1996,
+          "frequency": 5.91
+        },
+        {
+          "year": 1997,
+          "frequency": 6.64
+        },
+        {
+          "year": 1998,
+          "frequency": 5.73
+        },
+        {
+          "year": 1999,
+          "frequency": 9.7
+        },
+        {
+          "year": 2000,
+          "frequency": 1.98
+        },
+        {
+          "year": 2001,
+          "frequency": 8.68
+        },
+        {
+          "year": 2002,
+          "frequency": 3.35
+        },
+        {
+          "year": 2003,
+          "frequency": 6.07
+        },
+        {
+          "year": 2004,
+          "frequency": 8.72
+        },
+        {
+          "year": 2005,
+          "frequency": 15.23
+        },
+        {
+          "year": 2006,
+          "frequency": 14.84
+        },
+        {
+          "year": 2007,
+          "frequency": 12.52
+        },
+        {
+          "year": 2008,
+          "frequency": 24.86
+        },
+        {
+          "year": 2009,
+          "frequency": 23.47
+        },
+        {
+          "year": 2010,
+          "frequency": 15.08
+        },
+        {
+          "year": 2011,
+          "frequency": 37.46
+        },
+        {
+          "year": 2012,
+          "frequency": 33.55
+        },
+        {
+          "year": 2013,
+          "frequency": 28.0
+        },
+        {
+          "year": 2014,
+          "frequency": 24.74
+        },
+        {
+          "year": 2015,
+          "frequency": 22.97
+        },
+        {
+          "year": 2016,
+          "frequency": 20.36
+        },
+        {
+          "year": 2017,
+          "frequency": 24.8
+        },
+        {
+          "year": 2018,
+          "frequency": 15.38
+        },
+        {
+          "year": 2019,
+          "frequency": 32.81
+        },
+        {
+          "year": 2020,
+          "frequency": 33.21
+        },
+        {
+          "year": 2021,
+          "frequency": 21.49
+        },
+        {
+          "year": 2022,
+          "frequency": 31.88
+        },
+        {
+          "year": 2023,
+          "frequency": 22.88
+        },
+        {
+          "year": 2024,
+          "frequency": 35.79
+        },
+        {
+          "year": 2025,
+          "frequency": 33.44
+        },
+        {
+          "year": 2026,
+          "frequency": 22.42
         }
       ]
     },
     {
       "word": "global",
-      "early_per_10k": 0.21,
-      "recent_per_10k": 19.3,
-      "multiplier": 91.5,
+      "trend": "rising",
+      "early_avg": 0.21,
+      "recent_avg": 19.3,
       "change": 19.09,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1966,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1967,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1968,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1970,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1971,
-          "per_10k": 1.51
+          "frequency": 1.51
         },
         {
           "year": 1972,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1973,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1974,
-          "per_10k": 0.6
+          "frequency": 0.6
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1976,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1977,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1979,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1980,
-          "per_10k": 2.43
+          "frequency": 2.43
         },
         {
           "year": 1981,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1982,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1983,
-          "per_10k": 2.01
+          "frequency": 2.01
         },
         {
           "year": 1984,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1985,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1986,
-          "per_10k": 3.12
+          "frequency": 3.12
         },
         {
           "year": 1987,
-          "per_10k": 1.24
+          "frequency": 1.24
         },
         {
           "year": 1988,
-          "per_10k": 3.97
+          "frequency": 3.97
         },
         {
           "year": 1989,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1990,
-          "per_10k": 9.68
+          "frequency": 9.68
         },
         {
           "year": 1991,
-          "per_10k": 4.05
+          "frequency": 4.05
         },
         {
           "year": 1992,
-          "per_10k": 5.0
+          "frequency": 5.0
         },
         {
           "year": 1993,
-          "per_10k": 1.01
+          "frequency": 1.01
         },
         {
           "year": 1994,
-          "per_10k": 1.07
+          "frequency": 1.07
         },
         {
           "year": 1995,
-          "per_10k": 13.36
+          "frequency": 13.36
         },
         {
           "year": 1996,
-          "per_10k": 2.96
+          "frequency": 2.96
         },
         {
           "year": 1997,
-          "per_10k": 12.18
+          "frequency": 12.18
         },
         {
           "year": 1998,
-          "per_10k": 7.64
+          "frequency": 7.64
         },
         {
           "year": 1999,
-          "per_10k": 16.16
+          "frequency": 16.16
         },
         {
           "year": 2000,
-          "per_10k": 16.83
+          "frequency": 16.83
         },
         {
           "year": 2001,
-          "per_10k": 22.31
+          "frequency": 22.31
         },
         {
           "year": 2002,
-          "per_10k": 18.43
+          "frequency": 18.43
         },
         {
           "year": 2003,
-          "per_10k": 11.39
+          "frequency": 11.39
         },
         {
           "year": 2004,
-          "per_10k": 3.17
+          "frequency": 3.17
         },
         {
           "year": 2005,
-          "per_10k": 8.06
+          "frequency": 8.06
         },
         {
           "year": 2006,
-          "per_10k": 15.66
+          "frequency": 15.66
         },
         {
           "year": 2007,
-          "per_10k": 16.69
+          "frequency": 16.69
         },
         {
           "year": 2008,
-          "per_10k": 16.32
+          "frequency": 16.32
         },
         {
           "year": 2009,
-          "per_10k": 24.98
+          "frequency": 24.98
         },
         {
           "year": 2010,
-          "per_10k": 12.56
+          "frequency": 12.56
         },
         {
           "year": 2011,
-          "per_10k": 12.25
+          "frequency": 12.25
         },
         {
           "year": 2012,
-          "per_10k": 4.09
+          "frequency": 4.09
         },
         {
           "year": 2013,
-          "per_10k": 6.05
+          "frequency": 6.05
         },
         {
           "year": 2014,
-          "per_10k": 4.26
+          "frequency": 4.26
         },
         {
           "year": 2015,
-          "per_10k": 4.71
+          "frequency": 4.71
         },
         {
           "year": 2016,
-          "per_10k": 9.05
+          "frequency": 9.05
         },
         {
           "year": 2017,
-          "per_10k": 9.7
+          "frequency": 9.7
         },
         {
           "year": 2018,
-          "per_10k": 16.15
+          "frequency": 16.15
         },
         {
           "year": 2019,
-          "per_10k": 28.22
+          "frequency": 28.22
         },
         {
           "year": 2020,
-          "per_10k": 20.84
+          "frequency": 20.84
         },
         {
           "year": 2021,
-          "per_10k": 20.58
+          "frequency": 20.58
         },
         {
           "year": 2022,
-          "per_10k": 16.6
+          "frequency": 16.6
         },
         {
           "year": 2023,
-          "per_10k": 24.31
+          "frequency": 24.31
         },
         {
           "year": 2024,
-          "per_10k": 15.91
+          "frequency": 15.91
         },
         {
           "year": 2025,
-          "per_10k": 18.31
+          "frequency": 18.31
         },
         {
           "year": 2026,
-          "per_10k": 22.42
+          "frequency": 22.42
         }
       ]
     },
     {
       "word": "workers",
-      "early_per_10k": 8.69,
-      "recent_per_10k": 27.3,
-      "multiplier": 3.1,
+      "trend": "rising",
+      "early_avg": 8.69,
+      "recent_avg": 27.3,
       "change": 18.6,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 8.74
+          "frequency": 8.74
         },
         {
           "year": 1966,
-          "per_10k": 8.38
+          "frequency": 8.38
         },
         {
           "year": 1967,
-          "per_10k": 1.3
+          "frequency": 1.3
         },
         {
           "year": 1968,
-          "per_10k": 7.15
+          "frequency": 7.15
         },
         {
           "year": 1970,
-          "per_10k": 3.99
+          "frequency": 3.99
         },
         {
           "year": 1971,
-          "per_10k": 9.81
+          "frequency": 9.81
         },
         {
           "year": 1972,
-          "per_10k": 2.17
+          "frequency": 2.17
         },
         {
           "year": 1973,
-          "per_10k": 10.35
+          "frequency": 10.35
         },
         {
           "year": 1974,
-          "per_10k": 9.61
+          "frequency": 9.61
         },
         {
           "year": 1975,
-          "per_10k": 25.41
+          "frequency": 25.41
         },
         {
           "year": 1976,
-          "per_10k": 21.21
+          "frequency": 21.21
         },
         {
           "year": 1977,
-          "per_10k": 8.97
+          "frequency": 8.97
         },
         {
           "year": 1978,
-          "per_10k": 1.49
+          "frequency": 1.49
         },
         {
           "year": 1979,
-          "per_10k": 12.4
+          "frequency": 12.4
         },
         {
           "year": 1980,
-          "per_10k": 13.34
+          "frequency": 13.34
         },
         {
           "year": 1981,
-          "per_10k": 19.45
+          "frequency": 19.45
         },
         {
           "year": 1982,
-          "per_10k": 20.68
+          "frequency": 20.68
         },
         {
           "year": 1983,
-          "per_10k": 17.1
+          "frequency": 17.1
         },
         {
           "year": 1984,
-          "per_10k": 17.11
+          "frequency": 17.11
         },
         {
           "year": 1985,
-          "per_10k": 27.51
+          "frequency": 27.51
         },
         {
           "year": 1986,
-          "per_10k": 7.81
+          "frequency": 7.81
         },
         {
           "year": 1987,
-          "per_10k": 13.68
+          "frequency": 13.68
         },
         {
           "year": 1988,
-          "per_10k": 27.77
+          "frequency": 27.77
         },
         {
           "year": 1989,
-          "per_10k": 18.37
+          "frequency": 18.37
         },
         {
           "year": 1990,
-          "per_10k": 20.56
+          "frequency": 20.56
         },
         {
           "year": 1991,
-          "per_10k": 8.1
+          "frequency": 8.1
         },
         {
           "year": 1992,
-          "per_10k": 6.24
+          "frequency": 6.24
         },
         {
           "year": 1993,
-          "per_10k": 1.01
+          "frequency": 1.01
         },
         {
           "year": 1994,
-          "per_10k": 6.4
+          "frequency": 6.4
         },
         {
           "year": 1995,
-          "per_10k": 20.64
+          "frequency": 20.64
         },
         {
           "year": 1996,
-          "per_10k": 10.84
+          "frequency": 10.84
         },
         {
           "year": 1997,
-          "per_10k": 4.43
+          "frequency": 4.43
         },
         {
           "year": 1998,
-          "per_10k": 10.5
+          "frequency": 10.5
         },
         {
           "year": 1999,
-          "per_10k": 11.85
+          "frequency": 11.85
         },
         {
           "year": 2000,
-          "per_10k": 2.97
+          "frequency": 2.97
         },
         {
           "year": 2001,
-          "per_10k": 8.68
+          "frequency": 8.68
         },
         {
           "year": 2002,
-          "per_10k": 4.19
+          "frequency": 4.19
         },
         {
           "year": 2003,
-          "per_10k": 26.57
+          "frequency": 26.57
         },
         {
           "year": 2004,
-          "per_10k": 14.28
+          "frequency": 14.28
         },
         {
           "year": 2005,
-          "per_10k": 28.67
+          "frequency": 28.67
         },
         {
           "year": 2006,
-          "per_10k": 35.45
+          "frequency": 35.45
         },
         {
           "year": 2007,
-          "per_10k": 37.55
+          "frequency": 37.55
         },
         {
           "year": 2008,
-          "per_10k": 6.99
+          "frequency": 6.99
         },
         {
           "year": 2009,
-          "per_10k": 15.9
+          "frequency": 15.9
         },
         {
           "year": 2010,
-          "per_10k": 36.86
+          "frequency": 36.86
         },
         {
           "year": 2011,
-          "per_10k": 20.17
+          "frequency": 20.17
         },
         {
           "year": 2012,
-          "per_10k": 52.37
+          "frequency": 52.37
         },
         {
           "year": 2013,
-          "per_10k": 38.59
+          "frequency": 38.59
         },
         {
           "year": 2014,
-          "per_10k": 28.15
+          "frequency": 28.15
         },
         {
           "year": 2015,
-          "per_10k": 17.08
+          "frequency": 17.08
         },
         {
           "year": 2016,
-          "per_10k": 21.11
+          "frequency": 21.11
         },
         {
           "year": 2017,
-          "per_10k": 22.64
+          "frequency": 22.64
         },
         {
           "year": 2018,
-          "per_10k": 14.62
+          "frequency": 14.62
         },
         {
           "year": 2019,
-          "per_10k": 36.09
+          "frequency": 36.09
         },
         {
           "year": 2020,
-          "per_10k": 42.5
+          "frequency": 42.5
         },
         {
           "year": 2021,
-          "per_10k": 27.89
+          "frequency": 27.89
         },
         {
           "year": 2022,
-          "per_10k": 31.21
+          "frequency": 31.21
         },
         {
           "year": 2023,
-          "per_10k": 29.32
+          "frequency": 29.32
         },
         {
           "year": 2024,
-          "per_10k": 20.68
+          "frequency": 20.68
         },
         {
           "year": 2025,
-          "per_10k": 23.89
+          "frequency": 23.89
         },
         {
           "year": 2026,
-          "per_10k": 24.14
+          "frequency": 24.14
+        }
+      ]
+    },
+    {
+      "word": "continue",
+      "trend": "rising",
+      "early_avg": 6.37,
+      "recent_avg": 23.15,
+      "change": 16.77,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 4.37
+        },
+        {
+          "year": 1966,
+          "frequency": 6.29
+        },
+        {
+          "year": 1967,
+          "frequency": 1.3
+        },
+        {
+          "year": 1968,
+          "frequency": 5.11
+        },
+        {
+          "year": 1970,
+          "frequency": 1.59
+        },
+        {
+          "year": 1971,
+          "frequency": 6.04
+        },
+        {
+          "year": 1972,
+          "frequency": 8.67
+        },
+        {
+          "year": 1973,
+          "frequency": 4.7
+        },
+        {
+          "year": 1974,
+          "frequency": 6.61
+        },
+        {
+          "year": 1975,
+          "frequency": 19.06
+        },
+        {
+          "year": 1976,
+          "frequency": 9.43
+        },
+        {
+          "year": 1977,
+          "frequency": 4.48
+        },
+        {
+          "year": 1978,
+          "frequency": 8.96
+        },
+        {
+          "year": 1979,
+          "frequency": 8.27
+        },
+        {
+          "year": 1980,
+          "frequency": 18.19
+        },
+        {
+          "year": 1981,
+          "frequency": 12.97
+        },
+        {
+          "year": 1982,
+          "frequency": 9.85
+        },
+        {
+          "year": 1983,
+          "frequency": 16.09
+        },
+        {
+          "year": 1984,
+          "frequency": 13.08
+        },
+        {
+          "year": 1985,
+          "frequency": 13.1
+        },
+        {
+          "year": 1986,
+          "frequency": 18.74
+        },
+        {
+          "year": 1987,
+          "frequency": 21.15
+        },
+        {
+          "year": 1988,
+          "frequency": 9.26
+        },
+        {
+          "year": 1989,
+          "frequency": 20.21
+        },
+        {
+          "year": 1990,
+          "frequency": 20.56
+        },
+        {
+          "year": 1991,
+          "frequency": 9.45
+        },
+        {
+          "year": 1992,
+          "frequency": 23.73
+        },
+        {
+          "year": 1993,
+          "frequency": 10.1
+        },
+        {
+          "year": 1994,
+          "frequency": 22.39
+        },
+        {
+          "year": 1995,
+          "frequency": 18.21
+        },
+        {
+          "year": 1996,
+          "frequency": 17.73
+        },
+        {
+          "year": 1997,
+          "frequency": 17.72
+        },
+        {
+          "year": 1998,
+          "frequency": 11.46
+        },
+        {
+          "year": 1999,
+          "frequency": 11.85
+        },
+        {
+          "year": 2000,
+          "frequency": 10.89
+        },
+        {
+          "year": 2001,
+          "frequency": 27.26
+        },
+        {
+          "year": 2002,
+          "frequency": 9.22
+        },
+        {
+          "year": 2003,
+          "frequency": 12.15
+        },
+        {
+          "year": 2004,
+          "frequency": 11.1
+        },
+        {
+          "year": 2005,
+          "frequency": 8.96
+        },
+        {
+          "year": 2006,
+          "frequency": 18.14
+        },
+        {
+          "year": 2007,
+          "frequency": 9.04
+        },
+        {
+          "year": 2008,
+          "frequency": 10.88
+        },
+        {
+          "year": 2009,
+          "frequency": 7.57
+        },
+        {
+          "year": 2010,
+          "frequency": 9.21
+        },
+        {
+          "year": 2011,
+          "frequency": 5.04
+        },
+        {
+          "year": 2012,
+          "frequency": 4.09
+        },
+        {
+          "year": 2013,
+          "frequency": 9.08
+        },
+        {
+          "year": 2014,
+          "frequency": 11.09
+        },
+        {
+          "year": 2015,
+          "frequency": 5.89
+        },
+        {
+          "year": 2016,
+          "frequency": 19.61
+        },
+        {
+          "year": 2017,
+          "frequency": 21.56
+        },
+        {
+          "year": 2018,
+          "frequency": 24.62
+        },
+        {
+          "year": 2019,
+          "frequency": 28.22
+        },
+        {
+          "year": 2020,
+          "frequency": 21.25
+        },
+        {
+          "year": 2021,
+          "frequency": 26.98
+        },
+        {
+          "year": 2022,
+          "frequency": 23.91
+        },
+        {
+          "year": 2023,
+          "frequency": 22.17
+        },
+        {
+          "year": 2024,
+          "frequency": 15.11
+        },
+        {
+          "year": 2025,
+          "frequency": 17.52
+        },
+        {
+          "year": 2026,
+          "frequency": 30.18
+        }
+      ]
+    },
+    {
+      "word": "billion",
+      "trend": "rising",
+      "early_avg": 0.93,
+      "recent_avg": 17.36,
+      "change": 16.44,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 0.0
+        },
+        {
+          "year": 1966,
+          "frequency": 0.0
+        },
+        {
+          "year": 1967,
+          "frequency": 0.0
+        },
+        {
+          "year": 1968,
+          "frequency": 0.0
+        },
+        {
+          "year": 1970,
+          "frequency": 3.19
+        },
+        {
+          "year": 1971,
+          "frequency": 0.0
+        },
+        {
+          "year": 1972,
+          "frequency": 1.44
+        },
+        {
+          "year": 1973,
+          "frequency": 2.82
+        },
+        {
+          "year": 1974,
+          "frequency": 1.8
+        },
+        {
+          "year": 1975,
+          "frequency": 0.0
+        },
+        {
+          "year": 1976,
+          "frequency": 0.0
+        },
+        {
+          "year": 1977,
+          "frequency": 2.24
+        },
+        {
+          "year": 1978,
+          "frequency": 7.46
+        },
+        {
+          "year": 1979,
+          "frequency": 4.13
+        },
+        {
+          "year": 1980,
+          "frequency": 0.0
+        },
+        {
+          "year": 1981,
+          "frequency": 1.3
+        },
+        {
+          "year": 1982,
+          "frequency": 2.95
+        },
+        {
+          "year": 1983,
+          "frequency": 3.02
+        },
+        {
+          "year": 1984,
+          "frequency": 2.01
+        },
+        {
+          "year": 1985,
+          "frequency": 36.68
+        },
+        {
+          "year": 1986,
+          "frequency": 45.3
+        },
+        {
+          "year": 1987,
+          "frequency": 39.81
+        },
+        {
+          "year": 1988,
+          "frequency": 33.06
+        },
+        {
+          "year": 1989,
+          "frequency": 31.23
+        },
+        {
+          "year": 1990,
+          "frequency": 29.03
+        },
+        {
+          "year": 1991,
+          "frequency": 29.69
+        },
+        {
+          "year": 1992,
+          "frequency": 23.73
+        },
+        {
+          "year": 1993,
+          "frequency": 22.21
+        },
+        {
+          "year": 1994,
+          "frequency": 19.19
+        },
+        {
+          "year": 1995,
+          "frequency": 21.86
+        },
+        {
+          "year": 1996,
+          "frequency": 17.73
+        },
+        {
+          "year": 1997,
+          "frequency": 37.65
+        },
+        {
+          "year": 1998,
+          "frequency": 27.69
+        },
+        {
+          "year": 1999,
+          "frequency": 53.88
+        },
+        {
+          "year": 2000,
+          "frequency": 40.59
+        },
+        {
+          "year": 2001,
+          "frequency": 34.7
+        },
+        {
+          "year": 2002,
+          "frequency": 29.32
+        },
+        {
+          "year": 2003,
+          "frequency": 18.22
+        },
+        {
+          "year": 2004,
+          "frequency": 19.03
+        },
+        {
+          "year": 2005,
+          "frequency": 11.65
+        },
+        {
+          "year": 2006,
+          "frequency": 9.07
+        },
+        {
+          "year": 2007,
+          "frequency": 17.38
+        },
+        {
+          "year": 2008,
+          "frequency": 20.2
+        },
+        {
+          "year": 2009,
+          "frequency": 28.01
+        },
+        {
+          "year": 2010,
+          "frequency": 17.59
+        },
+        {
+          "year": 2011,
+          "frequency": 23.05
+        },
+        {
+          "year": 2012,
+          "frequency": 10.64
+        },
+        {
+          "year": 2013,
+          "frequency": 10.59
+        },
+        {
+          "year": 2014,
+          "frequency": 10.24
+        },
+        {
+          "year": 2015,
+          "frequency": 14.13
+        },
+        {
+          "year": 2016,
+          "frequency": 12.07
+        },
+        {
+          "year": 2017,
+          "frequency": 15.09
+        },
+        {
+          "year": 2018,
+          "frequency": 23.08
+        },
+        {
+          "year": 2019,
+          "frequency": 20.34
+        },
+        {
+          "year": 2020,
+          "frequency": 20.01
+        },
+        {
+          "year": 2021,
+          "frequency": 23.78
+        },
+        {
+          "year": 2022,
+          "frequency": 17.27
+        },
+        {
+          "year": 2023,
+          "frequency": 18.59
+        },
+        {
+          "year": 2024,
+          "frequency": 18.29
+        },
+        {
+          "year": 2025,
+          "frequency": 11.15
+        },
+        {
+          "year": 2026,
+          "frequency": 6.04
         }
       ]
     },
     {
       "word": "businesses",
-      "early_per_10k": 0.13,
-      "recent_per_10k": 15.77,
-      "multiplier": 120.9,
+      "trend": "rising",
+      "early_avg": 0.13,
+      "recent_avg": 15.77,
       "change": 15.64,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1966,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1967,
-          "per_10k": 1.3
+          "frequency": 1.3
         },
         {
           "year": 1968,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1970,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1971,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1972,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1973,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1974,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1976,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1977,
-          "per_10k": 2.24
+          "frequency": 2.24
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1979,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1980,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1981,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1982,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1983,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1984,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1985,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1986,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1987,
-          "per_10k": 7.46
+          "frequency": 7.46
         },
         {
           "year": 1988,
-          "per_10k": 3.97
+          "frequency": 3.97
         },
         {
           "year": 1989,
-          "per_10k": 3.67
+          "frequency": 3.67
         },
         {
           "year": 1990,
-          "per_10k": 4.84
+          "frequency": 4.84
         },
         {
           "year": 1991,
-          "per_10k": 4.05
+          "frequency": 4.05
         },
         {
           "year": 1992,
-          "per_10k": 8.74
+          "frequency": 8.74
         },
         {
           "year": 1993,
-          "per_10k": 1.01
+          "frequency": 1.01
         },
         {
           "year": 1994,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1995,
-          "per_10k": 2.43
+          "frequency": 2.43
         },
         {
           "year": 1996,
-          "per_10k": 2.96
+          "frequency": 2.96
         },
         {
           "year": 1997,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1998,
-          "per_10k": 12.41
+          "frequency": 12.41
         },
         {
           "year": 1999,
-          "per_10k": 6.47
+          "frequency": 6.47
         },
         {
           "year": 2000,
-          "per_10k": 7.92
+          "frequency": 7.92
         },
         {
           "year": 2001,
-          "per_10k": 19.83
+          "frequency": 19.83
         },
         {
           "year": 2002,
-          "per_10k": 6.7
+          "frequency": 6.7
         },
         {
           "year": 2003,
-          "per_10k": 14.42
+          "frequency": 14.42
         },
         {
           "year": 2004,
-          "per_10k": 7.93
+          "frequency": 7.93
         },
         {
           "year": 2005,
-          "per_10k": 13.44
+          "frequency": 13.44
         },
         {
           "year": 2006,
-          "per_10k": 10.72
+          "frequency": 10.72
         },
         {
           "year": 2007,
-          "per_10k": 4.87
+          "frequency": 4.87
         },
         {
           "year": 2008,
-          "per_10k": 6.22
+          "frequency": 6.22
         },
         {
           "year": 2009,
-          "per_10k": 24.98
+          "frequency": 24.98
         },
         {
           "year": 2010,
-          "per_10k": 20.1
+          "frequency": 20.1
         },
         {
           "year": 2011,
-          "per_10k": 15.85
+          "frequency": 15.85
         },
         {
           "year": 2012,
-          "per_10k": 13.09
+          "frequency": 13.09
         },
         {
           "year": 2013,
-          "per_10k": 17.4
+          "frequency": 17.4
         },
         {
           "year": 2014,
-          "per_10k": 9.38
+          "frequency": 9.38
         },
         {
           "year": 2015,
-          "per_10k": 7.66
+          "frequency": 7.66
         },
         {
           "year": 2016,
-          "per_10k": 14.33
+          "frequency": 14.33
         },
         {
           "year": 2017,
-          "per_10k": 17.25
+          "frequency": 17.25
         },
         {
           "year": 2018,
-          "per_10k": 10.77
+          "frequency": 10.77
         },
         {
           "year": 2019,
-          "per_10k": 8.53
+          "frequency": 8.53
         },
         {
           "year": 2020,
-          "per_10k": 30.32
+          "frequency": 30.32
         },
         {
           "year": 2021,
-          "per_10k": 36.12
+          "frequency": 36.12
         },
         {
           "year": 2022,
-          "per_10k": 21.25
+          "frequency": 21.25
         },
         {
           "year": 2023,
-          "per_10k": 12.87
+          "frequency": 12.87
         },
         {
           "year": 2024,
-          "per_10k": 4.77
+          "frequency": 4.77
         },
         {
           "year": 2025,
-          "per_10k": 6.37
+          "frequency": 6.37
         },
         {
           "year": 2026,
-          "per_10k": 9.48
+          "frequency": 9.48
         }
       ]
     },
     {
       "word": "families",
-      "early_per_10k": 1.2,
-      "recent_per_10k": 15.77,
-      "multiplier": 13.2,
+      "trend": "rising",
+      "early_avg": 1.2,
+      "recent_avg": 15.77,
       "change": 14.57,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1966,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1967,
-          "per_10k": 5.22
+          "frequency": 5.22
         },
         {
           "year": 1968,
-          "per_10k": 4.09
+          "frequency": 4.09
         },
         {
           "year": 1970,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1971,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1972,
-          "per_10k": 1.44
+          "frequency": 1.44
         },
         {
           "year": 1973,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1974,
-          "per_10k": 1.2
+          "frequency": 1.2
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1976,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1977,
-          "per_10k": 2.24
+          "frequency": 2.24
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1979,
-          "per_10k": 2.07
+          "frequency": 2.07
         },
         {
           "year": 1980,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1981,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1982,
-          "per_10k": 0.98
+          "frequency": 0.98
         },
         {
           "year": 1983,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1984,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1985,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1986,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1987,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1988,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1989,
-          "per_10k": 3.67
+          "frequency": 3.67
         },
         {
           "year": 1990,
-          "per_10k": 7.26
+          "frequency": 7.26
         },
         {
           "year": 1991,
-          "per_10k": 1.35
+          "frequency": 1.35
         },
         {
           "year": 1992,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1993,
-          "per_10k": 10.1
+          "frequency": 10.1
         },
         {
           "year": 1994,
-          "per_10k": 2.13
+          "frequency": 2.13
         },
         {
           "year": 1995,
-          "per_10k": 2.43
+          "frequency": 2.43
         },
         {
           "year": 1996,
-          "per_10k": 4.93
+          "frequency": 4.93
         },
         {
           "year": 1997,
-          "per_10k": 1.11
+          "frequency": 1.11
         },
         {
           "year": 1998,
-          "per_10k": 1.91
+          "frequency": 1.91
         },
         {
           "year": 1999,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 2000,
-          "per_10k": 0.99
+          "frequency": 0.99
         },
         {
           "year": 2001,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 2002,
-          "per_10k": 3.35
+          "frequency": 3.35
         },
         {
           "year": 2003,
-          "per_10k": 3.04
+          "frequency": 3.04
         },
         {
           "year": 2004,
-          "per_10k": 7.93
+          "frequency": 7.93
         },
         {
           "year": 2005,
-          "per_10k": 8.06
+          "frequency": 8.06
         },
         {
           "year": 2006,
-          "per_10k": 8.24
+          "frequency": 8.24
         },
         {
           "year": 2007,
-          "per_10k": 5.56
+          "frequency": 5.56
         },
         {
           "year": 2008,
-          "per_10k": 7.77
+          "frequency": 7.77
         },
         {
           "year": 2009,
-          "per_10k": 9.84
+          "frequency": 9.84
         },
         {
           "year": 2010,
-          "per_10k": 5.86
+          "frequency": 5.86
         },
         {
           "year": 2011,
-          "per_10k": 15.13
+          "frequency": 15.13
         },
         {
           "year": 2012,
-          "per_10k": 21.27
+          "frequency": 21.27
         },
         {
           "year": 2013,
-          "per_10k": 12.86
+          "frequency": 12.86
         },
         {
           "year": 2014,
-          "per_10k": 5.12
+          "frequency": 5.12
         },
         {
           "year": 2015,
-          "per_10k": 11.78
+          "frequency": 11.78
         },
         {
           "year": 2016,
-          "per_10k": 7.54
+          "frequency": 7.54
         },
         {
           "year": 2017,
-          "per_10k": 14.01
+          "frequency": 14.01
         },
         {
           "year": 2018,
-          "per_10k": 13.08
+          "frequency": 13.08
         },
         {
           "year": 2019,
-          "per_10k": 8.53
+          "frequency": 8.53
         },
         {
           "year": 2020,
-          "per_10k": 10.11
+          "frequency": 10.11
         },
         {
           "year": 2021,
-          "per_10k": 10.06
+          "frequency": 10.06
         },
         {
           "year": 2022,
-          "per_10k": 7.31
+          "frequency": 7.31
         },
         {
           "year": 2023,
-          "per_10k": 25.74
+          "frequency": 25.74
         },
         {
           "year": 2024,
-          "per_10k": 24.65
+          "frequency": 24.65
         },
         {
           "year": 2025,
-          "per_10k": 18.31
+          "frequency": 18.31
         },
         {
           "year": 2026,
-          "per_10k": 25.86
+          "frequency": 25.86
         }
       ]
     },
     {
       "word": "community",
-      "early_per_10k": 1.11,
-      "recent_per_10k": 14.59,
-      "multiplier": 13.1,
+      "trend": "rising",
+      "early_avg": 1.11,
+      "recent_avg": 14.59,
       "change": 13.47,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 1.09
+          "frequency": 1.09
         },
         {
           "year": 1966,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1967,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1968,
-          "per_10k": 1.02
+          "frequency": 1.02
         },
         {
           "year": 1970,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1971,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1972,
-          "per_10k": 2.89
+          "frequency": 2.89
         },
         {
           "year": 1973,
-          "per_10k": 2.82
+          "frequency": 2.82
         },
         {
           "year": 1974,
-          "per_10k": 1.2
+          "frequency": 1.2
         },
         {
           "year": 1975,
-          "per_10k": 2.12
+          "frequency": 2.12
         },
         {
           "year": 1976,
-          "per_10k": 2.36
+          "frequency": 2.36
         },
         {
           "year": 1977,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1979,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1980,
-          "per_10k": 2.43
+          "frequency": 2.43
         },
         {
           "year": 1981,
-          "per_10k": 2.59
+          "frequency": 2.59
         },
         {
           "year": 1982,
-          "per_10k": 0.98
+          "frequency": 0.98
         },
         {
           "year": 1983,
-          "per_10k": 4.02
+          "frequency": 4.02
         },
         {
           "year": 1984,
-          "per_10k": 2.01
+          "frequency": 2.01
         },
         {
           "year": 1985,
-          "per_10k": 3.93
+          "frequency": 3.93
         },
         {
           "year": 1986,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1987,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1988,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1989,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1990,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1991,
-          "per_10k": 4.05
+          "frequency": 4.05
         },
         {
           "year": 1992,
-          "per_10k": 5.0
+          "frequency": 5.0
         },
         {
           "year": 1993,
-          "per_10k": 8.08
+          "frequency": 8.08
         },
         {
           "year": 1994,
-          "per_10k": 3.2
+          "frequency": 3.2
         },
         {
           "year": 1995,
-          "per_10k": 7.29
+          "frequency": 7.29
         },
         {
           "year": 1996,
-          "per_10k": 4.93
+          "frequency": 4.93
         },
         {
           "year": 1997,
-          "per_10k": 12.18
+          "frequency": 12.18
         },
         {
           "year": 1998,
-          "per_10k": 7.64
+          "frequency": 7.64
         },
         {
           "year": 1999,
-          "per_10k": 7.54
+          "frequency": 7.54
         },
         {
           "year": 2000,
-          "per_10k": 3.96
+          "frequency": 3.96
         },
         {
           "year": 2001,
-          "per_10k": 1.24
+          "frequency": 1.24
         },
         {
           "year": 2002,
-          "per_10k": 3.35
+          "frequency": 3.35
         },
         {
           "year": 2003,
-          "per_10k": 1.52
+          "frequency": 1.52
         },
         {
           "year": 2004,
-          "per_10k": 3.17
+          "frequency": 3.17
         },
         {
           "year": 2005,
-          "per_10k": 13.44
+          "frequency": 13.44
         },
         {
           "year": 2006,
-          "per_10k": 2.47
+          "frequency": 2.47
         },
         {
           "year": 2007,
-          "per_10k": 2.09
+          "frequency": 2.09
         },
         {
           "year": 2008,
-          "per_10k": 6.99
+          "frequency": 6.99
         },
         {
           "year": 2009,
-          "per_10k": 6.06
+          "frequency": 6.06
         },
         {
           "year": 2010,
-          "per_10k": 2.51
+          "frequency": 2.51
         },
         {
           "year": 2011,
-          "per_10k": 10.8
+          "frequency": 10.8
         },
         {
           "year": 2012,
-          "per_10k": 10.64
+          "frequency": 10.64
         },
         {
           "year": 2013,
-          "per_10k": 6.81
+          "frequency": 6.81
         },
         {
           "year": 2014,
-          "per_10k": 2.56
+          "frequency": 2.56
         },
         {
           "year": 2015,
-          "per_10k": 7.66
+          "frequency": 7.66
         },
         {
           "year": 2016,
-          "per_10k": 12.82
+          "frequency": 12.82
         },
         {
           "year": 2017,
-          "per_10k": 22.64
+          "frequency": 22.64
         },
         {
           "year": 2018,
-          "per_10k": 24.62
+          "frequency": 24.62
         },
         {
           "year": 2019,
-          "per_10k": 19.69
+          "frequency": 19.69
         },
         {
           "year": 2020,
-          "per_10k": 12.17
+          "frequency": 12.17
         },
         {
           "year": 2021,
-          "per_10k": 11.43
+          "frequency": 11.43
         },
         {
           "year": 2022,
-          "per_10k": 13.95
+          "frequency": 13.95
         },
         {
           "year": 2023,
-          "per_10k": 13.59
+          "frequency": 13.59
         },
         {
           "year": 2024,
-          "per_10k": 12.72
+          "frequency": 12.72
         },
         {
           "year": 2025,
-          "per_10k": 5.57
+          "frequency": 5.57
         },
         {
           "year": 2026,
-          "per_10k": 9.48
+          "frequency": 9.48
         }
       ]
     },
     {
       "word": "together",
-      "early_per_10k": 2.14,
-      "recent_per_10k": 14.91,
-      "multiplier": 7.0,
+      "trend": "rising",
+      "early_avg": 2.14,
+      "recent_avg": 14.91,
       "change": 12.77,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 3.28
+          "frequency": 3.28
         },
         {
           "year": 1966,
-          "per_10k": 3.14
+          "frequency": 3.14
         },
         {
           "year": 1967,
-          "per_10k": 2.61
+          "frequency": 2.61
         },
         {
           "year": 1968,
-          "per_10k": 3.07
+          "frequency": 3.07
         },
         {
           "year": 1970,
-          "per_10k": 0.8
+          "frequency": 0.8
         },
         {
           "year": 1971,
-          "per_10k": 1.51
+          "frequency": 1.51
         },
         {
           "year": 1972,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1973,
-          "per_10k": 2.82
+          "frequency": 2.82
         },
         {
           "year": 1974,
-          "per_10k": 4.21
+          "frequency": 4.21
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1976,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1977,
-          "per_10k": 4.48
+          "frequency": 4.48
         },
         {
           "year": 1978,
-          "per_10k": 2.99
+          "frequency": 2.99
         },
         {
           "year": 1979,
-          "per_10k": 4.13
+          "frequency": 4.13
         },
         {
           "year": 1980,
-          "per_10k": 3.64
+          "frequency": 3.64
         },
         {
           "year": 1981,
-          "per_10k": 10.37
+          "frequency": 10.37
         },
         {
           "year": 1982,
-          "per_10k": 1.97
+          "frequency": 1.97
         },
         {
           "year": 1983,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1984,
-          "per_10k": 3.02
+          "frequency": 3.02
         },
         {
           "year": 1985,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 1986,
-          "per_10k": 3.12
+          "frequency": 3.12
         },
         {
           "year": 1987,
-          "per_10k": 4.98
+          "frequency": 4.98
         },
         {
           "year": 1988,
-          "per_10k": 1.32
+          "frequency": 1.32
         },
         {
           "year": 1989,
-          "per_10k": 1.84
+          "frequency": 1.84
         },
         {
           "year": 1990,
-          "per_10k": 2.42
+          "frequency": 2.42
         },
         {
           "year": 1991,
-          "per_10k": 2.7
+          "frequency": 2.7
         },
         {
           "year": 1992,
-          "per_10k": 3.75
+          "frequency": 3.75
         },
         {
           "year": 1993,
-          "per_10k": 4.04
+          "frequency": 4.04
         },
         {
           "year": 1994,
-          "per_10k": 4.26
+          "frequency": 4.26
         },
         {
           "year": 1995,
-          "per_10k": 1.21
+          "frequency": 1.21
         },
         {
           "year": 1996,
-          "per_10k": 0.99
+          "frequency": 0.99
         },
         {
           "year": 1997,
-          "per_10k": 2.21
+          "frequency": 2.21
         },
         {
           "year": 1998,
-          "per_10k": 0.95
+          "frequency": 0.95
         },
         {
           "year": 1999,
-          "per_10k": 3.23
+          "frequency": 3.23
         },
         {
           "year": 2000,
-          "per_10k": 0.99
+          "frequency": 0.99
         },
         {
           "year": 2001,
-          "per_10k": 2.48
+          "frequency": 2.48
         },
         {
           "year": 2002,
-          "per_10k": 3.35
+          "frequency": 3.35
         },
         {
           "year": 2003,
-          "per_10k": 3.04
+          "frequency": 3.04
         },
         {
           "year": 2004,
-          "per_10k": 5.55
+          "frequency": 5.55
         },
         {
           "year": 2005,
-          "per_10k": 4.48
+          "frequency": 4.48
         },
         {
           "year": 2006,
-          "per_10k": 6.59
+          "frequency": 6.59
         },
         {
           "year": 2007,
-          "per_10k": 4.17
+          "frequency": 4.17
         },
         {
           "year": 2008,
-          "per_10k": 9.32
+          "frequency": 9.32
         },
         {
           "year": 2009,
-          "per_10k": 7.57
+          "frequency": 7.57
         },
         {
           "year": 2010,
-          "per_10k": 15.92
+          "frequency": 15.92
         },
         {
           "year": 2011,
-          "per_10k": 6.48
+          "frequency": 6.48
         },
         {
           "year": 2012,
-          "per_10k": 4.91
+          "frequency": 4.91
         },
         {
           "year": 2013,
-          "per_10k": 8.32
+          "frequency": 8.32
         },
         {
           "year": 2014,
-          "per_10k": 7.68
+          "frequency": 7.68
         },
         {
           "year": 2015,
-          "per_10k": 9.42
+          "frequency": 9.42
         },
         {
           "year": 2016,
-          "per_10k": 30.16
+          "frequency": 30.16
         },
         {
           "year": 2017,
-          "per_10k": 21.56
+          "frequency": 21.56
         },
         {
           "year": 2018,
-          "per_10k": 17.69
+          "frequency": 17.69
         },
         {
           "year": 2019,
-          "per_10k": 15.09
+          "frequency": 15.09
         },
         {
           "year": 2020,
-          "per_10k": 21.87
+          "frequency": 21.87
         },
         {
           "year": 2021,
-          "per_10k": 18.75
+          "frequency": 18.75
         },
         {
           "year": 2022,
-          "per_10k": 11.29
+          "frequency": 11.29
         },
         {
           "year": 2023,
-          "per_10k": 10.01
+          "frequency": 10.01
         },
         {
           "year": 2024,
-          "per_10k": 7.16
+          "frequency": 7.16
         },
         {
           "year": 2025,
-          "per_10k": 12.74
+          "frequency": 12.74
         },
         {
           "year": 2026,
-          "per_10k": 12.93
-        }
-      ]
-    },
-    {
-      "word": "build",
-      "early_per_10k": 2.89,
-      "recent_per_10k": 15.64,
-      "multiplier": 5.4,
-      "change": 12.74,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 4.37
-        },
-        {
-          "year": 1966,
-          "per_10k": 2.1
-        },
-        {
-          "year": 1967,
-          "per_10k": 1.3
-        },
-        {
-          "year": 1968,
-          "per_10k": 8.17
-        },
-        {
-          "year": 1970,
-          "per_10k": 4.78
-        },
-        {
-          "year": 1971,
-          "per_10k": 2.26
-        },
-        {
-          "year": 1972,
-          "per_10k": 2.89
-        },
-        {
-          "year": 1973,
-          "per_10k": 0.94
-        },
-        {
-          "year": 1974,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1975,
-          "per_10k": 2.12
-        },
-        {
-          "year": 1976,
-          "per_10k": 4.71
-        },
-        {
-          "year": 1977,
-          "per_10k": 2.24
-        },
-        {
-          "year": 1978,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1979,
-          "per_10k": 2.07
-        },
-        {
-          "year": 1980,
-          "per_10k": 2.43
-        },
-        {
-          "year": 1981,
-          "per_10k": 2.59
-        },
-        {
-          "year": 1982,
-          "per_10k": 2.95
-        },
-        {
-          "year": 1983,
-          "per_10k": 5.03
-        },
-        {
-          "year": 1984,
-          "per_10k": 2.01
-        },
-        {
-          "year": 1985,
-          "per_10k": 2.62
-        },
-        {
-          "year": 1986,
-          "per_10k": 1.56
-        },
-        {
-          "year": 1987,
-          "per_10k": 2.49
-        },
-        {
-          "year": 1988,
-          "per_10k": 1.32
-        },
-        {
-          "year": 1989,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1990,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1991,
-          "per_10k": 6.75
-        },
-        {
-          "year": 1992,
-          "per_10k": 2.5
-        },
-        {
-          "year": 1993,
-          "per_10k": 6.06
-        },
-        {
-          "year": 1994,
-          "per_10k": 5.33
-        },
-        {
-          "year": 1995,
-          "per_10k": 12.14
-        },
-        {
-          "year": 1996,
-          "per_10k": 9.85
-        },
-        {
-          "year": 1997,
-          "per_10k": 5.54
-        },
-        {
-          "year": 1998,
-          "per_10k": 11.46
-        },
-        {
-          "year": 1999,
-          "per_10k": 5.39
-        },
-        {
-          "year": 2000,
-          "per_10k": 2.97
-        },
-        {
-          "year": 2001,
-          "per_10k": 7.44
-        },
-        {
-          "year": 2002,
-          "per_10k": 3.35
-        },
-        {
-          "year": 2003,
-          "per_10k": 3.8
-        },
-        {
-          "year": 2004,
-          "per_10k": 6.34
-        },
-        {
-          "year": 2005,
-          "per_10k": 8.06
-        },
-        {
-          "year": 2006,
-          "per_10k": 9.89
-        },
-        {
-          "year": 2007,
-          "per_10k": 9.04
-        },
-        {
-          "year": 2008,
-          "per_10k": 5.44
-        },
-        {
-          "year": 2009,
-          "per_10k": 3.79
-        },
-        {
-          "year": 2010,
-          "per_10k": 12.56
-        },
-        {
-          "year": 2011,
-          "per_10k": 7.92
-        },
-        {
-          "year": 2012,
-          "per_10k": 8.18
-        },
-        {
-          "year": 2013,
-          "per_10k": 6.05
-        },
-        {
-          "year": 2014,
-          "per_10k": 3.41
-        },
-        {
-          "year": 2015,
-          "per_10k": 5.89
-        },
-        {
-          "year": 2016,
-          "per_10k": 19.61
-        },
-        {
-          "year": 2017,
-          "per_10k": 22.64
-        },
-        {
-          "year": 2018,
-          "per_10k": 22.31
-        },
-        {
-          "year": 2019,
-          "per_10k": 22.97
-        },
-        {
-          "year": 2020,
-          "per_10k": 13.82
-        },
-        {
-          "year": 2021,
-          "per_10k": 15.09
-        },
-        {
-          "year": 2022,
-          "per_10k": 7.31
-        },
-        {
-          "year": 2023,
-          "per_10k": 10.01
-        },
-        {
-          "year": 2024,
-          "per_10k": 12.72
-        },
-        {
-          "year": 2025,
-          "per_10k": 7.96
-        },
-        {
-          "year": 2026,
-          "per_10k": 21.55
-        }
-      ]
-    },
-    {
-      "word": "seniors",
-      "early_per_10k": 0.0,
-      "recent_per_10k": 11.96,
-      "multiplier": 999,
-      "change": 11.96,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1966,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1967,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1968,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1972,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1973,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1974,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1975,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1976,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1977,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1978,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1979,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1980,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1981,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1982,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1983,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1984,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1985,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1986,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1987,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1988,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1989,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1990,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1991,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1992,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1993,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1994,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1997,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1998,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1999,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2000,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2001,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2003,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2006,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2007,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2008,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2009,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2010,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2011,
-          "per_10k": 1.44
-        },
-        {
-          "year": 2012,
-          "per_10k": 4.09
-        },
-        {
-          "year": 2013,
-          "per_10k": 3.03
-        },
-        {
-          "year": 2014,
-          "per_10k": 4.26
-        },
-        {
-          "year": 2015,
-          "per_10k": 9.42
-        },
-        {
-          "year": 2016,
-          "per_10k": 29.41
-        },
-        {
-          "year": 2017,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2018,
-          "per_10k": 20.77
-        },
-        {
-          "year": 2019,
-          "per_10k": 15.09
-        },
-        {
-          "year": 2020,
-          "per_10k": 8.25
-        },
-        {
-          "year": 2021,
-          "per_10k": 1.83
-        },
-        {
-          "year": 2022,
-          "per_10k": 6.64
-        },
-        {
-          "year": 2023,
-          "per_10k": 17.16
-        },
-        {
-          "year": 2024,
-          "per_10k": 21.47
-        },
-        {
-          "year": 2025,
-          "per_10k": 21.5
-        },
-        {
-          "year": 2026,
-          "per_10k": 6.9
-        }
-      ]
-    },
-    {
-      "word": "innovation",
-      "early_per_10k": 0.13,
-      "recent_per_10k": 11.85,
-      "multiplier": 90.8,
-      "change": 11.72,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1966,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1967,
-          "per_10k": 1.3
-        },
-        {
-          "year": 1968,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1972,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1973,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1974,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1975,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1976,
-          "per_10k": 2.36
-        },
-        {
-          "year": 1977,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1978,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1979,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1980,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1981,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1982,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1983,
-          "per_10k": 1.01
-        },
-        {
-          "year": 1984,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1985,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1986,
-          "per_10k": 1.56
-        },
-        {
-          "year": 1987,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1988,
-          "per_10k": 2.65
-        },
-        {
-          "year": 1989,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1990,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1991,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1992,
-          "per_10k": 1.25
-        },
-        {
-          "year": 1993,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1994,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1997,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1998,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1999,
-          "per_10k": 1.08
-        },
-        {
-          "year": 2000,
-          "per_10k": 2.97
-        },
-        {
-          "year": 2001,
-          "per_10k": 3.72
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2003,
-          "per_10k": 1.52
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.79
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.9
-        },
-        {
-          "year": 2006,
-          "per_10k": 4.95
-        },
-        {
-          "year": 2007,
-          "per_10k": 2.09
-        },
-        {
-          "year": 2008,
-          "per_10k": 10.88
-        },
-        {
-          "year": 2009,
-          "per_10k": 6.81
-        },
-        {
-          "year": 2010,
-          "per_10k": 25.13
-        },
-        {
-          "year": 2011,
-          "per_10k": 2.88
-        },
-        {
-          "year": 2012,
-          "per_10k": 2.45
-        },
-        {
-          "year": 2013,
-          "per_10k": 3.78
-        },
-        {
-          "year": 2014,
-          "per_10k": 5.12
-        },
-        {
-          "year": 2015,
-          "per_10k": 11.19
-        },
-        {
-          "year": 2016,
-          "per_10k": 29.41
-        },
-        {
-          "year": 2017,
-          "per_10k": 18.33
-        },
-        {
-          "year": 2018,
-          "per_10k": 21.54
-        },
-        {
-          "year": 2019,
-          "per_10k": 19.03
-        },
-        {
-          "year": 2020,
-          "per_10k": 8.25
-        },
-        {
-          "year": 2021,
-          "per_10k": 9.6
-        },
-        {
-          "year": 2022,
-          "per_10k": 6.64
-        },
-        {
-          "year": 2023,
-          "per_10k": 10.01
-        },
-        {
-          "year": 2024,
-          "per_10k": 9.54
-        },
-        {
-          "year": 2025,
-          "per_10k": 9.55
-        },
-        {
-          "year": 2026,
-          "per_10k": 6.04
-        }
-      ]
-    },
-    {
-      "word": "capabilities",
-      "early_per_10k": 0.27,
-      "recent_per_10k": 11.56,
-      "multiplier": 43.3,
-      "change": 11.29,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1966,
-          "per_10k": 1.05
-        },
-        {
-          "year": 1967,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1968,
-          "per_10k": 1.02
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1972,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1973,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1974,
-          "per_10k": 0.6
-        },
-        {
-          "year": 1975,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1976,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1977,
-          "per_10k": 2.24
-        },
-        {
-          "year": 1978,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1979,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1980,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1981,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1982,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1983,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1984,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1985,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1986,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1987,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1988,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1989,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1990,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1991,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1992,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1993,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1994,
-          "per_10k": 2.13
-        },
-        {
-          "year": 1995,
-          "per_10k": 2.43
-        },
-        {
-          "year": 1996,
-          "per_10k": 0.99
-        },
-        {
-          "year": 1997,
-          "per_10k": 3.32
-        },
-        {
-          "year": 1998,
-          "per_10k": 3.82
-        },
-        {
-          "year": 1999,
-          "per_10k": 12.93
-        },
-        {
-          "year": 2000,
-          "per_10k": 2.97
-        },
-        {
-          "year": 2001,
-          "per_10k": 1.24
-        },
-        {
-          "year": 2002,
-          "per_10k": 1.68
-        },
-        {
-          "year": 2003,
-          "per_10k": 4.56
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.79
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.9
-        },
-        {
-          "year": 2006,
-          "per_10k": 0.82
-        },
-        {
-          "year": 2007,
-          "per_10k": 6.26
-        },
-        {
-          "year": 2008,
-          "per_10k": 5.44
-        },
-        {
-          "year": 2009,
-          "per_10k": 10.6
-        },
-        {
-          "year": 2010,
-          "per_10k": 9.21
-        },
-        {
-          "year": 2011,
-          "per_10k": 3.6
-        },
-        {
-          "year": 2012,
-          "per_10k": 3.27
-        },
-        {
-          "year": 2013,
-          "per_10k": 2.27
-        },
-        {
-          "year": 2014,
-          "per_10k": 2.56
-        },
-        {
-          "year": 2015,
-          "per_10k": 5.3
-        },
-        {
-          "year": 2016,
-          "per_10k": 7.54
-        },
-        {
-          "year": 2017,
-          "per_10k": 18.33
-        },
-        {
-          "year": 2018,
-          "per_10k": 20.0
-        },
-        {
-          "year": 2019,
-          "per_10k": 14.44
-        },
-        {
-          "year": 2020,
-          "per_10k": 9.08
-        },
-        {
-          "year": 2021,
-          "per_10k": 9.14
-        },
-        {
-          "year": 2022,
-          "per_10k": 8.63
-        },
-        {
-          "year": 2023,
-          "per_10k": 12.16
-        },
-        {
-          "year": 2024,
-          "per_10k": 8.75
-        },
-        {
-          "year": 2025,
-          "per_10k": 5.57
-        },
-        {
-          "year": 2026,
-          "per_10k": 9.48
+          "frequency": 12.93
         }
       ]
     }
   ],
-  "declining": [
+  "declining_words": [
+    {
+      "word": "million",
+      "trend": "declining",
+      "early_avg": 105.46,
+      "recent_avg": 13.19,
+      "change": -92.28,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 177.05
+        },
+        {
+          "year": 1966,
+          "frequency": 210.67
+        },
+        {
+          "year": 1967,
+          "frequency": 43.06
+        },
+        {
+          "year": 1968,
+          "frequency": 73.57
+        },
+        {
+          "year": 1970,
+          "frequency": 117.19
+        },
+        {
+          "year": 1971,
+          "frequency": 125.3
+        },
+        {
+          "year": 1972,
+          "frequency": 78.72
+        },
+        {
+          "year": 1973,
+          "frequency": 114.78
+        },
+        {
+          "year": 1974,
+          "frequency": 48.67
+        },
+        {
+          "year": 1975,
+          "frequency": 65.64
+        },
+        {
+          "year": 1976,
+          "frequency": 82.49
+        },
+        {
+          "year": 1977,
+          "frequency": 73.97
+        },
+        {
+          "year": 1978,
+          "frequency": 64.2
+        },
+        {
+          "year": 1979,
+          "frequency": 45.48
+        },
+        {
+          "year": 1980,
+          "frequency": 37.59
+        },
+        {
+          "year": 1981,
+          "frequency": 53.16
+        },
+        {
+          "year": 1982,
+          "frequency": 44.32
+        },
+        {
+          "year": 1983,
+          "frequency": 55.32
+        },
+        {
+          "year": 1984,
+          "frequency": 50.32
+        },
+        {
+          "year": 1985,
+          "frequency": 15.72
+        },
+        {
+          "year": 1986,
+          "frequency": 20.31
+        },
+        {
+          "year": 1987,
+          "frequency": 24.88
+        },
+        {
+          "year": 1988,
+          "frequency": 39.68
+        },
+        {
+          "year": 1989,
+          "frequency": 29.4
+        },
+        {
+          "year": 1990,
+          "frequency": 29.03
+        },
+        {
+          "year": 1991,
+          "frequency": 22.94
+        },
+        {
+          "year": 1992,
+          "frequency": 18.73
+        },
+        {
+          "year": 1993,
+          "frequency": 30.29
+        },
+        {
+          "year": 1994,
+          "frequency": 26.66
+        },
+        {
+          "year": 1995,
+          "frequency": 26.71
+        },
+        {
+          "year": 1996,
+          "frequency": 25.61
+        },
+        {
+          "year": 1997,
+          "frequency": 24.36
+        },
+        {
+          "year": 1998,
+          "frequency": 19.09
+        },
+        {
+          "year": 1999,
+          "frequency": 46.34
+        },
+        {
+          "year": 2000,
+          "frequency": 40.59
+        },
+        {
+          "year": 2001,
+          "frequency": 29.74
+        },
+        {
+          "year": 2002,
+          "frequency": 13.4
+        },
+        {
+          "year": 2003,
+          "frequency": 24.29
+        },
+        {
+          "year": 2004,
+          "frequency": 40.45
+        },
+        {
+          "year": 2005,
+          "frequency": 24.19
+        },
+        {
+          "year": 2006,
+          "frequency": 21.43
+        },
+        {
+          "year": 2007,
+          "frequency": 27.81
+        },
+        {
+          "year": 2008,
+          "frequency": 23.31
+        },
+        {
+          "year": 2009,
+          "frequency": 24.23
+        },
+        {
+          "year": 2010,
+          "frequency": 23.45
+        },
+        {
+          "year": 2011,
+          "frequency": 22.33
+        },
+        {
+          "year": 2012,
+          "frequency": 17.18
+        },
+        {
+          "year": 2013,
+          "frequency": 24.97
+        },
+        {
+          "year": 2014,
+          "frequency": 26.44
+        },
+        {
+          "year": 2015,
+          "frequency": 15.9
+        },
+        {
+          "year": 2016,
+          "frequency": 18.85
+        },
+        {
+          "year": 2017,
+          "frequency": 37.73
+        },
+        {
+          "year": 2018,
+          "frequency": 18.46
+        },
+        {
+          "year": 2019,
+          "frequency": 9.19
+        },
+        {
+          "year": 2020,
+          "frequency": 13.2
+        },
+        {
+          "year": 2021,
+          "frequency": 8.69
+        },
+        {
+          "year": 2022,
+          "frequency": 13.95
+        },
+        {
+          "year": 2023,
+          "frequency": 12.16
+        },
+        {
+          "year": 2024,
+          "frequency": 8.75
+        },
+        {
+          "year": 2025,
+          "frequency": 7.17
+        },
+        {
+          "year": 2026,
+          "frequency": 2.59
+        }
+      ]
+    },
+    {
+      "word": "cent",
+      "trend": "declining",
+      "early_avg": 70.97,
+      "recent_avg": 0.0,
+      "change": -70.97,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 53.55
+        },
+        {
+          "year": 1966,
+          "frequency": 51.36
+        },
+        {
+          "year": 1967,
+          "frequency": 28.71
+        },
+        {
+          "year": 1968,
+          "frequency": 39.85
+        },
+        {
+          "year": 1970,
+          "frequency": 55.01
+        },
+        {
+          "year": 1971,
+          "frequency": 61.9
+        },
+        {
+          "year": 1972,
+          "frequency": 114.1
+        },
+        {
+          "year": 1973,
+          "frequency": 157.12
+        },
+        {
+          "year": 1974,
+          "frequency": 146.02
+        },
+        {
+          "year": 1975,
+          "frequency": 2.12
+        },
+        {
+          "year": 1976,
+          "frequency": 0.0
+        },
+        {
+          "year": 1977,
+          "frequency": 0.0
+        },
+        {
+          "year": 1978,
+          "frequency": 0.0
+        },
+        {
+          "year": 1979,
+          "frequency": 2.07
+        },
+        {
+          "year": 1980,
+          "frequency": 0.0
+        },
+        {
+          "year": 1981,
+          "frequency": 0.0
+        },
+        {
+          "year": 1982,
+          "frequency": 0.0
+        },
+        {
+          "year": 1983,
+          "frequency": 0.0
+        },
+        {
+          "year": 1984,
+          "frequency": 0.0
+        },
+        {
+          "year": 1985,
+          "frequency": 0.0
+        },
+        {
+          "year": 1986,
+          "frequency": 3.12
+        },
+        {
+          "year": 1987,
+          "frequency": 1.24
+        },
+        {
+          "year": 1988,
+          "frequency": 2.65
+        },
+        {
+          "year": 1989,
+          "frequency": 3.67
+        },
+        {
+          "year": 1990,
+          "frequency": 0.0
+        },
+        {
+          "year": 1991,
+          "frequency": 1.35
+        },
+        {
+          "year": 1992,
+          "frequency": 1.25
+        },
+        {
+          "year": 1993,
+          "frequency": 0.0
+        },
+        {
+          "year": 1994,
+          "frequency": 0.0
+        },
+        {
+          "year": 1995,
+          "frequency": 0.0
+        },
+        {
+          "year": 1996,
+          "frequency": 0.0
+        },
+        {
+          "year": 1997,
+          "frequency": 0.0
+        },
+        {
+          "year": 1998,
+          "frequency": 0.0
+        },
+        {
+          "year": 1999,
+          "frequency": 0.0
+        },
+        {
+          "year": 2000,
+          "frequency": 0.0
+        },
+        {
+          "year": 2001,
+          "frequency": 0.0
+        },
+        {
+          "year": 2002,
+          "frequency": 0.0
+        },
+        {
+          "year": 2003,
+          "frequency": 0.0
+        },
+        {
+          "year": 2004,
+          "frequency": 0.0
+        },
+        {
+          "year": 2005,
+          "frequency": 0.0
+        },
+        {
+          "year": 2006,
+          "frequency": 0.0
+        },
+        {
+          "year": 2007,
+          "frequency": 0.0
+        },
+        {
+          "year": 2008,
+          "frequency": 0.0
+        },
+        {
+          "year": 2009,
+          "frequency": 0.0
+        },
+        {
+          "year": 2010,
+          "frequency": 0.0
+        },
+        {
+          "year": 2011,
+          "frequency": 0.0
+        },
+        {
+          "year": 2012,
+          "frequency": 0.82
+        },
+        {
+          "year": 2013,
+          "frequency": 0.0
+        },
+        {
+          "year": 2014,
+          "frequency": 0.0
+        },
+        {
+          "year": 2015,
+          "frequency": 0.0
+        },
+        {
+          "year": 2016,
+          "frequency": 0.0
+        },
+        {
+          "year": 2017,
+          "frequency": 0.0
+        },
+        {
+          "year": 2018,
+          "frequency": 0.0
+        },
+        {
+          "year": 2019,
+          "frequency": 0.0
+        },
+        {
+          "year": 2020,
+          "frequency": 0.0
+        },
+        {
+          "year": 2021,
+          "frequency": 0.0
+        },
+        {
+          "year": 2022,
+          "frequency": 0.0
+        },
+        {
+          "year": 2023,
+          "frequency": 0.0
+        },
+        {
+          "year": 2024,
+          "frequency": 0.0
+        },
+        {
+          "year": 2025,
+          "frequency": 0.0
+        },
+        {
+          "year": 2026,
+          "frequency": 0.0
+        }
+      ]
+    },
+    {
+      "word": "per",
+      "trend": "declining",
+      "early_avg": 77.66,
+      "recent_avg": 8.91,
+      "change": -68.74,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 57.92
+        },
+        {
+          "year": 1966,
+          "frequency": 57.65
+        },
+        {
+          "year": 1967,
+          "frequency": 30.01
+        },
+        {
+          "year": 1968,
+          "frequency": 44.96
+        },
+        {
+          "year": 1970,
+          "frequency": 55.8
+        },
+        {
+          "year": 1971,
+          "frequency": 63.41
+        },
+        {
+          "year": 1972,
+          "frequency": 122.77
+        },
+        {
+          "year": 1973,
+          "frequency": 169.35
+        },
+        {
+          "year": 1974,
+          "frequency": 155.63
+        },
+        {
+          "year": 1975,
+          "frequency": 19.06
+        },
+        {
+          "year": 1976,
+          "frequency": 16.5
+        },
+        {
+          "year": 1977,
+          "frequency": 38.11
+        },
+        {
+          "year": 1978,
+          "frequency": 2.99
+        },
+        {
+          "year": 1979,
+          "frequency": 37.21
+        },
+        {
+          "year": 1980,
+          "frequency": 21.83
+        },
+        {
+          "year": 1981,
+          "frequency": 10.37
+        },
+        {
+          "year": 1982,
+          "frequency": 17.73
+        },
+        {
+          "year": 1983,
+          "frequency": 13.08
+        },
+        {
+          "year": 1984,
+          "frequency": 14.09
+        },
+        {
+          "year": 1985,
+          "frequency": 17.03
+        },
+        {
+          "year": 1986,
+          "frequency": 7.81
+        },
+        {
+          "year": 1987,
+          "frequency": 27.37
+        },
+        {
+          "year": 1988,
+          "frequency": 21.16
+        },
+        {
+          "year": 1989,
+          "frequency": 16.53
+        },
+        {
+          "year": 1990,
+          "frequency": 8.47
+        },
+        {
+          "year": 1991,
+          "frequency": 16.19
+        },
+        {
+          "year": 1992,
+          "frequency": 26.22
+        },
+        {
+          "year": 1993,
+          "frequency": 55.53
+        },
+        {
+          "year": 1994,
+          "frequency": 18.13
+        },
+        {
+          "year": 1995,
+          "frequency": 7.29
+        },
+        {
+          "year": 1996,
+          "frequency": 13.79
+        },
+        {
+          "year": 1997,
+          "frequency": 15.5
+        },
+        {
+          "year": 1998,
+          "frequency": 7.64
+        },
+        {
+          "year": 1999,
+          "frequency": 23.71
+        },
+        {
+          "year": 2000,
+          "frequency": 13.86
+        },
+        {
+          "year": 2001,
+          "frequency": 13.63
+        },
+        {
+          "year": 2002,
+          "frequency": 11.73
+        },
+        {
+          "year": 2003,
+          "frequency": 10.63
+        },
+        {
+          "year": 2004,
+          "frequency": 4.76
+        },
+        {
+          "year": 2005,
+          "frequency": 4.48
+        },
+        {
+          "year": 2006,
+          "frequency": 5.77
+        },
+        {
+          "year": 2007,
+          "frequency": 9.74
+        },
+        {
+          "year": 2008,
+          "frequency": 6.22
+        },
+        {
+          "year": 2009,
+          "frequency": 5.3
+        },
+        {
+          "year": 2010,
+          "frequency": 10.05
+        },
+        {
+          "year": 2011,
+          "frequency": 10.08
+        },
+        {
+          "year": 2012,
+          "frequency": 22.09
+        },
+        {
+          "year": 2013,
+          "frequency": 16.65
+        },
+        {
+          "year": 2014,
+          "frequency": 7.68
+        },
+        {
+          "year": 2015,
+          "frequency": 11.78
+        },
+        {
+          "year": 2016,
+          "frequency": 10.56
+        },
+        {
+          "year": 2017,
+          "frequency": 10.78
+        },
+        {
+          "year": 2018,
+          "frequency": 13.08
+        },
+        {
+          "year": 2019,
+          "frequency": 9.19
+        },
+        {
+          "year": 2020,
+          "frequency": 8.05
+        },
+        {
+          "year": 2021,
+          "frequency": 4.12
+        },
+        {
+          "year": 2022,
+          "frequency": 13.95
+        },
+        {
+          "year": 2023,
+          "frequency": 6.44
+        },
+        {
+          "year": 2024,
+          "frequency": 6.36
+        },
+        {
+          "year": 2025,
+          "frequency": 11.15
+        },
+        {
+          "year": 2026,
+          "frequency": 6.04
+        }
+      ]
+    },
+    {
+      "word": "expenditure",
+      "trend": "declining",
+      "early_avg": 40.25,
+      "recent_avg": 2.84,
+      "change": -37.41,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 64.48
+        },
+        {
+          "year": 1966,
+          "frequency": 66.03
+        },
+        {
+          "year": 1967,
+          "frequency": 33.92
+        },
+        {
+          "year": 1968,
+          "frequency": 40.87
+        },
+        {
+          "year": 1970,
+          "frequency": 32.68
+        },
+        {
+          "year": 1971,
+          "frequency": 22.64
+        },
+        {
+          "year": 1972,
+          "frequency": 35.39
+        },
+        {
+          "year": 1973,
+          "frequency": 31.05
+        },
+        {
+          "year": 1974,
+          "frequency": 33.05
+        },
+        {
+          "year": 1975,
+          "frequency": 42.35
+        },
+        {
+          "year": 1976,
+          "frequency": 37.71
+        },
+        {
+          "year": 1977,
+          "frequency": 29.14
+        },
+        {
+          "year": 1978,
+          "frequency": 41.8
+        },
+        {
+          "year": 1979,
+          "frequency": 26.88
+        },
+        {
+          "year": 1980,
+          "frequency": 16.98
+        },
+        {
+          "year": 1981,
+          "frequency": 20.74
+        },
+        {
+          "year": 1982,
+          "frequency": 13.79
+        },
+        {
+          "year": 1983,
+          "frequency": 19.11
+        },
+        {
+          "year": 1984,
+          "frequency": 21.14
+        },
+        {
+          "year": 1985,
+          "frequency": 20.96
+        },
+        {
+          "year": 1986,
+          "frequency": 54.67
+        },
+        {
+          "year": 1987,
+          "frequency": 32.34
+        },
+        {
+          "year": 1988,
+          "frequency": 46.29
+        },
+        {
+          "year": 1989,
+          "frequency": 47.77
+        },
+        {
+          "year": 1990,
+          "frequency": 32.66
+        },
+        {
+          "year": 1991,
+          "frequency": 39.14
+        },
+        {
+          "year": 1992,
+          "frequency": 33.72
+        },
+        {
+          "year": 1993,
+          "frequency": 32.31
+        },
+        {
+          "year": 1994,
+          "frequency": 33.05
+        },
+        {
+          "year": 1995,
+          "frequency": 21.86
+        },
+        {
+          "year": 1996,
+          "frequency": 18.72
+        },
+        {
+          "year": 1997,
+          "frequency": 24.36
+        },
+        {
+          "year": 1998,
+          "frequency": 19.09
+        },
+        {
+          "year": 1999,
+          "frequency": 17.24
+        },
+        {
+          "year": 2000,
+          "frequency": 30.69
+        },
+        {
+          "year": 2001,
+          "frequency": 19.83
+        },
+        {
+          "year": 2002,
+          "frequency": 14.24
+        },
+        {
+          "year": 2003,
+          "frequency": 12.91
+        },
+        {
+          "year": 2004,
+          "frequency": 12.69
+        },
+        {
+          "year": 2005,
+          "frequency": 2.69
+        },
+        {
+          "year": 2006,
+          "frequency": 3.3
+        },
+        {
+          "year": 2007,
+          "frequency": 4.87
+        },
+        {
+          "year": 2008,
+          "frequency": 2.33
+        },
+        {
+          "year": 2009,
+          "frequency": 0.76
+        },
+        {
+          "year": 2010,
+          "frequency": 3.35
+        },
+        {
+          "year": 2011,
+          "frequency": 2.88
+        },
+        {
+          "year": 2012,
+          "frequency": 2.45
+        },
+        {
+          "year": 2013,
+          "frequency": 2.27
+        },
+        {
+          "year": 2014,
+          "frequency": 5.97
+        },
+        {
+          "year": 2015,
+          "frequency": 1.77
+        },
+        {
+          "year": 2016,
+          "frequency": 2.26
+        },
+        {
+          "year": 2017,
+          "frequency": 1.08
+        },
+        {
+          "year": 2018,
+          "frequency": 5.38
+        },
+        {
+          "year": 2019,
+          "frequency": 1.31
+        },
+        {
+          "year": 2020,
+          "frequency": 2.68
+        },
+        {
+          "year": 2021,
+          "frequency": 3.2
+        },
+        {
+          "year": 2022,
+          "frequency": 7.97
+        },
+        {
+          "year": 2023,
+          "frequency": 4.29
+        },
+        {
+          "year": 2024,
+          "frequency": 0.8
+        },
+        {
+          "year": 2025,
+          "frequency": 0.8
+        },
+        {
+          "year": 2026,
+          "frequency": 0.86
+        }
+      ]
+    },
+    {
+      "word": "development",
+      "trend": "declining",
+      "early_avg": 43.01,
+      "recent_avg": 12.23,
+      "change": -30.78,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 55.74
+        },
+        {
+          "year": 1966,
+          "frequency": 70.22
+        },
+        {
+          "year": 1967,
+          "frequency": 28.71
+        },
+        {
+          "year": 1968,
+          "frequency": 24.52
+        },
+        {
+          "year": 1970,
+          "frequency": 41.45
+        },
+        {
+          "year": 1971,
+          "frequency": 57.37
+        },
+        {
+          "year": 1972,
+          "frequency": 54.16
+        },
+        {
+          "year": 1973,
+          "frequency": 26.34
+        },
+        {
+          "year": 1974,
+          "frequency": 14.42
+        },
+        {
+          "year": 1975,
+          "frequency": 57.17
+        },
+        {
+          "year": 1976,
+          "frequency": 49.49
+        },
+        {
+          "year": 1977,
+          "frequency": 60.52
+        },
+        {
+          "year": 1978,
+          "frequency": 43.3
+        },
+        {
+          "year": 1979,
+          "frequency": 45.48
+        },
+        {
+          "year": 1980,
+          "frequency": 44.87
+        },
+        {
+          "year": 1981,
+          "frequency": 58.34
+        },
+        {
+          "year": 1982,
+          "frequency": 48.26
+        },
+        {
+          "year": 1983,
+          "frequency": 50.29
+        },
+        {
+          "year": 1984,
+          "frequency": 40.26
+        },
+        {
+          "year": 1985,
+          "frequency": 40.61
+        },
+        {
+          "year": 1986,
+          "frequency": 40.61
+        },
+        {
+          "year": 1987,
+          "frequency": 18.66
+        },
+        {
+          "year": 1988,
+          "frequency": 35.71
+        },
+        {
+          "year": 1989,
+          "frequency": 23.88
+        },
+        {
+          "year": 1990,
+          "frequency": 32.66
+        },
+        {
+          "year": 1991,
+          "frequency": 31.04
+        },
+        {
+          "year": 1992,
+          "frequency": 33.72
+        },
+        {
+          "year": 1993,
+          "frequency": 30.29
+        },
+        {
+          "year": 1994,
+          "frequency": 41.58
+        },
+        {
+          "year": 1995,
+          "frequency": 34.0
+        },
+        {
+          "year": 1996,
+          "frequency": 25.61
+        },
+        {
+          "year": 1997,
+          "frequency": 40.97
+        },
+        {
+          "year": 1998,
+          "frequency": 46.78
+        },
+        {
+          "year": 1999,
+          "frequency": 43.1
+        },
+        {
+          "year": 2000,
+          "frequency": 28.71
+        },
+        {
+          "year": 2001,
+          "frequency": 22.31
+        },
+        {
+          "year": 2002,
+          "frequency": 11.73
+        },
+        {
+          "year": 2003,
+          "frequency": 9.11
+        },
+        {
+          "year": 2004,
+          "frequency": 8.72
+        },
+        {
+          "year": 2005,
+          "frequency": 6.27
+        },
+        {
+          "year": 2006,
+          "frequency": 7.42
+        },
+        {
+          "year": 2007,
+          "frequency": 4.17
+        },
+        {
+          "year": 2008,
+          "frequency": 3.11
+        },
+        {
+          "year": 2009,
+          "frequency": 9.84
+        },
+        {
+          "year": 2010,
+          "frequency": 10.05
+        },
+        {
+          "year": 2011,
+          "frequency": 11.52
+        },
+        {
+          "year": 2012,
+          "frequency": 9.82
+        },
+        {
+          "year": 2013,
+          "frequency": 10.59
+        },
+        {
+          "year": 2014,
+          "frequency": 4.26
+        },
+        {
+          "year": 2015,
+          "frequency": 12.37
+        },
+        {
+          "year": 2016,
+          "frequency": 20.36
+        },
+        {
+          "year": 2017,
+          "frequency": 17.25
+        },
+        {
+          "year": 2018,
+          "frequency": 19.23
+        },
+        {
+          "year": 2019,
+          "frequency": 13.78
+        },
+        {
+          "year": 2020,
+          "frequency": 5.16
+        },
+        {
+          "year": 2021,
+          "frequency": 13.72
+        },
+        {
+          "year": 2022,
+          "frequency": 7.97
+        },
+        {
+          "year": 2023,
+          "frequency": 7.87
+        },
+        {
+          "year": 2024,
+          "frequency": 11.93
+        },
+        {
+          "year": 2025,
+          "frequency": 15.92
+        },
+        {
+          "year": 2026,
+          "frequency": 9.48
+        }
+      ]
+    },
+    {
+      "word": "increase",
+      "trend": "declining",
+      "early_avg": 41.42,
+      "recent_avg": 16.48,
+      "change": -24.94,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 37.16
+        },
+        {
+          "year": 1966,
+          "frequency": 51.36
+        },
+        {
+          "year": 1967,
+          "frequency": 43.06
+        },
+        {
+          "year": 1968,
+          "frequency": 27.59
+        },
+        {
+          "year": 1970,
+          "frequency": 45.44
+        },
+        {
+          "year": 1971,
+          "frequency": 38.5
+        },
+        {
+          "year": 1972,
+          "frequency": 37.55
+        },
+        {
+          "year": 1973,
+          "frequency": 46.1
+        },
+        {
+          "year": 1974,
+          "frequency": 40.86
+        },
+        {
+          "year": 1975,
+          "frequency": 46.58
+        },
+        {
+          "year": 1976,
+          "frequency": 33.0
+        },
+        {
+          "year": 1977,
+          "frequency": 22.42
+        },
+        {
+          "year": 1978,
+          "frequency": 31.35
+        },
+        {
+          "year": 1979,
+          "frequency": 35.15
+        },
+        {
+          "year": 1980,
+          "frequency": 18.19
+        },
+        {
+          "year": 1981,
+          "frequency": 19.45
+        },
+        {
+          "year": 1982,
+          "frequency": 17.73
+        },
+        {
+          "year": 1983,
+          "frequency": 14.08
+        },
+        {
+          "year": 1984,
+          "frequency": 19.12
+        },
+        {
+          "year": 1985,
+          "frequency": 22.27
+        },
+        {
+          "year": 1986,
+          "frequency": 34.36
+        },
+        {
+          "year": 1987,
+          "frequency": 32.34
+        },
+        {
+          "year": 1988,
+          "frequency": 27.77
+        },
+        {
+          "year": 1989,
+          "frequency": 40.42
+        },
+        {
+          "year": 1990,
+          "frequency": 32.66
+        },
+        {
+          "year": 1991,
+          "frequency": 37.79
+        },
+        {
+          "year": 1992,
+          "frequency": 28.72
+        },
+        {
+          "year": 1993,
+          "frequency": 28.27
+        },
+        {
+          "year": 1994,
+          "frequency": 14.93
+        },
+        {
+          "year": 1995,
+          "frequency": 18.21
+        },
+        {
+          "year": 1996,
+          "frequency": 7.88
+        },
+        {
+          "year": 1997,
+          "frequency": 22.15
+        },
+        {
+          "year": 1998,
+          "frequency": 12.41
+        },
+        {
+          "year": 1999,
+          "frequency": 26.94
+        },
+        {
+          "year": 2000,
+          "frequency": 27.72
+        },
+        {
+          "year": 2001,
+          "frequency": 4.96
+        },
+        {
+          "year": 2002,
+          "frequency": 29.32
+        },
+        {
+          "year": 2003,
+          "frequency": 12.15
+        },
+        {
+          "year": 2004,
+          "frequency": 11.9
+        },
+        {
+          "year": 2005,
+          "frequency": 7.17
+        },
+        {
+          "year": 2006,
+          "frequency": 3.3
+        },
+        {
+          "year": 2007,
+          "frequency": 23.64
+        },
+        {
+          "year": 2008,
+          "frequency": 15.54
+        },
+        {
+          "year": 2009,
+          "frequency": 10.6
+        },
+        {
+          "year": 2010,
+          "frequency": 16.75
+        },
+        {
+          "year": 2011,
+          "frequency": 25.21
+        },
+        {
+          "year": 2012,
+          "frequency": 13.91
+        },
+        {
+          "year": 2013,
+          "frequency": 27.24
+        },
+        {
+          "year": 2014,
+          "frequency": 21.32
+        },
+        {
+          "year": 2015,
+          "frequency": 21.79
+        },
+        {
+          "year": 2016,
+          "frequency": 6.03
+        },
+        {
+          "year": 2017,
+          "frequency": 25.87
+        },
+        {
+          "year": 2018,
+          "frequency": 18.46
+        },
+        {
+          "year": 2019,
+          "frequency": 7.22
+        },
+        {
+          "year": 2020,
+          "frequency": 7.43
+        },
+        {
+          "year": 2021,
+          "frequency": 8.23
+        },
+        {
+          "year": 2022,
+          "frequency": 31.88
+        },
+        {
+          "year": 2023,
+          "frequency": 22.17
+        },
+        {
+          "year": 2024,
+          "frequency": 12.72
+        },
+        {
+          "year": 2025,
+          "frequency": 23.09
+        },
+        {
+          "year": 2026,
+          "frequency": 7.76
+        }
+      ]
+    },
+    {
+      "word": "growth",
+      "trend": "declining",
+      "early_avg": 36.15,
+      "recent_avg": 14.8,
+      "change": -21.35,
+      "yearly_data": [
+        {
+          "year": 1965,
+          "frequency": 9.84
+        },
+        {
+          "year": 1966,
+          "frequency": 17.82
+        },
+        {
+          "year": 1967,
+          "frequency": 44.36
+        },
+        {
+          "year": 1968,
+          "frequency": 14.3
+        },
+        {
+          "year": 1970,
+          "frequency": 38.27
+        },
+        {
+          "year": 1971,
+          "frequency": 33.97
+        },
+        {
+          "year": 1972,
+          "frequency": 53.44
+        },
+        {
+          "year": 1973,
+          "frequency": 63.04
+        },
+        {
+          "year": 1974,
+          "frequency": 54.68
+        },
+        {
+          "year": 1975,
+          "frequency": 31.76
+        },
+        {
+          "year": 1976,
+          "frequency": 35.35
+        },
+        {
+          "year": 1977,
+          "frequency": 35.87
+        },
+        {
+          "year": 1978,
+          "frequency": 31.35
+        },
+        {
+          "year": 1979,
+          "frequency": 39.28
+        },
+        {
+          "year": 1980,
+          "frequency": 38.81
+        },
+        {
+          "year": 1981,
+          "frequency": 27.23
+        },
+        {
+          "year": 1982,
+          "frequency": 23.64
+        },
+        {
+          "year": 1983,
+          "frequency": 27.16
+        },
+        {
+          "year": 1984,
+          "frequency": 26.17
+        },
+        {
+          "year": 1985,
+          "frequency": 34.06
+        },
+        {
+          "year": 1986,
+          "frequency": 24.99
+        },
+        {
+          "year": 1987,
+          "frequency": 23.63
+        },
+        {
+          "year": 1988,
+          "frequency": 31.74
+        },
+        {
+          "year": 1989,
+          "frequency": 60.63
+        },
+        {
+          "year": 1990,
+          "frequency": 50.8
+        },
+        {
+          "year": 1991,
+          "frequency": 60.73
+        },
+        {
+          "year": 1992,
+          "frequency": 69.93
+        },
+        {
+          "year": 1993,
+          "frequency": 38.37
+        },
+        {
+          "year": 1994,
+          "frequency": 39.45
+        },
+        {
+          "year": 1995,
+          "frequency": 47.35
+        },
+        {
+          "year": 1996,
+          "frequency": 51.23
+        },
+        {
+          "year": 1997,
+          "frequency": 33.22
+        },
+        {
+          "year": 1998,
+          "frequency": 42.01
+        },
+        {
+          "year": 1999,
+          "frequency": 25.86
+        },
+        {
+          "year": 2000,
+          "frequency": 38.61
+        },
+        {
+          "year": 2001,
+          "frequency": 50.81
+        },
+        {
+          "year": 2002,
+          "frequency": 20.11
+        },
+        {
+          "year": 2003,
+          "frequency": 22.78
+        },
+        {
+          "year": 2004,
+          "frequency": 13.48
+        },
+        {
+          "year": 2005,
+          "frequency": 12.54
+        },
+        {
+          "year": 2006,
+          "frequency": 20.61
+        },
+        {
+          "year": 2007,
+          "frequency": 13.91
+        },
+        {
+          "year": 2008,
+          "frequency": 37.29
+        },
+        {
+          "year": 2009,
+          "frequency": 7.57
+        },
+        {
+          "year": 2010,
+          "frequency": 36.02
+        },
+        {
+          "year": 2011,
+          "frequency": 37.46
+        },
+        {
+          "year": 2012,
+          "frequency": 20.46
+        },
+        {
+          "year": 2013,
+          "frequency": 29.51
+        },
+        {
+          "year": 2014,
+          "frequency": 16.21
+        },
+        {
+          "year": 2015,
+          "frequency": 15.31
+        },
+        {
+          "year": 2016,
+          "frequency": 22.62
+        },
+        {
+          "year": 2017,
+          "frequency": 20.48
+        },
+        {
+          "year": 2018,
+          "frequency": 17.69
+        },
+        {
+          "year": 2019,
+          "frequency": 14.44
+        },
+        {
+          "year": 2020,
+          "frequency": 14.65
+        },
+        {
+          "year": 2021,
+          "frequency": 16.92
+        },
+        {
+          "year": 2022,
+          "frequency": 9.96
+        },
+        {
+          "year": 2023,
+          "frequency": 8.58
+        },
+        {
+          "year": 2024,
+          "frequency": 12.72
+        },
+        {
+          "year": 2025,
+          "frequency": 12.74
+        },
+        {
+          "year": 2026,
+          "frequency": 19.83
+        }
+      ]
+    },
     {
       "word": "trade",
-      "early_per_10k": 27.57,
-      "recent_per_10k": 6.48,
-      "multiplier": 4.3,
+      "trend": "declining",
+      "early_avg": 27.57,
+      "recent_avg": 6.48,
       "change": -21.09,
-      "timeseries": [
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 33.88
+          "frequency": 33.88
         },
         {
           "year": 1966,
-          "per_10k": 14.67
+          "frequency": 14.67
         },
         {
           "year": 1967,
-          "per_10k": 26.1
+          "frequency": 26.1
         },
         {
           "year": 1968,
-          "per_10k": 6.13
+          "frequency": 6.13
         },
         {
           "year": 1970,
-          "per_10k": 29.5
+          "frequency": 29.5
         },
         {
           "year": 1971,
-          "per_10k": 24.15
+          "frequency": 24.15
         },
         {
           "year": 1972,
-          "per_10k": 42.61
+          "frequency": 42.61
         },
         {
           "year": 1973,
-          "per_10k": 58.33
+          "frequency": 58.33
         },
         {
           "year": 1974,
-          "per_10k": 27.64
+          "frequency": 27.64
         },
         {
           "year": 1975,
-          "per_10k": 12.7
+          "frequency": 12.7
         },
         {
           "year": 1976,
-          "per_10k": 7.07
+          "frequency": 7.07
         },
         {
           "year": 1977,
-          "per_10k": 11.21
+          "frequency": 11.21
         },
         {
           "year": 1978,
-          "per_10k": 38.82
+          "frequency": 38.82
         },
         {
           "year": 1979,
-          "per_10k": 37.21
+          "frequency": 37.21
         },
         {
           "year": 1980,
-          "per_10k": 46.08
+          "frequency": 46.08
         },
         {
           "year": 1981,
-          "per_10k": 28.52
+          "frequency": 28.52
         },
         {
           "year": 1982,
-          "per_10k": 28.56
+          "frequency": 28.56
         },
         {
           "year": 1983,
-          "per_10k": 31.18
+          "frequency": 31.18
         },
         {
           "year": 1984,
-          "per_10k": 11.07
+          "frequency": 11.07
         },
         {
           "year": 1985,
-          "per_10k": 20.96
+          "frequency": 20.96
         },
         {
           "year": 1986,
-          "per_10k": 12.5
+          "frequency": 12.5
         },
         {
           "year": 1987,
-          "per_10k": 12.44
+          "frequency": 12.44
         },
         {
           "year": 1988,
-          "per_10k": 18.52
+          "frequency": 18.52
         },
         {
           "year": 1989,
-          "per_10k": 7.35
+          "frequency": 7.35
         },
         {
           "year": 1990,
-          "per_10k": 21.77
+          "frequency": 21.77
         },
         {
           "year": 1991,
-          "per_10k": 13.5
+          "frequency": 13.5
         },
         {
           "year": 1992,
-          "per_10k": 19.98
+          "frequency": 19.98
         },
         {
           "year": 1993,
-          "per_10k": 4.04
+          "frequency": 4.04
         },
         {
           "year": 1994,
-          "per_10k": 6.4
+          "frequency": 6.4
         },
         {
           "year": 1995,
-          "per_10k": 6.07
+          "frequency": 6.07
         },
         {
           "year": 1996,
-          "per_10k": 4.93
+          "frequency": 4.93
         },
         {
           "year": 1997,
-          "per_10k": 3.32
+          "frequency": 3.32
         },
         {
           "year": 1998,
-          "per_10k": 11.46
+          "frequency": 11.46
         },
         {
           "year": 1999,
-          "per_10k": 16.16
+          "frequency": 16.16
         },
         {
           "year": 2000,
-          "per_10k": 5.94
+          "frequency": 5.94
         },
         {
           "year": 2001,
-          "per_10k": 12.39
+          "frequency": 12.39
         },
         {
           "year": 2002,
-          "per_10k": 3.35
+          "frequency": 3.35
         },
         {
           "year": 2003,
-          "per_10k": 12.15
+          "frequency": 12.15
         },
         {
           "year": 2004,
-          "per_10k": 3.17
+          "frequency": 3.17
         },
         {
           "year": 2005,
-          "per_10k": 3.58
+          "frequency": 3.58
         },
         {
           "year": 2006,
-          "per_10k": 0.82
+          "frequency": 0.82
         },
         {
           "year": 2007,
-          "per_10k": 1.39
+          "frequency": 1.39
         },
         {
           "year": 2008,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 2009,
-          "per_10k": 6.81
+          "frequency": 6.81
         },
         {
           "year": 2010,
-          "per_10k": 5.03
+          "frequency": 5.03
         },
         {
           "year": 2011,
-          "per_10k": 7.2
+          "frequency": 7.2
         },
         {
           "year": 2012,
-          "per_10k": 2.45
+          "frequency": 2.45
         },
         {
           "year": 2013,
-          "per_10k": 2.27
+          "frequency": 2.27
         },
         {
           "year": 2014,
-          "per_10k": 0.85
+          "frequency": 0.85
         },
         {
           "year": 2015,
-          "per_10k": 2.36
+          "frequency": 2.36
         },
         {
           "year": 2016,
-          "per_10k": 9.05
+          "frequency": 9.05
         },
         {
           "year": 2017,
-          "per_10k": 7.55
+          "frequency": 7.55
         },
         {
           "year": 2018,
-          "per_10k": 9.23
+          "frequency": 9.23
         },
         {
           "year": 2019,
-          "per_10k": 11.16
+          "frequency": 11.16
         },
         {
           "year": 2020,
-          "per_10k": 8.25
+          "frequency": 8.25
         },
         {
           "year": 2021,
-          "per_10k": 4.57
+          "frequency": 4.57
         },
         {
           "year": 2022,
-          "per_10k": 5.31
+          "frequency": 5.31
         },
         {
           "year": 2023,
-          "per_10k": 2.86
+          "frequency": 2.86
         },
         {
           "year": 2024,
-          "per_10k": 1.59
+          "frequency": 1.59
         },
         {
           "year": 2025,
-          "per_10k": 3.98
+          "frequency": 3.98
         },
         {
           "year": 2026,
-          "per_10k": 10.35
+          "frequency": 10.35
         }
       ]
     },
     {
-      "word": "domestic",
-      "early_per_10k": 13.98,
-      "recent_per_10k": 2.47,
-      "multiplier": 5.6,
-      "change": -11.5,
-      "timeseries": [
+      "word": "year",
+      "trend": "declining",
+      "early_avg": 60.87,
+      "recent_avg": 40.25,
+      "change": -20.62,
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 2.19
+          "frequency": 83.06
         },
         {
           "year": 1966,
-          "per_10k": 11.53
+          "frequency": 85.94
         },
         {
           "year": 1967,
-          "per_10k": 7.83
+          "frequency": 83.51
         },
         {
           "year": 1968,
-          "per_10k": 7.15
+          "frequency": 95.02
         },
         {
           "year": 1970,
-          "per_10k": 18.34
+          "frequency": 45.44
         },
         {
           "year": 1971,
-          "per_10k": 17.36
+          "frequency": 37.74
         },
         {
           "year": 1972,
-          "per_10k": 21.67
+          "frequency": 46.22
         },
         {
           "year": 1973,
-          "per_10k": 25.4
+          "frequency": 47.98
         },
         {
           "year": 1974,
-          "per_10k": 19.83
+          "frequency": 45.67
         },
         {
           "year": 1975,
-          "per_10k": 8.47
+          "frequency": 38.11
         },
         {
           "year": 1976,
-          "per_10k": 7.07
+          "frequency": 49.49
         },
         {
           "year": 1977,
-          "per_10k": 6.72
+          "frequency": 47.07
         },
         {
           "year": 1978,
-          "per_10k": 4.48
+          "frequency": 58.23
         },
         {
           "year": 1979,
-          "per_10k": 4.13
+          "frequency": 107.5
         },
         {
           "year": 1980,
-          "per_10k": 2.43
+          "frequency": 58.21
         },
         {
           "year": 1981,
-          "per_10k": 3.89
+          "frequency": 58.34
         },
         {
           "year": 1982,
-          "per_10k": 3.94
+          "frequency": 45.3
         },
         {
           "year": 1983,
-          "per_10k": 12.07
+          "frequency": 46.27
         },
         {
           "year": 1984,
-          "per_10k": 6.04
+          "frequency": 55.35
         },
         {
           "year": 1985,
-          "per_10k": 10.48
+          "frequency": 32.75
         },
         {
           "year": 1986,
-          "per_10k": 7.81
+          "frequency": 40.61
         },
         {
           "year": 1987,
-          "per_10k": 9.95
+          "frequency": 43.54
         },
         {
           "year": 1988,
-          "per_10k": 14.55
+          "frequency": 43.65
         },
         {
           "year": 1989,
-          "per_10k": 16.53
+          "frequency": 56.95
         },
         {
           "year": 1990,
-          "per_10k": 7.26
+          "frequency": 54.43
         },
         {
           "year": 1991,
-          "per_10k": 8.1
+          "frequency": 60.73
         },
         {
           "year": 1992,
-          "per_10k": 16.23
+          "frequency": 47.45
         },
         {
           "year": 1993,
-          "per_10k": 13.13
+          "frequency": 57.55
         },
         {
           "year": 1994,
-          "per_10k": 4.26
+          "frequency": 57.58
         },
         {
           "year": 1995,
-          "per_10k": 9.71
+          "frequency": 46.14
         },
         {
           "year": 1996,
-          "per_10k": 5.91
+          "frequency": 38.42
         },
         {
           "year": 1997,
-          "per_10k": 3.32
+          "frequency": 47.62
         },
         {
           "year": 1998,
-          "per_10k": 4.77
+          "frequency": 53.47
         },
         {
           "year": 1999,
-          "per_10k": 7.54
+          "frequency": 59.27
         },
         {
           "year": 2000,
-          "per_10k": 7.92
+          "frequency": 58.42
         },
         {
           "year": 2001,
-          "per_10k": 3.72
+          "frequency": 76.84
         },
         {
           "year": 2002,
-          "per_10k": 0.84
+          "frequency": 56.13
         },
         {
           "year": 2003,
-          "per_10k": 5.31
+          "frequency": 44.79
         },
         {
           "year": 2004,
-          "per_10k": 3.97
+          "frequency": 51.55
         },
         {
           "year": 2005,
-          "per_10k": 0.0
+          "frequency": 47.48
         },
         {
           "year": 2006,
-          "per_10k": 2.47
+          "frequency": 36.27
         },
         {
           "year": 2007,
-          "per_10k": 2.09
+          "frequency": 50.76
         },
         {
           "year": 2008,
-          "per_10k": 3.11
+          "frequency": 95.56
         },
         {
           "year": 2009,
-          "per_10k": 3.03
+          "frequency": 67.38
         },
         {
           "year": 2010,
-          "per_10k": 0.0
+          "frequency": 56.12
         },
         {
           "year": 2011,
-          "per_10k": 0.72
+          "frequency": 95.08
         },
         {
           "year": 2012,
-          "per_10k": 2.45
+          "frequency": 48.28
         },
         {
           "year": 2013,
-          "per_10k": 2.27
+          "frequency": 48.43
         },
         {
           "year": 2014,
-          "per_10k": 1.71
+          "frequency": 52.88
         },
         {
           "year": 2015,
-          "per_10k": 7.66
+          "frequency": 41.81
         },
         {
           "year": 2016,
-          "per_10k": 2.26
+          "frequency": 40.72
         },
         {
           "year": 2017,
-          "per_10k": 2.16
+          "frequency": 39.89
         },
         {
           "year": 2018,
-          "per_10k": 3.08
+          "frequency": 43.85
         },
         {
           "year": 2019,
-          "per_10k": 1.97
+          "frequency": 41.34
         },
         {
           "year": 2020,
-          "per_10k": 0.83
+          "frequency": 27.64
         },
         {
           "year": 2021,
-          "per_10k": 1.83
+          "frequency": 39.78
         },
         {
           "year": 2022,
-          "per_10k": 2.66
+          "frequency": 41.84
         },
         {
           "year": 2023,
-          "per_10k": 5.01
+          "frequency": 48.62
         },
         {
           "year": 2024,
-          "per_10k": 3.98
+          "frequency": 34.99
         },
         {
           "year": 2025,
-          "per_10k": 2.39
+          "frequency": 50.96
         },
         {
           "year": 2026,
-          "per_10k": 0.86
+          "frequency": 33.62
         }
       ]
     },
     {
-      "word": "expansion",
-      "early_per_10k": 10.64,
-      "recent_per_10k": 0.38,
-      "multiplier": 28.1,
-      "change": -10.26,
-      "timeseries": [
+      "word": "total",
+      "trend": "declining",
+      "early_avg": 25.05,
+      "recent_avg": 5.22,
+      "change": -19.82,
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 6.56
+          "frequency": 31.69
         },
         {
           "year": 1966,
-          "per_10k": 25.15
+          "frequency": 38.78
         },
         {
           "year": 1967,
-          "per_10k": 19.57
+          "frequency": 9.13
         },
         {
           "year": 1968,
-          "per_10k": 8.17
+          "frequency": 23.5
         },
         {
           "year": 1970,
-          "per_10k": 16.74
+          "frequency": 15.15
         },
         {
           "year": 1971,
-          "per_10k": 6.79
+          "frequency": 33.21
         },
         {
           "year": 1972,
-          "per_10k": 9.39
+          "frequency": 21.67
         },
         {
           "year": 1973,
-          "per_10k": 5.64
+          "frequency": 28.22
         },
         {
           "year": 1974,
-          "per_10k": 8.41
+          "frequency": 25.84
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 23.29
         },
         {
           "year": 1976,
-          "per_10k": 4.71
+          "frequency": 37.71
         },
         {
           "year": 1977,
-          "per_10k": 4.48
+          "frequency": 15.69
         },
         {
           "year": 1978,
-          "per_10k": 7.46
+          "frequency": 10.45
         },
         {
           "year": 1979,
-          "per_10k": 8.27
+          "frequency": 20.67
         },
         {
           "year": 1980,
-          "per_10k": 6.06
+          "frequency": 10.91
         },
         {
           "year": 1981,
-          "per_10k": 5.19
+          "frequency": 23.34
         },
         {
           "year": 1982,
-          "per_10k": 4.92
+          "frequency": 15.76
         },
         {
           "year": 1983,
-          "per_10k": 3.02
+          "frequency": 20.12
         },
         {
           "year": 1984,
-          "per_10k": 5.03
+          "frequency": 23.15
         },
         {
           "year": 1985,
-          "per_10k": 6.55
+          "frequency": 14.41
         },
         {
           "year": 1986,
-          "per_10k": 4.69
+          "frequency": 14.06
         },
         {
           "year": 1987,
-          "per_10k": 2.49
+          "frequency": 9.95
         },
         {
           "year": 1988,
-          "per_10k": 9.26
+          "frequency": 21.16
         },
         {
           "year": 1989,
-          "per_10k": 9.19
+          "frequency": 25.72
         },
         {
           "year": 1990,
-          "per_10k": 3.63
+          "frequency": 16.93
         },
         {
           "year": 1991,
-          "per_10k": 2.7
+          "frequency": 14.84
         },
         {
           "year": 1992,
-          "per_10k": 1.25
+          "frequency": 13.74
         },
         {
           "year": 1993,
-          "per_10k": 3.03
+          "frequency": 19.18
         },
         {
           "year": 1994,
-          "per_10k": 5.33
+          "frequency": 12.79
         },
         {
           "year": 1995,
-          "per_10k": 0.0
+          "frequency": 8.5
         },
         {
           "year": 1996,
-          "per_10k": 3.94
+          "frequency": 8.87
         },
         {
           "year": 1997,
-          "per_10k": 1.11
+          "frequency": 7.75
         },
         {
           "year": 1998,
-          "per_10k": 1.91
+          "frequency": 7.64
         },
         {
           "year": 1999,
-          "per_10k": 5.39
+          "frequency": 7.54
         },
         {
           "year": 2000,
-          "per_10k": 0.99
+          "frequency": 15.84
         },
         {
           "year": 2001,
-          "per_10k": 1.24
+          "frequency": 19.83
         },
         {
           "year": 2002,
-          "per_10k": 0.84
+          "frequency": 11.73
         },
         {
           "year": 2003,
-          "per_10k": 0.76
+          "frequency": 6.83
         },
         {
           "year": 2004,
-          "per_10k": 0.79
+          "frequency": 7.14
         },
         {
           "year": 2005,
-          "per_10k": 0.0
+          "frequency": 4.48
         },
         {
           "year": 2006,
-          "per_10k": 0.0
+          "frequency": 5.77
         },
         {
           "year": 2007,
-          "per_10k": 0.0
+          "frequency": 8.34
         },
         {
           "year": 2008,
-          "per_10k": 0.78
+          "frequency": 5.44
         },
         {
           "year": 2009,
-          "per_10k": 1.51
+          "frequency": 14.39
         },
         {
           "year": 2010,
-          "per_10k": 3.35
+          "frequency": 10.05
         },
         {
           "year": 2011,
-          "per_10k": 0.72
+          "frequency": 10.08
         },
         {
           "year": 2012,
-          "per_10k": 0.82
+          "frequency": 12.27
         },
         {
           "year": 2013,
-          "per_10k": 0.0
+          "frequency": 12.86
         },
         {
           "year": 2014,
-          "per_10k": 5.12
+          "frequency": 6.82
         },
         {
           "year": 2015,
-          "per_10k": 1.77
+          "frequency": 9.42
         },
         {
           "year": 2016,
-          "per_10k": 1.51
+          "frequency": 13.57
         },
         {
           "year": 2017,
-          "per_10k": 0.0
+          "frequency": 8.62
         },
         {
           "year": 2018,
-          "per_10k": 0.77
+          "frequency": 6.15
         },
         {
           "year": 2019,
-          "per_10k": 1.31
+          "frequency": 5.91
         },
         {
           "year": 2020,
-          "per_10k": 0.0
+          "frequency": 8.05
         },
         {
           "year": 2021,
-          "per_10k": 0.91
+          "frequency": 2.29
         },
         {
           "year": 2022,
-          "per_10k": 0.0
+          "frequency": 5.98
         },
         {
           "year": 2023,
-          "per_10k": 0.0
+          "frequency": 6.44
         },
         {
           "year": 2024,
-          "per_10k": 0.8
+          "frequency": 3.18
         },
         {
           "year": 2025,
-          "per_10k": 0.0
+          "frequency": 4.78
         },
         {
           "year": 2026,
-          "per_10k": 0.0
+          "frequency": 0.86
         }
       ]
     },
     {
-      "word": "construction",
-      "early_per_10k": 11.92,
-      "recent_per_10k": 2.75,
-      "multiplier": 4.3,
-      "change": -9.17,
-      "timeseries": [
+      "word": "industrial",
+      "trend": "declining",
+      "early_avg": 20.81,
+      "recent_avg": 1.0,
+      "change": -19.81,
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 9.84
+          "frequency": 20.77
         },
         {
           "year": 1966,
-          "per_10k": 10.48
+          "frequency": 32.49
         },
         {
           "year": 1967,
-          "per_10k": 20.88
+          "frequency": 26.1
         },
         {
           "year": 1968,
-          "per_10k": 7.15
+          "frequency": 9.2
         },
         {
           "year": 1970,
-          "per_10k": 11.16
+          "frequency": 21.52
         },
         {
           "year": 1971,
-          "per_10k": 10.57
+          "frequency": 12.08
         },
         {
           "year": 1972,
-          "per_10k": 11.55
+          "frequency": 23.11
         },
         {
           "year": 1973,
-          "per_10k": 13.17
+          "frequency": 10.35
         },
         {
           "year": 1974,
-          "per_10k": 9.61
+          "frequency": 18.63
         },
         {
           "year": 1975,
-          "per_10k": 14.82
+          "frequency": 33.88
         },
         {
           "year": 1976,
-          "per_10k": 11.78
+          "frequency": 44.78
         },
         {
           "year": 1977,
-          "per_10k": 0.0
+          "frequency": 29.14
         },
         {
           "year": 1978,
-          "per_10k": 1.49
+          "frequency": 25.38
         },
         {
           "year": 1979,
-          "per_10k": 2.07
+          "frequency": 20.67
         },
         {
           "year": 1980,
-          "per_10k": 2.43
+          "frequency": 12.13
         },
         {
           "year": 1981,
-          "per_10k": 3.89
+          "frequency": 16.85
         },
         {
           "year": 1982,
-          "per_10k": 23.64
+          "frequency": 15.76
         },
         {
           "year": 1983,
-          "per_10k": 22.13
+          "frequency": 17.1
         },
         {
           "year": 1984,
-          "per_10k": 20.13
+          "frequency": 16.1
         },
         {
           "year": 1985,
-          "per_10k": 3.93
+          "frequency": 9.17
         },
         {
           "year": 1986,
-          "per_10k": 4.69
+          "frequency": 15.62
         },
         {
           "year": 1987,
-          "per_10k": 9.95
+          "frequency": 6.22
         },
         {
           "year": 1988,
-          "per_10k": 10.58
+          "frequency": 7.94
         },
         {
           "year": 1989,
-          "per_10k": 7.35
+          "frequency": 1.84
         },
         {
           "year": 1990,
-          "per_10k": 7.26
+          "frequency": 8.47
         },
         {
           "year": 1991,
-          "per_10k": 4.05
+          "frequency": 5.4
         },
         {
           "year": 1992,
-          "per_10k": 5.0
+          "frequency": 1.25
         },
         {
           "year": 1993,
-          "per_10k": 3.03
+          "frequency": 7.07
         },
         {
           "year": 1994,
-          "per_10k": 2.13
+          "frequency": 2.13
         },
         {
           "year": 1995,
-          "per_10k": 4.86
+          "frequency": 4.86
         },
         {
           "year": 1996,
-          "per_10k": 0.99
+          "frequency": 2.96
         },
         {
           "year": 1997,
-          "per_10k": 3.32
+          "frequency": 7.75
         },
         {
           "year": 1998,
-          "per_10k": 3.82
+          "frequency": 6.68
         },
         {
           "year": 1999,
-          "per_10k": 0.0
+          "frequency": 2.16
         },
         {
           "year": 2000,
-          "per_10k": 3.96
+          "frequency": 0.99
         },
         {
           "year": 2001,
-          "per_10k": 3.72
+          "frequency": 3.72
         },
         {
           "year": 2002,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 2003,
-          "per_10k": 0.76
+          "frequency": 6.83
         },
         {
           "year": 2004,
-          "per_10k": 3.97
+          "frequency": 0.0
         },
         {
           "year": 2005,
-          "per_10k": 1.79
+          "frequency": 0.9
         },
         {
           "year": 2006,
-          "per_10k": 0.0
+          "frequency": 2.47
         },
         {
           "year": 2007,
-          "per_10k": 2.78
+          "frequency": 0.0
         },
         {
           "year": 2008,
-          "per_10k": 1.55
+          "frequency": 0.0
         },
         {
           "year": 2009,
-          "per_10k": 3.79
+          "frequency": 2.27
         },
         {
           "year": 2010,
-          "per_10k": 5.03
+          "frequency": 2.51
         },
         {
           "year": 2011,
-          "per_10k": 1.44
+          "frequency": 0.0
         },
         {
           "year": 2012,
-          "per_10k": 7.36
+          "frequency": 0.0
         },
         {
           "year": 2013,
-          "per_10k": 9.08
+          "frequency": 0.76
         },
         {
           "year": 2014,
-          "per_10k": 17.06
+          "frequency": 3.41
         },
         {
           "year": 2015,
-          "per_10k": 4.71
+          "frequency": 0.0
         },
         {
           "year": 2016,
-          "per_10k": 4.52
+          "frequency": 4.52
         },
         {
           "year": 2017,
-          "per_10k": 8.62
+          "frequency": 2.16
         },
         {
           "year": 2018,
-          "per_10k": 2.31
+          "frequency": 0.0
         },
         {
           "year": 2019,
-          "per_10k": 3.94
+          "frequency": 2.62
         },
         {
           "year": 2020,
-          "per_10k": 1.65
+          "frequency": 2.48
         },
         {
           "year": 2021,
-          "per_10k": 3.2
+          "frequency": 1.37
         },
         {
           "year": 2022,
-          "per_10k": 3.32
+          "frequency": 0.66
         },
         {
           "year": 2023,
-          "per_10k": 2.86
+          "frequency": 0.72
         },
         {
           "year": 2024,
-          "per_10k": 1.59
+          "frequency": 0.0
         },
         {
           "year": 2025,
-          "per_10k": 0.0
+          "frequency": 0.0
         },
         {
           "year": 2026,
-          "per_10k": 0.0
+          "frequency": 0.0
         }
       ]
     },
     {
-      "word": "defense",
-      "early_per_10k": 10.69,
-      "recent_per_10k": 1.94,
-      "multiplier": 5.5,
-      "change": -8.75,
-      "timeseries": [
+      "word": "industries",
+      "trend": "declining",
+      "early_avg": 21.96,
+      "recent_avg": 3.32,
+      "change": -18.64,
+      "yearly_data": [
         {
           "year": 1965,
-          "per_10k": 10.93
+          "frequency": 14.21
         },
         {
           "year": 1966,
-          "per_10k": 6.29
+          "frequency": 26.2
         },
         {
           "year": 1967,
-          "per_10k": 13.05
+          "frequency": 36.53
         },
         {
           "year": 1968,
-          "per_10k": 47.0
+          "frequency": 8.17
         },
         {
           "year": 1970,
-          "per_10k": 8.77
+          "frequency": 16.74
         },
         {
           "year": 1971,
-          "per_10k": 9.06
+          "frequency": 10.57
         },
         {
           "year": 1972,
-          "per_10k": 7.22
+          "frequency": 16.61
         },
         {
           "year": 1973,
-          "per_10k": 2.82
+          "frequency": 22.58
         },
         {
           "year": 1974,
-          "per_10k": 1.8
+          "frequency": 15.02
         },
         {
           "year": 1975,
-          "per_10k": 0.0
+          "frequency": 52.93
         },
         {
           "year": 1976,
-          "per_10k": 2.36
+          "frequency": 35.35
         },
         {
           "year": 1977,
-          "per_10k": 2.24
+          "frequency": 29.14
         },
         {
           "year": 1978,
-          "per_10k": 0.0
+          "frequency": 29.86
         },
         {
           "year": 1979,
-          "per_10k": 0.0
+          "frequency": 14.47
         },
         {
           "year": 1980,
-          "per_10k": 0.0
+          "frequency": 26.68
         },
         {
           "year": 1981,
-          "per_10k": 1.3
+          "frequency": 24.63
         },
         {
           "year": 1982,
-          "per_10k": 0.98
+          "frequency": 11.82
         },
         {
           "year": 1983,
-          "per_10k": 3.02
+          "frequency": 16.09
         },
         {
           "year": 1984,
-          "per_10k": 1.01
+          "frequency": 13.08
         },
         {
           "year": 1985,
-          "per_10k": 2.62
+          "frequency": 10.48
         },
         {
           "year": 1986,
-          "per_10k": 6.25
+          "frequency": 1.56
         },
         {
           "year": 1987,
-          "per_10k": 2.49
+          "frequency": 4.98
         },
         {
           "year": 1988,
-          "per_10k": 1.32
+          "frequency": 17.19
         },
         {
           "year": 1989,
-          "per_10k": 3.67
+          "frequency": 0.0
         },
         {
           "year": 1990,
-          "per_10k": 1.21
+          "frequency": 7.26
         },
         {
           "year": 1991,
-          "per_10k": 2.7
+          "frequency": 6.75
         },
         {
           "year": 1992,
-          "per_10k": 6.24
+          "frequency": 2.5
         },
         {
           "year": 1993,
-          "per_10k": 3.03
+          "frequency": 2.02
         },
         {
           "year": 1994,
-          "per_10k": 1.07
+          "frequency": 1.07
         },
         {
           "year": 1995,
-          "per_10k": 2.43
+          "frequency": 3.64
         },
         {
           "year": 1996,
-          "per_10k": 6.9
+          "frequency": 4.93
         },
         {
           "year": 1997,
-          "per_10k": 1.11
+          "frequency": 5.54
         },
         {
           "year": 1998,
-          "per_10k": 8.59
+          "frequency": 4.77
         },
         {
           "year": 1999,
-          "per_10k": 7.54
+          "frequency": 1.08
         },
         {
           "year": 2000,
-          "per_10k": 5.94
+          "frequency": 3.96
         },
         {
           "year": 2001,
-          "per_10k": 0.0
+          "frequency": 17.35
         },
         {
           "year": 2002,
-          "per_10k": 1.68
+          "frequency": 2.51
         },
         {
           "year": 2003,
-          "per_10k": 0.0
+          "frequency": 6.07
         },
         {
           "year": 2004,
-          "per_10k": 2.38
+          "frequency": 8.72
         },
         {
           "year": 2005,
-          "per_10k": 0.0
+          "frequency": 7.17
         },
         {
           "year": 2006,
-          "per_10k": 0.0
+          "frequency": 7.42
         },
         {
           "year": 2007,
-          "per_10k": 0.0
+          "frequency": 2.78
         },
         {
           "year": 2008,
-          "per_10k": 0.0
+          "frequency": 3.11
         },
         {
           "year": 2009,
-          "per_10k": 0.0
+          "frequency": 3.03
         },
         {
           "year": 2010,
-          "per_10k": 0.0
+          "frequency": 9.21
         },
         {
           "year": 2011,
-          "per_10k": 0.0
+          "frequency": 2.88
         },
         {
           "year": 2012,
-          "per_10k": 0.0
+          "frequency": 4.09
         },
         {
           "year": 2013,
-          "per_10k": 0.0
+          "frequency": 12.86
         },
         {
           "year": 2014,
-          "per_10k": 0.0
+          "frequency": 6.82
         },
         {
           "year": 2015,
-          "per_10k": 0.0
+          "frequency": 2.94
         },
         {
           "year": 2016,
-          "per_10k": 0.0
+          "frequency": 10.56
         },
         {
           "year": 2017,
-          "per_10k": 1.08
+          "frequency": 5.39
         },
         {
           "year": 2018,
-          "per_10k": 0.0
+          "frequency": 3.85
         },
         {
           "year": 2019,
-          "per_10k": 5.91
+          "frequency": 1.31
         },
         {
           "year": 2020,
-          "per_10k": 0.21
+          "frequency": 4.54
         },
         {
           "year": 2021,
-          "per_10k": 0.46
+          "frequency": 4.12
         },
         {
           "year": 2022,
-          "per_10k": 1.33
+          "frequency": 0.66
         },
         {
           "year": 2023,
-          "per_10k": 1.43
+          "frequency": 4.29
         },
         {
           "year": 2024,
-          "per_10k": 4.77
+          "frequency": 3.18
         },
         {
           "year": 2025,
-          "per_10k": 0.8
+          "frequency": 2.39
         },
         {
           "year": 2026,
-          "per_10k": 3.45
-        }
-      ]
-    },
-    {
-      "word": "manufacturing",
-      "early_per_10k": 11.74,
-      "recent_per_10k": 3.46,
-      "multiplier": 3.4,
-      "change": -8.28,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 8.74
-        },
-        {
-          "year": 1966,
-          "per_10k": 6.29
-        },
-        {
-          "year": 1967,
-          "per_10k": 13.05
-        },
-        {
-          "year": 1968,
-          "per_10k": 6.13
-        },
-        {
-          "year": 1970,
-          "per_10k": 15.94
-        },
-        {
-          "year": 1971,
-          "per_10k": 13.59
-        },
-        {
-          "year": 1972,
-          "per_10k": 12.28
-        },
-        {
-          "year": 1973,
-          "per_10k": 16.93
-        },
-        {
-          "year": 1974,
-          "per_10k": 13.82
-        },
-        {
-          "year": 1975,
-          "per_10k": 10.59
-        },
-        {
-          "year": 1976,
-          "per_10k": 11.78
-        },
-        {
-          "year": 1977,
-          "per_10k": 11.21
-        },
-        {
-          "year": 1978,
-          "per_10k": 13.44
-        },
-        {
-          "year": 1979,
-          "per_10k": 14.47
-        },
-        {
-          "year": 1980,
-          "per_10k": 15.77
-        },
-        {
-          "year": 1981,
-          "per_10k": 7.78
-        },
-        {
-          "year": 1982,
-          "per_10k": 5.91
-        },
-        {
-          "year": 1983,
-          "per_10k": 20.12
-        },
-        {
-          "year": 1984,
-          "per_10k": 22.14
-        },
-        {
-          "year": 1985,
-          "per_10k": 6.55
-        },
-        {
-          "year": 1986,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1987,
-          "per_10k": 13.68
-        },
-        {
-          "year": 1988,
-          "per_10k": 17.19
-        },
-        {
-          "year": 1989,
-          "per_10k": 20.21
-        },
-        {
-          "year": 1990,
-          "per_10k": 8.47
-        },
-        {
-          "year": 1991,
-          "per_10k": 6.75
-        },
-        {
-          "year": 1992,
-          "per_10k": 8.74
-        },
-        {
-          "year": 1993,
-          "per_10k": 8.08
-        },
-        {
-          "year": 1994,
-          "per_10k": 7.46
-        },
-        {
-          "year": 1995,
-          "per_10k": 7.29
-        },
-        {
-          "year": 1996,
-          "per_10k": 6.9
-        },
-        {
-          "year": 1997,
-          "per_10k": 13.29
-        },
-        {
-          "year": 1998,
-          "per_10k": 5.73
-        },
-        {
-          "year": 1999,
-          "per_10k": 9.7
-        },
-        {
-          "year": 2000,
-          "per_10k": 14.85
-        },
-        {
-          "year": 2001,
-          "per_10k": 4.96
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.84
-        },
-        {
-          "year": 2003,
-          "per_10k": 18.22
-        },
-        {
-          "year": 2004,
-          "per_10k": 6.34
-        },
-        {
-          "year": 2005,
-          "per_10k": 6.27
-        },
-        {
-          "year": 2006,
-          "per_10k": 10.72
-        },
-        {
-          "year": 2007,
-          "per_10k": 5.56
-        },
-        {
-          "year": 2008,
-          "per_10k": 0.78
-        },
-        {
-          "year": 2009,
-          "per_10k": 1.51
-        },
-        {
-          "year": 2010,
-          "per_10k": 4.19
-        },
-        {
-          "year": 2011,
-          "per_10k": 2.88
-        },
-        {
-          "year": 2012,
-          "per_10k": 6.55
-        },
-        {
-          "year": 2013,
-          "per_10k": 8.32
-        },
-        {
-          "year": 2014,
-          "per_10k": 1.71
-        },
-        {
-          "year": 2015,
-          "per_10k": 3.53
-        },
-        {
-          "year": 2016,
-          "per_10k": 11.31
-        },
-        {
-          "year": 2017,
-          "per_10k": 2.16
-        },
-        {
-          "year": 2018,
-          "per_10k": 3.08
-        },
-        {
-          "year": 2019,
-          "per_10k": 1.97
-        },
-        {
-          "year": 2020,
-          "per_10k": 2.68
-        },
-        {
-          "year": 2021,
-          "per_10k": 4.12
-        },
-        {
-          "year": 2022,
-          "per_10k": 1.33
-        },
-        {
-          "year": 2023,
-          "per_10k": 2.86
-        },
-        {
-          "year": 2024,
-          "per_10k": 6.36
-        },
-        {
-          "year": 2025,
-          "per_10k": 3.98
-        },
-        {
-          "year": 2026,
-          "per_10k": 6.04
-        }
-      ]
-    },
-    {
-      "word": "export",
-      "early_per_10k": 8.06,
-      "recent_per_10k": 0.28,
-      "multiplier": 29.2,
-      "change": -7.78,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 4.37
-        },
-        {
-          "year": 1966,
-          "per_10k": 11.53
-        },
-        {
-          "year": 1967,
-          "per_10k": 14.35
-        },
-        {
-          "year": 1968,
-          "per_10k": 3.07
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 7.55
-        },
-        {
-          "year": 1972,
-          "per_10k": 5.78
-        },
-        {
-          "year": 1973,
-          "per_10k": 2.82
-        },
-        {
-          "year": 1974,
-          "per_10k": 3.61
-        },
-        {
-          "year": 1975,
-          "per_10k": 27.52
-        },
-        {
-          "year": 1976,
-          "per_10k": 11.78
-        },
-        {
-          "year": 1977,
-          "per_10k": 8.97
-        },
-        {
-          "year": 1978,
-          "per_10k": 13.44
-        },
-        {
-          "year": 1979,
-          "per_10k": 8.27
-        },
-        {
-          "year": 1980,
-          "per_10k": 12.13
-        },
-        {
-          "year": 1981,
-          "per_10k": 3.89
-        },
-        {
-          "year": 1982,
-          "per_10k": 0.98
-        },
-        {
-          "year": 1983,
-          "per_10k": 8.05
-        },
-        {
-          "year": 1984,
-          "per_10k": 3.02
-        },
-        {
-          "year": 1985,
-          "per_10k": 1.31
-        },
-        {
-          "year": 1986,
-          "per_10k": 3.12
-        },
-        {
-          "year": 1987,
-          "per_10k": 7.46
-        },
-        {
-          "year": 1988,
-          "per_10k": 10.58
-        },
-        {
-          "year": 1989,
-          "per_10k": 1.84
-        },
-        {
-          "year": 1990,
-          "per_10k": 2.42
-        },
-        {
-          "year": 1991,
-          "per_10k": 2.7
-        },
-        {
-          "year": 1992,
-          "per_10k": 1.25
-        },
-        {
-          "year": 1993,
-          "per_10k": 1.01
-        },
-        {
-          "year": 1994,
-          "per_10k": 2.13
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1997,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1998,
-          "per_10k": 7.64
-        },
-        {
-          "year": 1999,
-          "per_10k": 5.39
-        },
-        {
-          "year": 2000,
-          "per_10k": 0.99
-        },
-        {
-          "year": 2001,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.84
-        },
-        {
-          "year": 2003,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2005,
-          "per_10k": 1.79
-        },
-        {
-          "year": 2006,
-          "per_10k": 0.82
-        },
-        {
-          "year": 2007,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2008,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2009,
-          "per_10k": 1.51
-        },
-        {
-          "year": 2010,
-          "per_10k": 1.68
-        },
-        {
-          "year": 2011,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2012,
-          "per_10k": 0.82
-        },
-        {
-          "year": 2013,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2014,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2015,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2016,
-          "per_10k": 0.75
-        },
-        {
-          "year": 2017,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2018,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2019,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2020,
-          "per_10k": 0.62
-        },
-        {
-          "year": 2021,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2022,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2023,
-          "per_10k": 2.15
-        },
-        {
-          "year": 2024,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2025,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2026,
-          "per_10k": 0.0
-        }
-      ]
-    },
-    {
-      "word": "international",
-      "early_per_10k": 12.7,
-      "recent_per_10k": 4.92,
-      "multiplier": 2.6,
-      "change": -7.78,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 10.93
-        },
-        {
-          "year": 1966,
-          "per_10k": 10.48
-        },
-        {
-          "year": 1967,
-          "per_10k": 7.83
-        },
-        {
-          "year": 1968,
-          "per_10k": 10.22
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 20.38
-        },
-        {
-          "year": 1972,
-          "per_10k": 20.94
-        },
-        {
-          "year": 1973,
-          "per_10k": 17.88
-        },
-        {
-          "year": 1974,
-          "per_10k": 19.83
-        },
-        {
-          "year": 1975,
-          "per_10k": 8.47
-        },
-        {
-          "year": 1976,
-          "per_10k": 4.71
-        },
-        {
-          "year": 1977,
-          "per_10k": 17.93
-        },
-        {
-          "year": 1978,
-          "per_10k": 8.96
-        },
-        {
-          "year": 1979,
-          "per_10k": 16.54
-        },
-        {
-          "year": 1980,
-          "per_10k": 14.55
-        },
-        {
-          "year": 1981,
-          "per_10k": 12.97
-        },
-        {
-          "year": 1982,
-          "per_10k": 10.83
-        },
-        {
-          "year": 1983,
-          "per_10k": 21.12
-        },
-        {
-          "year": 1984,
-          "per_10k": 16.1
-        },
-        {
-          "year": 1985,
-          "per_10k": 11.79
-        },
-        {
-          "year": 1986,
-          "per_10k": 7.81
-        },
-        {
-          "year": 1987,
-          "per_10k": 34.83
-        },
-        {
-          "year": 1988,
-          "per_10k": 13.23
-        },
-        {
-          "year": 1989,
-          "per_10k": 7.35
-        },
-        {
-          "year": 1990,
-          "per_10k": 24.19
-        },
-        {
-          "year": 1991,
-          "per_10k": 25.64
-        },
-        {
-          "year": 1992,
-          "per_10k": 12.49
-        },
-        {
-          "year": 1993,
-          "per_10k": 5.05
-        },
-        {
-          "year": 1994,
-          "per_10k": 4.26
-        },
-        {
-          "year": 1995,
-          "per_10k": 7.29
-        },
-        {
-          "year": 1996,
-          "per_10k": 3.94
-        },
-        {
-          "year": 1997,
-          "per_10k": 14.4
-        },
-        {
-          "year": 1998,
-          "per_10k": 14.32
-        },
-        {
-          "year": 1999,
-          "per_10k": 12.93
-        },
-        {
-          "year": 2000,
-          "per_10k": 0.99
-        },
-        {
-          "year": 2001,
-          "per_10k": 3.72
-        },
-        {
-          "year": 2002,
-          "per_10k": 3.35
-        },
-        {
-          "year": 2003,
-          "per_10k": 7.59
-        },
-        {
-          "year": 2004,
-          "per_10k": 6.34
-        },
-        {
-          "year": 2005,
-          "per_10k": 6.27
-        },
-        {
-          "year": 2006,
-          "per_10k": 14.01
-        },
-        {
-          "year": 2007,
-          "per_10k": 4.87
-        },
-        {
-          "year": 2008,
-          "per_10k": 1.55
-        },
-        {
-          "year": 2009,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2010,
-          "per_10k": 5.03
-        },
-        {
-          "year": 2011,
-          "per_10k": 2.16
-        },
-        {
-          "year": 2012,
-          "per_10k": 5.73
-        },
-        {
-          "year": 2013,
-          "per_10k": 2.27
-        },
-        {
-          "year": 2014,
-          "per_10k": 0.85
-        },
-        {
-          "year": 2015,
-          "per_10k": 4.12
-        },
-        {
-          "year": 2016,
-          "per_10k": 0.75
-        },
-        {
-          "year": 2017,
-          "per_10k": 8.62
-        },
-        {
-          "year": 2018,
-          "per_10k": 6.15
-        },
-        {
-          "year": 2019,
-          "per_10k": 5.25
-        },
-        {
-          "year": 2020,
-          "per_10k": 3.71
-        },
-        {
-          "year": 2021,
-          "per_10k": 5.03
-        },
-        {
-          "year": 2022,
-          "per_10k": 4.65
-        },
-        {
-          "year": 2023,
-          "per_10k": 5.01
-        },
-        {
-          "year": 2024,
-          "per_10k": 3.18
-        },
-        {
-          "year": 2025,
-          "per_10k": 2.39
-        },
-        {
-          "year": 2026,
-          "per_10k": 5.17
-        }
-      ]
-    },
-    {
-      "word": "exports",
-      "early_per_10k": 7.43,
-      "recent_per_10k": 0.04,
-      "multiplier": 180.1,
-      "change": -7.39,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 2.19
-        },
-        {
-          "year": 1966,
-          "per_10k": 12.58
-        },
-        {
-          "year": 1967,
-          "per_10k": 11.74
-        },
-        {
-          "year": 1968,
-          "per_10k": 1.02
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1971,
-          "per_10k": 4.53
-        },
-        {
-          "year": 1972,
-          "per_10k": 10.11
-        },
-        {
-          "year": 1973,
-          "per_10k": 13.17
-        },
-        {
-          "year": 1974,
-          "per_10k": 12.62
-        },
-        {
-          "year": 1975,
-          "per_10k": 6.35
-        },
-        {
-          "year": 1976,
-          "per_10k": 4.71
-        },
-        {
-          "year": 1977,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1978,
-          "per_10k": 4.48
-        },
-        {
-          "year": 1979,
-          "per_10k": 6.2
-        },
-        {
-          "year": 1980,
-          "per_10k": 9.7
-        },
-        {
-          "year": 1981,
-          "per_10k": 3.89
-        },
-        {
-          "year": 1982,
-          "per_10k": 2.95
-        },
-        {
-          "year": 1983,
-          "per_10k": 7.04
-        },
-        {
-          "year": 1984,
-          "per_10k": 8.05
-        },
-        {
-          "year": 1985,
-          "per_10k": 2.62
-        },
-        {
-          "year": 1986,
-          "per_10k": 1.56
-        },
-        {
-          "year": 1987,
-          "per_10k": 2.49
-        },
-        {
-          "year": 1988,
-          "per_10k": 9.26
-        },
-        {
-          "year": 1989,
-          "per_10k": 7.35
-        },
-        {
-          "year": 1990,
-          "per_10k": 3.63
-        },
-        {
-          "year": 1991,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1992,
-          "per_10k": 1.25
-        },
-        {
-          "year": 1993,
-          "per_10k": 2.02
-        },
-        {
-          "year": 1994,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 1.97
-        },
-        {
-          "year": 1997,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1998,
-          "per_10k": 0.95
-        },
-        {
-          "year": 1999,
-          "per_10k": 2.16
-        },
-        {
-          "year": 2000,
-          "per_10k": 2.97
-        },
-        {
-          "year": 2001,
-          "per_10k": 4.96
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2003,
-          "per_10k": 3.8
-        },
-        {
-          "year": 2004,
-          "per_10k": 1.59
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2006,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2007,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2008,
-          "per_10k": 0.78
-        },
-        {
-          "year": 2009,
-          "per_10k": 3.03
-        },
-        {
-          "year": 2010,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2011,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2012,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2013,
-          "per_10k": 0.76
-        },
-        {
-          "year": 2014,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2015,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2016,
-          "per_10k": 1.51
-        },
-        {
-          "year": 2017,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2018,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2019,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2020,
-          "per_10k": 0.41
-        },
-        {
-          "year": 2021,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2022,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2023,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2024,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2025,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2026,
-          "per_10k": 0.0
-        }
-      ]
-    },
-    {
-      "word": "british",
-      "early_per_10k": 7.47,
-      "recent_per_10k": 0.29,
-      "multiplier": 25.6,
-      "change": -7.18,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1966,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1967,
-          "per_10k": 19.57
-        },
-        {
-          "year": 1968,
-          "per_10k": 14.3
-        },
-        {
-          "year": 1970,
-          "per_10k": 13.55
-        },
-        {
-          "year": 1971,
-          "per_10k": 9.06
-        },
-        {
-          "year": 1972,
-          "per_10k": 12.28
-        },
-        {
-          "year": 1973,
-          "per_10k": 4.7
-        },
-        {
-          "year": 1974,
-          "per_10k": 1.2
-        },
-        {
-          "year": 1975,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1976,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1977,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1978,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1979,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1980,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1981,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1982,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1983,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1984,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1985,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1986,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1987,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1988,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1989,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1990,
-          "per_10k": 1.21
-        },
-        {
-          "year": 1991,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1992,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1993,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1994,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1997,
-          "per_10k": 2.21
-        },
-        {
-          "year": 1998,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1999,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2000,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2001,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2002,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2003,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.9
-        },
-        {
-          "year": 2006,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2007,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2008,
-          "per_10k": 0.78
-        },
-        {
-          "year": 2009,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2010,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2011,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2012,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2013,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2014,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2015,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2016,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2017,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2018,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2019,
-          "per_10k": 0.66
-        },
-        {
-          "year": 2020,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2021,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2022,
-          "per_10k": 0.66
-        },
-        {
-          "year": 2023,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2024,
-          "per_10k": 0.8
-        },
-        {
-          "year": 2025,
-          "per_10k": 0.8
-        },
-        {
-          "year": 2026,
-          "per_10k": 0.0
-        }
-      ]
-    },
-    {
-      "word": "countries",
-      "early_per_10k": 13.37,
-      "recent_per_10k": 6.31,
-      "multiplier": 2.1,
-      "change": -7.05,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 22.95
-        },
-        {
-          "year": 1966,
-          "per_10k": 11.53
-        },
-        {
-          "year": 1967,
-          "per_10k": 5.22
-        },
-        {
-          "year": 1968,
-          "per_10k": 6.13
-        },
-        {
-          "year": 1970,
-          "per_10k": 7.17
-        },
-        {
-          "year": 1971,
-          "per_10k": 16.61
-        },
-        {
-          "year": 1972,
-          "per_10k": 12.28
-        },
-        {
-          "year": 1973,
-          "per_10k": 8.47
-        },
-        {
-          "year": 1974,
-          "per_10k": 34.85
-        },
-        {
-          "year": 1975,
-          "per_10k": 8.47
-        },
-        {
-          "year": 1976,
-          "per_10k": 30.64
-        },
-        {
-          "year": 1977,
-          "per_10k": 38.11
-        },
-        {
-          "year": 1978,
-          "per_10k": 38.82
-        },
-        {
-          "year": 1979,
-          "per_10k": 43.42
-        },
-        {
-          "year": 1980,
-          "per_10k": 15.77
-        },
-        {
-          "year": 1981,
-          "per_10k": 9.08
-        },
-        {
-          "year": 1982,
-          "per_10k": 18.71
-        },
-        {
-          "year": 1983,
-          "per_10k": 23.13
-        },
-        {
-          "year": 1984,
-          "per_10k": 14.09
-        },
-        {
-          "year": 1985,
-          "per_10k": 23.58
-        },
-        {
-          "year": 1986,
-          "per_10k": 6.25
-        },
-        {
-          "year": 1987,
-          "per_10k": 9.95
-        },
-        {
-          "year": 1988,
-          "per_10k": 15.87
-        },
-        {
-          "year": 1989,
-          "per_10k": 5.51
-        },
-        {
-          "year": 1990,
-          "per_10k": 10.89
-        },
-        {
-          "year": 1991,
-          "per_10k": 12.15
-        },
-        {
-          "year": 1992,
-          "per_10k": 9.99
-        },
-        {
-          "year": 1993,
-          "per_10k": 21.2
-        },
-        {
-          "year": 1994,
-          "per_10k": 20.26
-        },
-        {
-          "year": 1995,
-          "per_10k": 25.5
-        },
-        {
-          "year": 1996,
-          "per_10k": 19.7
-        },
-        {
-          "year": 1997,
-          "per_10k": 11.07
-        },
-        {
-          "year": 1998,
-          "per_10k": 7.64
-        },
-        {
-          "year": 1999,
-          "per_10k": 4.31
-        },
-        {
-          "year": 2000,
-          "per_10k": 11.88
-        },
-        {
-          "year": 2001,
-          "per_10k": 4.96
-        },
-        {
-          "year": 2002,
-          "per_10k": 7.54
-        },
-        {
-          "year": 2003,
-          "per_10k": 12.91
-        },
-        {
-          "year": 2004,
-          "per_10k": 4.76
-        },
-        {
-          "year": 2005,
-          "per_10k": 4.48
-        },
-        {
-          "year": 2006,
-          "per_10k": 12.37
-        },
-        {
-          "year": 2007,
-          "per_10k": 4.87
-        },
-        {
-          "year": 2008,
-          "per_10k": 6.22
-        },
-        {
-          "year": 2009,
-          "per_10k": 3.03
-        },
-        {
-          "year": 2010,
-          "per_10k": 3.35
-        },
-        {
-          "year": 2011,
-          "per_10k": 2.16
-        },
-        {
-          "year": 2012,
-          "per_10k": 2.45
-        },
-        {
-          "year": 2013,
-          "per_10k": 6.81
-        },
-        {
-          "year": 2014,
-          "per_10k": 2.56
-        },
-        {
-          "year": 2015,
-          "per_10k": 7.66
-        },
-        {
-          "year": 2016,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2017,
-          "per_10k": 6.47
-        },
-        {
-          "year": 2018,
-          "per_10k": 3.85
-        },
-        {
-          "year": 2019,
-          "per_10k": 2.62
-        },
-        {
-          "year": 2020,
-          "per_10k": 5.78
-        },
-        {
-          "year": 2021,
-          "per_10k": 9.14
-        },
-        {
-          "year": 2022,
-          "per_10k": 9.96
-        },
-        {
-          "year": 2023,
-          "per_10k": 7.15
-        },
-        {
-          "year": 2024,
-          "per_10k": 3.18
-        },
-        {
-          "year": 2025,
-          "per_10k": 6.37
-        },
-        {
-          "year": 2026,
-          "per_10k": 8.62
-        }
-      ]
-    },
-    {
-      "word": "oil",
-      "early_per_10k": 7.16,
-      "recent_per_10k": 0.37,
-      "multiplier": 19.3,
-      "change": -6.79,
-      "timeseries": [
-        {
-          "year": 1965,
-          "per_10k": 6.56
-        },
-        {
-          "year": 1966,
-          "per_10k": 2.1
-        },
-        {
-          "year": 1967,
-          "per_10k": 3.91
-        },
-        {
-          "year": 1968,
-          "per_10k": 1.02
-        },
-        {
-          "year": 1970,
-          "per_10k": 0.8
-        },
-        {
-          "year": 1971,
-          "per_10k": 2.26
-        },
-        {
-          "year": 1972,
-          "per_10k": 0.72
-        },
-        {
-          "year": 1973,
-          "per_10k": 1.88
-        },
-        {
-          "year": 1974,
-          "per_10k": 48.07
-        },
-        {
-          "year": 1975,
-          "per_10k": 4.23
-        },
-        {
-          "year": 1976,
-          "per_10k": 14.14
-        },
-        {
-          "year": 1977,
-          "per_10k": 11.21
-        },
-        {
-          "year": 1978,
-          "per_10k": 7.46
-        },
-        {
-          "year": 1979,
-          "per_10k": 14.47
-        },
-        {
-          "year": 1980,
-          "per_10k": 13.34
-        },
-        {
-          "year": 1981,
-          "per_10k": 20.74
-        },
-        {
-          "year": 1982,
-          "per_10k": 9.85
-        },
-        {
-          "year": 1983,
-          "per_10k": 12.07
-        },
-        {
-          "year": 1984,
-          "per_10k": 12.08
-        },
-        {
-          "year": 1985,
-          "per_10k": 1.31
-        },
-        {
-          "year": 1986,
-          "per_10k": 3.12
-        },
-        {
-          "year": 1987,
-          "per_10k": 1.24
-        },
-        {
-          "year": 1988,
-          "per_10k": 6.61
-        },
-        {
-          "year": 1989,
-          "per_10k": 1.84
-        },
-        {
-          "year": 1990,
-          "per_10k": 8.47
-        },
-        {
-          "year": 1991,
-          "per_10k": 8.1
-        },
-        {
-          "year": 1992,
-          "per_10k": 1.25
-        },
-        {
-          "year": 1993,
-          "per_10k": 1.01
-        },
-        {
-          "year": 1994,
-          "per_10k": 1.07
-        },
-        {
-          "year": 1995,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1996,
-          "per_10k": 2.96
-        },
-        {
-          "year": 1997,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1998,
-          "per_10k": 0.0
-        },
-        {
-          "year": 1999,
-          "per_10k": 3.23
-        },
-        {
-          "year": 2000,
-          "per_10k": 1.98
-        },
-        {
-          "year": 2001,
-          "per_10k": 1.24
-        },
-        {
-          "year": 2002,
-          "per_10k": 5.03
-        },
-        {
-          "year": 2003,
-          "per_10k": 3.8
-        },
-        {
-          "year": 2004,
-          "per_10k": 0.79
-        },
-        {
-          "year": 2005,
-          "per_10k": 0.9
-        },
-        {
-          "year": 2006,
-          "per_10k": 3.3
-        },
-        {
-          "year": 2007,
-          "per_10k": 6.26
-        },
-        {
-          "year": 2008,
-          "per_10k": 2.33
-        },
-        {
-          "year": 2009,
-          "per_10k": 0.76
-        },
-        {
-          "year": 2010,
-          "per_10k": 0.84
-        },
-        {
-          "year": 2011,
-          "per_10k": 2.16
-        },
-        {
-          "year": 2012,
-          "per_10k": 0.82
-        },
-        {
-          "year": 2013,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2014,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2015,
-          "per_10k": 0.59
-        },
-        {
-          "year": 2016,
-          "per_10k": 1.51
-        },
-        {
-          "year": 2017,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2018,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2019,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2020,
-          "per_10k": 0.62
-        },
-        {
-          "year": 2021,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2022,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2023,
-          "per_10k": 1.43
-        },
-        {
-          "year": 2024,
-          "per_10k": 0.8
-        },
-        {
-          "year": 2025,
-          "per_10k": 0.0
-        },
-        {
-          "year": 2026,
-          "per_10k": 0.86
+          "frequency": 3.45
         }
       ]
     }

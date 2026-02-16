@@ -392,11 +392,13 @@ reason: [max 12 words OR "none" if neutral]
 
 ## Word frequency analysis
 
-To track how Budget vocabulary evolved, all paragraphs were tokenised and word frequencies calculated for two periods: 1965–1975 (early era) and 2016–2026 (recent era). Raw counts were normalised to mentions per 10,000 words to account for varying speech lengths across years.
+To track how Budget vocabulary evolved, all speeches were tokenised and word frequencies calculated for two periods: 1965–1975 (early era) and 2017–2026 (recent era). Raw counts were normalised to mentions per 10,000 words to account for varying speech lengths across years. UK spellings were also normalised to US variants (e.g. "programme" → "program", "defence" → "defense") to avoid double-counting.
 
-Rising and declining words were identified by comparing the multiplier change between periods. For example, "support" increased from 2.0 to 70.4 mentions per 10,000 words — a 36× increase.
+Rising and declining words were identified by comparing the change in mean frequency between periods. For example, "support" increased from 1.9 to 60.3 mentions per 10,000 words — a 32× increase.
 
-In calculating the finance minister "pet words", the corpus was grouped by minister and words were ranked by how distinctively each FM used them compared to others. This surfaced vocabulary fingerprints: Goh Keng Swee spoke of military and battalions; Tony Tan introduced computer and automation; Lawrence Wong emphasises green and carbon.
+In calculating the finance minister "pet words", the corpus was grouped by minister and words were ranked by how distinctively each FM used them compared to others. This surfaced vocabulary fingerprints across all 10 finance ministers: Goh Keng Swee spoke of military and battalions; Tony Tan spoke automation and robots; Lawrence Wong now speaks of assurance and vouchers.
+
+A separate analysis identified words that persisted across all seven decades — effort, skills, training, competitive, improve, productivity — suggesting an enduring expectation of self-improvement that runs through every era, regardless of who delivers the speech.
 
 --- 
 
