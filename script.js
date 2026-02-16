@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         );
 
         generateStorySections();
+        // Re-cache explore section after it's created by generateStorySections()
+        domElements.exploreSection = document.querySelector('[data-step="explore"]');
         initVisualization();
         setupScrollTriggers();
         // Native D3 event handlers on dots handle hover/click
@@ -635,9 +637,9 @@ function initVisualization() {
         });
     }
 
-    // Dots
+    // Dots - use key function for stable data binding across resize
     dots = svg.selectAll('.dot')
-        .data(filteredParagraphs)
+        .data(filteredParagraphs, d => `${d.year}_${d.fm_name}_${d.text.slice(0,20)}`)
         .join('rect')
         .attr('class', 'dot')
         .attr('x', d => d.xPos - dotSize / 2)
@@ -667,7 +669,6 @@ function initVisualization() {
         })
         .on('mouseenter', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
-            if (!d.primary_value || d.primary_value === 'none') return;
 
             // Clear pending hide timeout
             if (window.hoverPanelTimeout) {
@@ -683,7 +684,6 @@ function initVisualization() {
         })
         .on('mouseleave', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
-            if (!d.primary_value || d.primary_value === 'none') return;
 
             // Delay hiding panel and removing selection
             window.hoverPanelTimeout = setTimeout(() => {
@@ -693,7 +693,6 @@ function initVisualization() {
         })
         .on('click', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
-            if (!d.primary_value || d.primary_value === 'none') return;
 
             // Clear previous, select this one
             d3.selectAll('.dot.selected').classed('selected', false);
@@ -746,7 +745,7 @@ function setupScrollTriggers() {
                 // Add delay so readers can read the explore card first
                 // On mobile, interactive mode is enabled but CSS allows scrolling
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown && !userExitedInteractiveMode) {
+                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout) {
 
                         window.interactiveModeTimeout = setTimeout(() => {
                             document.body.classList.add('interactive-mode');
@@ -776,42 +775,31 @@ function setupScrollTriggers() {
                         }, 300); // Quick trigger to prevent chart scrolling away
                     }
                 } else {
-                    // Not intersecting - cancel pending timeout and disable interactive mode only if not scrolled past
+                    // Not intersecting - cancel pending timeout
                     if (window.interactiveModeTimeout) {
                         clearTimeout(window.interactiveModeTimeout);
                         window.interactiveModeTimeout = null;
                     }
 
+                    // Check if user scrolled PAST the explore section (not above it)
+                    // If past, keep/enable interactive mode so chart stays visible
                     const rect = entry.boundingClientRect;
-                    // On desktop, don't auto-disable interactive mode - user must explicitly exit
-                    // This prevents flickering when IntersectionObserver fires during interactive mode
-                    const isDesktop = window.innerWidth > 768;
-                    if (rect.bottom > 0 && rect.top > window.innerHeight * 0.5) {
-                        // User scrolled back up past explore section - reset the exit flag
-                        userExitedInteractiveMode = false;
-                        // Haven't reached it yet - only disable if not in cooldown
-                        // On desktop, only disable if user explicitly exited (not from observer)
-                        if (!interactiveModeCooldown && !isDesktop) {
-                            document.body.classList.remove('interactive-mode');
-                        }
-                    } else {
-                        // Scrolled past - enable interactive mode immediately (in case timeout was cancelled)
-                        // On mobile, interactive mode is enabled but CSS allows scrolling
-                        if (!document.body.classList.contains('interactive-mode') && !interactiveModeCooldown && !userExitedInteractiveMode) {
-                            document.body.classList.add('interactive-mode');
-                            domElements.currentEra.textContent = 'Your turn';
-                            const isMobileHeader2 = window.innerWidth <= 768;
-                            domElements.currentContext.textContent = isMobileHeader2
-                                ? 'Tap any square to see the paragraph it represents.'
-                                : 'Hover over any square to see the paragraph it represents.';
+                    const isAboveExploreSection = rect.top > window.innerHeight * 0.5;
 
-                            // Make all dots visible
-                            if (dots) {
-                                dots.attr('opacity', 0.9);
-                            }
-                            if (svg) {
-                                svg.select('.highlight-box').attr('opacity', 0);
-                            }
+                    if (!isAboveExploreSection && !document.body.classList.contains('interactive-mode')) {
+                        // User scrolled past explore section - enable interactive mode
+                        document.body.classList.add('interactive-mode');
+                        domElements.currentEra.textContent = 'Your turn';
+                        const isMobileHeader = window.innerWidth <= 768;
+                        domElements.currentContext.textContent = isMobileHeader
+                            ? 'Tap any square to see the paragraph it represents.'
+                            : 'Hover over any square to see the paragraph it represents.';
+
+                        if (dots) {
+                            dots.attr('opacity', 0.9);
+                        }
+                        if (svg) {
+                            svg.select('.highlight-box').attr('opacity', 0);
                         }
                     }
                 }
@@ -823,6 +811,37 @@ function setupScrollTriggers() {
     } else {
         console.error('❌ Explore section not found! Interactive mode will not work.');
     }
+
+    // Fallback: Check on scroll if we've passed the explore section (for fast scrollers)
+    let scrollCheckThrottled = false;
+    window.addEventListener('scroll', () => {
+        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode')) return;
+        scrollCheckThrottled = true;
+
+        requestAnimationFrame(() => {
+            const exploreEl = document.querySelector('[data-step="explore"]');
+            if (exploreEl) {
+                const rect = exploreEl.getBoundingClientRect();
+                // If explore section is above the viewport (scrolled past it)
+                if (rect.bottom < window.innerHeight * 0.3) {
+                    document.body.classList.add('interactive-mode');
+                    domElements.currentEra.textContent = 'Your turn';
+                    const isMobileHeader = window.innerWidth <= 768;
+                    domElements.currentContext.textContent = isMobileHeader
+                        ? 'Tap any square to see the paragraph it represents.'
+                        : 'Hover over any square to see the paragraph it represents.';
+
+                    if (dots) {
+                        dots.attr('opacity', 0.9);
+                    }
+                    if (svg) {
+                        svg.select('.highlight-box').attr('opacity', 0);
+                    }
+                }
+            }
+            scrollCheckThrottled = false;
+        });
+    }, { passive: true });
 }
 
 function highlightYearRange(start, end) {
@@ -916,7 +935,12 @@ function unpinQuote() {
 
 // Resize (also handles orientation change)
 window.addEventListener('resize', debounce(() => {
-    domElements.timelineViz.innerHTML = '';
+    // Proper D3 cleanup to prevent orphaned event listeners
+    if (svg) {
+        svg.remove();
+        svg = null;
+        dots = null;
+    }
     initVisualization();
 }, 250));
 
@@ -941,15 +965,7 @@ document.addEventListener('click', function(e) {
 
 
 // Exit interactive mode and allow free scrolling
-let interactiveModeCooldown = false;
-let userExitedInteractiveMode = false; // Track if user manually exited
-
 function exitInteractiveMode() {
-
-    // Set cooldown to prevent immediate re-trigger
-    interactiveModeCooldown = true;
-    userExitedInteractiveMode = true; // User manually exited, don't auto-enable again
-
     // Remove overflow:hidden so we can scroll
     document.body.style.overflow = '';
     document.body.classList.remove('interactive-mode');
@@ -957,11 +973,6 @@ function exitInteractiveMode() {
     // Hide hover panel
     const panel = domElements.hoverPanel;
     if (panel) panel.classList.add('hidden');
-
-    // Clear cooldown after 3 seconds
-    setTimeout(() => {
-        interactiveModeCooldown = false;
-    }, 3000);
 }
 
 // Exit interactive mode and scroll to top (for mobile button)
@@ -971,32 +982,11 @@ function exitInteractiveModeAndScrollTop() {
 }
 
 // Allow scrolling up to exit interactive mode (desktop)
-// Track cumulative scroll to require sustained scrolling
-let cumulativeScrollUp = 0;
-let scrollResetTimeout = null;
-
 document.addEventListener('wheel', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
 
-    // Reset cumulative scroll after 500ms of no scrolling
-    if (scrollResetTimeout) {
-        clearTimeout(scrollResetTimeout);
-    }
-    scrollResetTimeout = setTimeout(() => {
-        cumulativeScrollUp = 0;
-    }, 500);
-
-    // Only track upward scrolling (negative deltaY)
-    if (e.deltaY < 0) {
-        cumulativeScrollUp += Math.abs(e.deltaY);
-    } else {
-        // Scrolling down resets the counter
-        cumulativeScrollUp = 0;
-    }
-
-    // Require significant sustained upward scroll to exit (300+ pixels worth)
-    if (cumulativeScrollUp > 300) {
-        cumulativeScrollUp = 0;
+    // Significant upward scroll exits interactive mode
+    if (e.deltaY < -100) {
         exitInteractiveMode();
     }
 }, { passive: true });
@@ -1010,24 +1000,20 @@ document.addEventListener('keydown', function(e) {
 
 // Touch swipe to exit interactive mode (mobile)
 let touchStartY = 0;
-let touchStartTime = 0;
 
 document.addEventListener('touchstart', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
     touchStartY = e.touches[0].clientY;
-    touchStartTime = Date.now();
 }, { passive: true });
 
 document.addEventListener('touchend', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
 
     const touchEndY = e.changedTouches[0].clientY;
-    const touchEndTime = Date.now();
     const deltaY = touchEndY - touchStartY;
-    const deltaTime = touchEndTime - touchStartTime;
 
     // Detect swipe down (finger moves down = scroll up intent) - quick swipe of at least 50px
-    if (deltaY > 50 && deltaTime < 300) {
+    if (deltaY > 50) {
         exitInteractiveMode();
     }
 }, { passive: true });
