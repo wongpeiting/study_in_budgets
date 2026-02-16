@@ -305,7 +305,7 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Seniors. Singaporeans. Families. The language began to name who support was for."
+      "reflection": "Support. Help. Families. Seniors. The language shifted to name who the government serves."
     },
     {
       "id": "support_stat",
@@ -317,20 +317,20 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "By 2016-2026, it appeared 70 times per 10,000 words. The government now uses the language of support 36 times more often than it did at independence."
+      "reflection": "By 2017-2026, it appeared 60 times per 10,000 words. The government now uses the language of support 32 times more often than it did at independence."
     },
     {
       "id": "words_declining",
       "year_range": [1965, 2026],
       "era_label": "↓ Declining",
-      "title": "Words that used to be everywhere",
+      "title": "Words that have faded over time",
       "type": "word_trends",
       "trend_type": "declining",
-      "setup": "These words dominated early speeches. Now they've almost vanished.",
+      "setup": "These words were central to early speeches. Now they occur infrequently.",
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Expenditure. Development. Trade. Industrial. The nation-building language receded."
+      "reflection": "Trade. Export. Manufacturing. Construction. The language of nation-building faded."
     },
     {
       "id": "fm_fingerprints",
@@ -342,16 +342,18 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "From battalions to seniors. From unemployment to resilience. Each era spoke to its own anxieties.",
+      "reflection": "First battalions. Now vouchers.",
       "fm_words": [
-        {"fm": "Lim Kim San", "era": "1960s", "words": "separation, malaysia, urban"},
-        {"fm": "Goh Keng Swee", "era": "1960s-70s", "words": "military, battalions, unemployed"},
-        {"fm": "Hon Sui Sen", "era": "1970s-80s", "words": "monetary, currency, entrepot"},
-        {"fm": "Tony Tan", "era": "1980s", "words": "computer, automation, software"},
-        {"fm": "Richard Hu", "era": "1980s-90s", "words": "competitiveness, incentive, regional"},
-        {"fm": "Tharman", "era": "2000s-10s", "words": "workfare, elderly, incomes"},
-        {"fm": "Heng Swee Keat", "era": "2010s-20s", "words": "digital, transformation, resilience"},
-        {"fm": "Lawrence Wong", "era": "2020s", "words": "assurance, shared, seniors"}
+        {"fm": "Lim Kim San", "era": "1960s", "words": "separation, urban, authorities"},
+        {"fm": "Goh Keng Swee", "era": "1960s-70s", "words": "military, battalions, army"},
+        {"fm": "Hon Sui Sen", "era": "1970s", "words": "monetary, dollar, inflationary"},
+        {"fm": "Goh Chok Tong", "era": "1979-81", "words": "house, eighties, schedule"},
+        {"fm": "Tony Tan", "era": "1980s", "words": "automation, software, robots"},
+        {"fm": "Richard Hu", "era": "1985-2001", "words": "securities, competitiveness, incentive"},
+        {"fm": "Lee Hsien Loong", "era": "2000s", "words": "entrepreneurship, talent, creative"},
+        {"fm": "Tharman", "era": "2007-15", "words": "workfare, elderly, medishield"},
+        {"fm": "Heng Swee Keat", "era": "2016-21", "words": "digital, transformation, safe"},
+        {"fm": "Lawrence Wong", "era": "2020s", "words": "assurance, vouchers, preschool"}
       ]
     },
     {
@@ -364,14 +366,14 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "The tone changed. The demand did not.",
+      "reflection": "The language of self-improvement runs through every decade.",
       "word_data": [
-        {"word": "effort", "rates": [8.0, 8.1, 10.5, 4.9, 7.5, 11.3, 11.0]},
-        {"word": "train", "rates": [15.5, 19.0, 19.6, 4.8, 8.0, 10.6, 14.7]},
-        {"word": "skill", "rates": [3.3, 11.3, 15.6, 6.7, 8.9, 20.3, 21.0]},
-        {"word": "competitive", "rates": [2.2, 2.1, 11.3, 13.6, 14.7, 5.2, 4.5]},
-        {"word": "improve", "rates": [4.2, 11.5, 10.5, 8.2, 6.3, 10.9, 5.1]},
-        {"word": "contribute", "rates": [1.1, 2.7, 1.5, 2.9, 3.8, 3.1, 3.2]}
+        {"word": "effort", "rates": [5.3, 2.3, 3.8, 2.0, 2.1, 3.8, 2.6]},
+        {"word": "skills", "rates": [1.4, 5.9, 8.0, 4.3, 5.4, 12.3, 13.4]},
+        {"word": "training", "rates": [12.5, 15.0, 15.8, 3.4, 6.6, 8.4, 10.0]},
+        {"word": "competitive", "rates": [1.9, 1.4, 6.0, 8.1, 9.1, 3.7, 3.7]},
+        {"word": "improve", "rates": [2.2, 3.3, 5.2, 4.2, 3.6, 6.1, 2.9]},
+        {"word": "productivity", "rates": [1.9, 4.2, 13.6, 4.3, 1.9, 19.2, 3.5]}
       ],
       "decades": ["60s", "70s", "80s", "90s", "00s", "10s", "20s"]
     },
@@ -400,18 +402,18 @@
   "stats": {
     "headline": {
       "word": "support",
-      "then_rate": "2.0",
-      "now_rate": "70.4",
-      "multiplier": "36x",
+      "then_rate": "1.9",
+      "now_rate": "60.3",
+      "multiplier": "32x",
       "unit": "per 10,000 words"
     },
     "then": {
       "year": "1965-1975",
-      "top_words": "expenditure, development, trade"
+      "top_words": "million, cent, per, expenditure"
     },
     "now": {
-      "year": "2016-2026",
-      "top_words": "support, Singaporeans, help, workers"
+      "year": "2017-2026",
+      "top_words": "support, Singaporeans, help, provide"
     }
   }
 }
