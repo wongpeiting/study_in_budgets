@@ -61,7 +61,7 @@
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Under Lee Kuan Yew, promises barely outweighed demands.<br>By Lawrence Wong's era, promises outnumber demands by more than 2 to 1.",
+      "reflection": "Under Lee Kuan Yew, promises barely outweighed demands.<br>By Lawrence Wong’s era, there were nearly three promises for every demand.",
       "pm_data": [
         {"pm": "Lee Kuan Yew", "years": "1965-1990", "promises": 501, "demands": 418, "ratio": 54.5},
         {"pm": "Goh Chok Tong", "years": "1991-2004", "promises": 623, "demands": 329, "ratio": 65.4},
@@ -82,7 +82,7 @@
       "year_range": [1965, 1975],
       "era_label": "1965–1975",
       "title": "\"The world owes us nothing\"",
-      "setup": "Singapore had just been kicked out of Malaysia. There was no safety net. The message was clear:",
+      "setup": "Singapore had just separated from Malaysia. There was no safety net. The message was clear:",
       "quote": "This confidence must not lead our people, whether entrepreneurs, or trade unionists, into believing that the world owes us a living and that things will always be all right. They will be all right only if we are constantly alert, efficient and striving.",
       "speaker": "Lim Kim San",
       "year": 1966,
@@ -104,11 +104,11 @@
       "year_range": [1965, 1975],
       "era_label": "1965",
       "title": "\"An inhospitable swamp\"",
-      "setup": "The government invoked Singapore's pioneers:",
+      "setup": "The government invoked Singapore's forefathers:",
       "quote": "What is now needed is a return to the pioneering spirit of our forefathers who by their dynamism, hard work, and self-sacrifice turned what was an inhospitable swamp into the largest port in South-East Asia.",
       "speaker": "Lim Kim San",
       "year": 1965,
-      "reflection": "If the pioneers endured, so should you."
+      "reflection": "If the forefathers endured, so should you."
     },
     {
       "id": "nation_building",
@@ -126,7 +126,7 @@
       "year_range": [1976, 1985],
       "era_label": "1979",
       "title": "\"To achieve nirvana, you must first experience pain\"",
-      "setup": "Even good news came with a warning:",
+      "setup": "A painless Budget still came with a lecture:",
       "quote": "It is a completely painless budget, and even mildly pleasurable. But there is a moral to this, and that is, to achieve nirvana you must first experience pain. We have all worked hard in the past. We have all made sacrifices. We have never flinched from the harsh realities of the world.",
       "speaker": "Goh Chok Tong",
       "year": 1979,
@@ -137,7 +137,7 @@
       "year_range": [1997, 2009],
       "era_label": "1997–2009",
       "title": "The turning point",
-      "setup": "Then came the Asian Financial Crisis. For the first time, the government acknowledged people needed help:",
+      "setup": "Then came the Asian Financial Crisis. The government more readily acknowledged that people needed help:",
       "quote": "Government is mindful of the difficulties faced by individuals and households in the current economic downturn. The cost-cutting package announced in November 1998 was focused mainly on reducing business costs. I will therefore be announcing several measures to help individuals.",
       "speaker": "Richard Hu",
       "year": 1999,
@@ -152,7 +152,7 @@
       "quote": "A key feature in this year's Budget is the Pioneer Generation Package. As the Prime Minister has stated, we are honouring this unique generation of Singaporeans who built up the country.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2014,
-      "reflection": "What was once framed as duty was now framed as something to be repaid."
+      "reflection": "The state moved from exhorting sacrifice to honouring it."
     },
     {
       "id": "covid_crisis",
