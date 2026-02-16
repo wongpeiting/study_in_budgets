@@ -2,7 +2,7 @@
 
 As a reporter who used to follow government speeches closely for [work](https://www.straitstimes.com/authors/wong-pei-ting), I do very so often detect some very slight shifts in messaging that I found interesting. As we can imagine such changes are usually gradual, so it would take an analysis of years-long of speeches before we can really pin down a pivot. This project is born from this place of curiosity, where I question if I could devise a text analysis pipeline that can open up a quantitative way of confirming (or disproving) some of these hunches.
 
-Since Prime Minister Lawrence Wong was set to deliver the 2026 Budget speech on Feb 12, I hopped on a mission to collect all the 67 Budget speeches delivered in Singapore since independence in 1965, so I could begin testing if it was indeed possible for me to find patterns in a corpus of words. The journey was an iterative one fraught with experimental design flaws, data cleaning challenges and LLM classification inaccuracies. 
+Since Prime Minister Lawrence Wong was set to deliver the 2026 Budget speech on Feb 12, I hopped on a mission to collect all the 67 Budget speeches delivered in Singapore since independence in 1965, so I could begin testing if it was indeed possible for me to find patterns in a corpus of words. The journey was an iterative one fraught with early framing uncertainty, data cleaning challenges (not insurmountable, just tedious) and LLM classification issues. 
 
 After three weeks of mucking around, including testing if I could somehow find patterns with the use of a [semantic map](https://github.com/TowCenter/semantic-map), I got inspired by The Pudding's *[In Pursuit of Democracy](https://pudding.cool/2025/11/democracy/)* project, in which Alvin Chang focused on testing just one thing – how the idea of democracy shifted within a body of congressional speeches.
 
@@ -31,7 +31,7 @@ After the speeches were collected, they were manually cleaned to remove non-subs
 
 By the end of this process, the corpus comprised roughly 700,000 words across 11,559 paragraphs. Metadata for each speech - including the finance minister, date of delivery and presiding prime minister - was appended at the paragraph level in a CSV file prior to AI augmentation.
 
-### LLM classification
+## LLM classification
 
 Each paragraph was classified using Google's Gemini 2.0 Flash into five categories:
 
@@ -419,7 +419,9 @@ At the end of the narrative, the chart becomes interactive: readers can hover ov
 
 ## Credits
 
-This project lived many lives during its three production weeks. In one of the earlier explorations, Sanjaay Babu (Duke '29) and Bhuvan Anantham (LSE '28) helped with data cleaning and metadata generation, contributing greatly to the polish of this final iteration.
+This project lived many lives during its three production weeks. In one of the earlier explorations, Sanjaay Babu (Duke '29) and Bhuvan Anantham (LSE '28) helped with data cleaning and metadata generation, contributing greatly to the polish of this final iteration. 
+
+Charmaine Yap (Columbia Law '26), without whom this project would not have materialised, contributed editorial inputs, while my professors at Columbia Journalism School, Jonathan Soma and Dhrumil Mehta, oversaw the production of this piece, including attending to my cries for help in the middle of the day/ night.
 
 --- 
 
