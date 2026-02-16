@@ -1017,3 +1017,84 @@ document.addEventListener('touchend', function(e) {
         exitInteractiveMode();
     }
 }, { passive: true });
+
+// Section Navigation
+(function() {
+    const sectionNav = document.getElementById('section-nav');
+    if (!sectionNav) return;
+
+    const navItems = sectionNav.querySelectorAll('.nav-item');
+    const sectionIds = ['how_to_read', 'early_decades_intro', 'turning_point', 'new_normal_intro', 'word_trends_intro', 'explore'];
+
+    // Show nav after scrolling past hero
+    function updateNavVisibility() {
+        const scrollY = window.scrollY;
+        const heroHeight = document.querySelector('.hero')?.offsetHeight || 500;
+
+        if (scrollY > heroHeight * 0.5 && !document.body.classList.contains('interactive-mode')) {
+            sectionNav.classList.add('visible');
+        } else {
+            sectionNav.classList.remove('visible');
+        }
+    }
+
+    // Update active section indicator
+    function updateActiveSection() {
+        const scrollY = window.scrollY + window.innerHeight * 0.4;
+
+        let activeSection = null;
+
+        // Find which section is currently in view
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+            const el = document.querySelector(`[data-step="${sectionIds[i]}"]`);
+            if (el && el.offsetTop <= scrollY) {
+                activeSection = sectionIds[i];
+                break;
+            }
+        }
+
+        navItems.forEach(item => {
+            const section = item.dataset.section;
+            if (section === activeSection) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // Smooth scroll to section
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = item.dataset.section;
+            const targetEl = document.querySelector(`[data-step="${sectionId}"]`);
+
+            if (targetEl) {
+                // Exit interactive mode if active
+                if (document.body.classList.contains('interactive-mode')) {
+                    exitInteractiveMode();
+                }
+
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
+
+    // Throttled scroll handler
+    let scrollThrottled = false;
+    window.addEventListener('scroll', () => {
+        if (scrollThrottled) return;
+        scrollThrottled = true;
+
+        requestAnimationFrame(() => {
+            updateNavVisibility();
+            updateActiveSection();
+            scrollThrottled = false;
+        });
+    }, { passive: true });
+
+    // Initial check
+    updateNavVisibility();
+    updateActiveSection();
+})();
