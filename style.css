@@ -749,6 +749,7 @@ body.interactive-mode {
 /* FM Table */
 .fm-table-content {
     max-width: 480px;
+    margin-top: 8rem;
 }
 
 .fm-table {
@@ -1490,7 +1491,7 @@ body.interactive-mode .methodology-link {
 
     /* Sticky viz container - minimal padding for max chart space */
     .sticky-viz {
-        padding: 0.5rem 0.5rem 0 0.5rem;
+        padding: 1.5rem 0.5rem 0 0.5rem;
         justify-content: flex-start;
     }
 
@@ -1703,7 +1704,7 @@ body.interactive-mode .methodology-link {
     }
 
     .sticky-viz {
-        padding: 0.5rem 0.35rem 0 0.35rem;
+        padding: 1.5rem 0.35rem 0 0.35rem;
     }
 
     .viz-header {
