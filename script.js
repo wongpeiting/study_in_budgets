@@ -1032,11 +1032,21 @@ document.addEventListener('touchend', function(e) {
     // Mobile nav items
     const mobileNavItems = mobileNavMenu ? mobileNavMenu.querySelectorAll('.mobile-nav-item') : [];
 
-    // Show nav after scrolling past hero
+    // Show nav after scrolling past hero, hide when explore section has scrolled mostly out of view
     function updateNavVisibility() {
         const scrollY = window.scrollY;
         const heroHeight = document.querySelector('.hero')?.offsetHeight || 500;
-        const isVisible = scrollY > heroHeight * 0.5 && !document.body.classList.contains('interactive-mode');
+
+        // Check if explore section has scrolled past (hide nav when user is fully in explore mode)
+        const exploreEl = document.querySelector('[data-step="explore"]');
+        let exploreHasScrolledPast = false;
+        if (exploreEl) {
+            const rect = exploreEl.getBoundingClientRect();
+            // Hide nav when explore section's top is above 20% of viewport (user has scrolled past it)
+            exploreHasScrolledPast = rect.top < window.innerHeight * 0.2 && rect.bottom < window.innerHeight * 0.5;
+        }
+
+        const isVisible = scrollY > heroHeight * 0.5 && !exploreHasScrolledPast;
 
         if (sectionNav) {
             sectionNav.classList.toggle('visible', isVisible);
