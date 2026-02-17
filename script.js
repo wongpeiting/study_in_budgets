@@ -32,6 +32,9 @@ function initDomElements() {
     domElements.exploreSection = document.querySelector('[data-step="explore"]');
 }
 
+// Track currently selected dot for optimized hover handling
+let selectedDot = null;
+
 // Responsive sizing helper
 function getResponsiveConfig() {
     const width = window.innerWidth;
@@ -677,7 +680,10 @@ function initVisualization() {
             }
 
             // Clear previous selection, add new selection using class
-            d3.selectAll('.dot.selected').classed('selected', false);
+            if (selectedDot && selectedDot !== this) {
+                d3.select(selectedDot).classed('selected', false);
+            }
+            selectedDot = this;
             d3.select(this).classed('selected', true).raise();
 
             showHoverPanel(d);
@@ -687,7 +693,10 @@ function initVisualization() {
 
             // Delay hiding panel and removing selection
             window.hoverPanelTimeout = setTimeout(() => {
-                d3.selectAll('.dot.selected').classed('selected', false);
+                if (selectedDot) {
+                    d3.select(selectedDot).classed('selected', false);
+                    selectedDot = null;
+                }
                 hideHoverPanel();
             }, 150);
         })
@@ -695,7 +704,10 @@ function initVisualization() {
             if (!document.body.classList.contains('interactive-mode')) return;
 
             // Clear previous, select this one
-            d3.selectAll('.dot.selected').classed('selected', false);
+            if (selectedDot && selectedDot !== this) {
+                d3.select(selectedDot).classed('selected', false);
+            }
+            selectedDot = this;
             d3.select(this).classed('selected', true);
 
             showHoverPanel(d);
@@ -762,6 +774,7 @@ function setupScrollTriggers() {
                                 dots.transition()
                                     .duration(400)
                                     .attr('opacity', 0.9);
+                                dots.style('pointer-events', 'auto');
                             }
                             // Remove highlight box
                             if (svg) {
@@ -797,6 +810,7 @@ function setupScrollTriggers() {
 
                         if (dots) {
                             dots.attr('opacity', 0.9);
+                            dots.style('pointer-events', 'auto');
                         }
                         if (svg) {
                             svg.select('.highlight-box').attr('opacity', 0);
@@ -969,6 +983,14 @@ function exitInteractiveMode() {
     // Remove overflow:hidden so we can scroll
     document.body.style.overflow = '';
     document.body.classList.remove('interactive-mode');
+
+    // Reset pointer-events on dots
+    if (dots) {
+        dots.style('pointer-events', null);
+    }
+
+    // Reset selected dot tracking
+    selectedDot = null;
 
     // Hide hover panel
     const panel = domElements.hoverPanel;
