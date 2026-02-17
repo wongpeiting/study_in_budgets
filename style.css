@@ -1444,10 +1444,7 @@ body.interactive-mode .dot:hover {
     }
 }
 
-/* Hide when in interactive mode */
-body.interactive-mode .section-nav {
-    display: none;
-}
+/* Keep nav visible in interactive mode - positioned in corner, won't block dots */
 
 /* Mobile Section Navigator */
 .mobile-nav {
@@ -1537,10 +1534,7 @@ body.interactive-mode .section-nav {
     }
 }
 
-/* Hide mobile nav in interactive mode */
-body.interactive-mode .mobile-nav {
-    display: none;
-}
+/* Keep mobile nav visible in interactive mode */
 
 /* Fixed methodology link - only visible in interactive mode */
 .methodology-link {
