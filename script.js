@@ -967,11 +967,11 @@ function showHoverPanel(d) {
 
     const tag = panel.querySelector('.hover-panel-tag');
     if (d.primary_type === 'promise') {
-        tag.textContent = d.primary_value === 'citizen' ? 'Promises to you' : 'Promises to firms';
+        tag.textContent = d.primary_value === 'citizen' ? 'Promise to you' : 'Promise to firms';
         tag.style.background = d.primary_value === 'citizen' ? '#C44F4F' : '#E89898';
         tag.style.color = '#fff';
     } else if (d.primary_type === 'obligation') {
-        tag.textContent = d.primary_value === 'citizen' ? 'Asks of you' : 'Asks of firms';
+        tag.textContent = d.primary_value === 'citizen' ? 'Ask of you' : 'Ask of firms';
         tag.style.background = d.primary_value === 'citizen' ? '#2B4460' : '#6B8CAE';
         tag.style.color = '#fff';
     } else {
