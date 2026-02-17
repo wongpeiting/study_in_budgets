@@ -758,9 +758,10 @@ function setupScrollTriggers() {
                 // Add delay so readers can read the explore card first
                 // On mobile, interactive mode is enabled but CSS allows scrolling
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout) {
+                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
 
                         window.interactiveModeTimeout = setTimeout(() => {
+                            if (interactiveModeCooldown) return; // Double-check cooldown
                             document.body.classList.add('interactive-mode');
 
                             // Update header to show explore instructions
@@ -800,7 +801,7 @@ function setupScrollTriggers() {
                     const rect = entry.boundingClientRect;
                     const isAboveExploreSection = rect.top > window.innerHeight * 0.5;
 
-                    if (!isAboveExploreSection && !document.body.classList.contains('interactive-mode')) {
+                    if (!isAboveExploreSection && !document.body.classList.contains('interactive-mode') && !interactiveModeCooldown) {
                         // User scrolled past explore section - enable interactive mode
                         document.body.classList.add('interactive-mode');
                         domElements.currentEra.textContent = 'Your turn';
@@ -820,7 +821,7 @@ function setupScrollTriggers() {
                 }
             });
         }, {
-            threshold: [0, 0.1, 0.3, 0.5, 0.7, 1]
+            threshold: [0, 0.5] // Simplified: only trigger at 0% and 50% visibility
         });
         exploreObserver.observe(exploreSection);
     } else {
@@ -830,12 +831,12 @@ function setupScrollTriggers() {
     // Fallback: Check on scroll if we've passed the explore section (for fast scrollers)
     let scrollCheckThrottled = false;
     window.addEventListener('scroll', () => {
-        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode')) return;
+        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
         scrollCheckThrottled = true;
 
         requestAnimationFrame(() => {
             const exploreEl = document.querySelector('[data-step="explore"]');
-            if (exploreEl) {
+            if (exploreEl && !interactiveModeCooldown) {
                 const rect = exploreEl.getBoundingClientRect();
                 // If explore section is above the viewport (scrolled past it)
                 if (rect.bottom < window.innerHeight * 0.3) {
@@ -979,6 +980,9 @@ document.addEventListener('click', function(e) {
 });
 
 
+// Cooldown to prevent rapid mode toggling
+let interactiveModeCooldown = false;
+
 // Exit interactive mode and allow free scrolling
 function exitInteractiveMode() {
     // Remove overflow:hidden so we can scroll
@@ -996,6 +1000,12 @@ function exitInteractiveMode() {
     // Hide hover panel
     const panel = domElements.hoverPanel;
     if (panel) panel.classList.add('hidden');
+
+    // Set cooldown to prevent immediate re-entry
+    interactiveModeCooldown = true;
+    setTimeout(() => {
+        interactiveModeCooldown = false;
+    }, 1000); // 1 second cooldown
 }
 
 // Exit interactive mode and scroll to top (for mobile button)
@@ -1004,12 +1014,30 @@ function exitInteractiveModeAndScrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Allow scrolling up to exit interactive mode (desktop)
+// Track cumulative scroll for exit detection (desktop)
+let cumulativeWheelDelta = 0;
+let wheelResetTimeout = null;
+
 document.addEventListener('wheel', function(e) {
     if (!document.body.classList.contains('interactive-mode')) return;
 
-    // Significant upward scroll exits interactive mode
-    if (e.deltaY < -100) {
+    // Accumulate upward scroll delta
+    if (e.deltaY < 0) {
+        cumulativeWheelDelta += Math.abs(e.deltaY);
+    } else {
+        // Reset on downward scroll
+        cumulativeWheelDelta = 0;
+    }
+
+    // Reset accumulator after 500ms of no scrolling
+    clearTimeout(wheelResetTimeout);
+    wheelResetTimeout = setTimeout(() => {
+        cumulativeWheelDelta = 0;
+    }, 500);
+
+    // Only exit after sustained upward scroll (500px cumulative)
+    if (cumulativeWheelDelta > 500) {
+        cumulativeWheelDelta = 0;
         exitInteractiveMode();
     }
 }, { passive: true });
@@ -1021,7 +1049,8 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Touch swipe to exit interactive mode (mobile)
+// Touch swipe to exit interactive mode (mobile) - disabled to prevent accidental exits
+// Users can use the "Back to top" button instead
 let touchStartY = 0;
 
 document.addEventListener('touchstart', function(e) {
@@ -1035,8 +1064,8 @@ document.addEventListener('touchend', function(e) {
     const touchEndY = e.changedTouches[0].clientY;
     const deltaY = touchEndY - touchStartY;
 
-    // Detect swipe down (finger moves down = scroll up intent) - quick swipe of at least 50px
-    if (deltaY > 50) {
+    // Only exit on very deliberate long swipe (200px+) to prevent accidental exits
+    if (deltaY > 200) {
         exitInteractiveMode();
     }
 }, { passive: true });
