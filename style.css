@@ -456,8 +456,8 @@ body.interactive-mode {
 
 .word-change-multiplier {
     text-align: center;
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--accent);
     margin-top: 0.75rem;
 }
