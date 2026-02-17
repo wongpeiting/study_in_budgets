@@ -1199,7 +1199,6 @@ body.interactive-mode .dot {
 
 body.interactive-mode .dot:hover {
     opacity: 1;
-    filter: brightness(1.1);
 }
 
 /* Responsive */
