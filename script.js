@@ -606,10 +606,10 @@ function initVisualization() {
     // Legend (subtle, on left side) - hide on mobile (CSS legend used instead)
     if (!config.hideSvgLegend) {
         const legendData = [
-            { label: 'Promises to you', color: '#C44F4F' },
-            { label: 'Promises to firms', color: '#E89898' },
-            { label: 'Asks of you', color: '#2B4460' },
-            { label: 'Asks of firms', color: '#6B8CAE' }
+            { label: 'Promise to you', color: '#C44F4F' },
+            { label: 'Promise to firms', color: '#E89898' },
+            { label: 'Ask of you', color: '#2B4460' },
+            { label: 'Ask of firms', color: '#6B8CAE' }
         ];
 
         const legendX = 30;
