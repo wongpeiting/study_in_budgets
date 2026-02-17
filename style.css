@@ -756,8 +756,8 @@ body.interactive-mode {
 .fm-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.8rem;
+    margin: 0.6rem 0;
+    font-size: 0.7rem;
 }
 
 .fm-table thead {
@@ -1227,6 +1227,7 @@ body.interactive-mode .dot:hover {
 .scroll-spacer {
     height: 200vh;
     background: var(--bg);
+    pointer-events: none; /* Don't block taps on the fixed chart below */
 }
 
 /* Credits and Methodology Section */
