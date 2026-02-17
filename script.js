@@ -45,7 +45,7 @@ function getResponsiveConfig() {
     return {
         dotSize: isSmallMobile ? 2.2 : (isMobile ? 2.8 : 3.3),
         dotGap: isSmallMobile ? 0.3 : (isMobile ? 0.4 : 0.6),
-        marginTop: isSmallMobile ? 20 : (isMobile ? 30 : 240),
+        marginTop: isSmallMobile ? 55 : (isMobile ? 65 : 240),
         marginRight: isMobile ? 10 : 25,
         marginBottom: isSmallMobile ? 30 : (isMobile ? 40 : 50),
         marginLeft: isMobile ? 10 : 25,
