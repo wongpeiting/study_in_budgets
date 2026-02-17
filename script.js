@@ -958,6 +958,17 @@ window.addEventListener('resize', debounce(() => {
         dots = null;
     }
     initVisualization();
+
+    // If we're in interactive mode, re-apply settings to new dots
+    if (document.body.classList.contains('interactive-mode')) {
+        if (dots) {
+            dots.style('pointer-events', 'auto');
+            dots.attr('opacity', 0.9);
+        }
+        if (svg) {
+            svg.select('.highlight-box').attr('opacity', 0);
+        }
+    }
 }, 250));
 
 function debounce(fn, wait) {
