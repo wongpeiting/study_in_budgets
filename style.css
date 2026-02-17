@@ -1150,10 +1150,9 @@ body.interactive-mode .step-explore {
     display: none;
 }
 
-/* Dots - Non-interactive during story, enabled in interactive mode */
+/* Dots - Always receive events, handlers check for interactive-mode */
 .dot {
     transition: opacity 0.2s ease, transform 0.15s ease;
-    pointer-events: none;
     cursor: default;
 }
 
