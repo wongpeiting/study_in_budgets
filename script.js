@@ -755,10 +755,10 @@ function setupScrollTriggers() {
     if (exploreSection) {
         const exploreObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Enable interactive mode when explore section is mostly visible (50%+)
-                // Add delay so readers can read the explore card first
+                // Enable interactive mode when explore section starts entering (20%+)
+                // Quick transition to prevent sticky chart from scrolling away
                 // On mobile, interactive mode is enabled but CSS allows scrolling
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
                     if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
 
                         window.interactiveModeTimeout = setTimeout(() => {
@@ -788,7 +788,7 @@ function setupScrollTriggers() {
                             }
 
                             window.interactiveModeTimeout = null;
-                        }, 300); // Quick trigger to prevent chart scrolling away
+                        }, 50); // Very quick - prevents chart from scrolling out of view
                     }
                 } else {
                     // Not intersecting - cancel pending timeout
@@ -822,7 +822,7 @@ function setupScrollTriggers() {
                 }
             });
         }, {
-            threshold: [0, 0.5] // Simplified: only trigger at 0% and 50% visibility
+            threshold: [0, 0.2, 0.5] // Trigger at 20% for positioning, 50% for fallback
         });
         exploreObserver.observe(exploreSection);
     } else {

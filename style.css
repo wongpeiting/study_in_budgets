@@ -1787,15 +1787,15 @@ body.interactive-mode .methodology-link {
         font-size: 0.6rem;
     }
     
-    /* Hover panel - centered on mobile */
+    /* Hover panel - top-aligned on mobile to avoid covering dots */
     .hover-panel {
         width: 85vw;
         max-width: 320px;
         padding: 0.75rem;
-        top: 50%;
+        top: 1rem;
         bottom: auto;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
     }
 
     /* Methodology link - centered below legend */
@@ -1833,11 +1833,11 @@ body.interactive-mode .methodology-link {
     }
 
     .hover-panel.hidden {
-        transform: translate(-50%, -50%) scale(0.95);
+        transform: translateX(-50%) translateY(-10px);
         opacity: 0;
     }
-    
-    
+
+
     /* Year progress bar */
     .year-progress {
         padding: 0 5%;
@@ -1942,9 +1942,9 @@ body.interactive-mode .methodology-link {
         max-width: 300px;
         left: 50%;
         padding: 0.5rem 0.6rem;
-        top: 50%;
+        top: 1rem;
         bottom: auto;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
     }
 
     .methodology-link {
@@ -1980,7 +1980,7 @@ body.interactive-mode .methodology-link {
     }
 
     .hover-panel.hidden {
-        transform: translate(-50%, -50%) scale(0.95);
+        transform: translateX(-50%) translateY(-10px);
         opacity: 0;
     }
 }
