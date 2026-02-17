@@ -692,14 +692,14 @@ function initVisualization() {
         .on('mouseleave', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
 
-            // Delay hiding panel and removing selection
+            // Delay hiding panel and removing selection (longer delay for mobile)
             window.hoverPanelTimeout = setTimeout(() => {
                 if (selectedDot) {
                     d3.select(selectedDot).classed('selected', false);
                     selectedDot = null;
                 }
                 hideHoverPanel();
-            }, 150);
+            }, 500);
         })
         .on('click', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
@@ -985,7 +985,10 @@ document.addEventListener('click', function(e) {
     const panel = domElements.hoverPanel;
     // If panel is pinned and click is outside the panel and not on a dot
     if (panel && panel.classList.contains('pinned')) {
-        if (!panel.contains(e.target) && !e.target.classList.contains('dot')) {
+        // Check for dot class (works for both HTML and SVG elements)
+        const isDot = e.target.classList?.contains('dot') ||
+                      e.target.getAttribute?.('class')?.includes('dot');
+        if (!panel.contains(e.target) && !isDot) {
             unpinQuote();
         }
     }
@@ -1058,26 +1061,9 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Touch swipe to exit interactive mode (mobile) - disabled to prevent accidental exits
-// Users can use the "Back to top" button instead
-let touchStartY = 0;
-
-document.addEventListener('touchstart', function(e) {
-    if (!document.body.classList.contains('interactive-mode')) return;
-    touchStartY = e.touches[0].clientY;
-}, { passive: true });
-
-document.addEventListener('touchend', function(e) {
-    if (!document.body.classList.contains('interactive-mode')) return;
-
-    const touchEndY = e.changedTouches[0].clientY;
-    const deltaY = touchEndY - touchStartY;
-
-    // Only exit on very deliberate long swipe (200px+) to prevent accidental exits
-    if (deltaY > 200) {
-        exitInteractiveMode();
-    }
-}, { passive: true });
+// Touch swipe to exit interactive mode - DISABLED
+// Users should use the "Back to top" button instead
+// Swipe gestures were causing accidental exits and quote flickering
 
 // Section Navigation
 (function() {
