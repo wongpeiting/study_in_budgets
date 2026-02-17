@@ -1665,16 +1665,16 @@ body.interactive-mode .methodology-link {
         padding-bottom: 150vh;
     }
 
-    /* Sticky viz container - minimal padding for max chart space */
+    /* Sticky viz container - extra top padding to show all dots */
     .sticky-viz {
-        padding: 1.5rem 0.5rem 0 0.5rem;
+        padding: 2.5rem 0.5rem 0 0.5rem;
         justify-content: flex-start;
     }
 
     .viz-header {
         min-height: auto;
         margin-bottom: 0.25rem;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
     }
 
     .viz-header h2 {
@@ -1880,13 +1880,13 @@ body.interactive-mode .methodology-link {
     }
 
     .sticky-viz {
-        padding: 1.5rem 0.35rem 0 0.35rem;
+        padding: 2.25rem 0.35rem 0 0.35rem;
     }
 
     .viz-header {
         min-height: auto;
         margin-bottom: 0.2rem;
-        margin-top: 0.35rem;
+        margin-top: 0.5rem;
     }
 
     .viz-header h2 {
