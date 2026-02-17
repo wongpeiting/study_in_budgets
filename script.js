@@ -714,13 +714,14 @@ function initVisualization() {
             pinQuote();
         });
 
-    // Highlight box
+    // Highlight box - must not block pointer events on dots
     svg.append('rect')
         .attr('class', 'highlight-box')
         .attr('y', margin.top)
         .attr('height', height - margin.top - margin.bottom)
         .attr('fill', '#fad8ac8f')
-        .attr('opacity', 0);
+        .attr('opacity', 0)
+        .style('pointer-events', 'none');
 }
 
 // Scroll triggers
