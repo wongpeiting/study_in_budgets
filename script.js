@@ -9,6 +9,7 @@ let dots = null;
 let currentSection = null;
 let filteredParagraphs = null;
 let yearPositions = {};
+let interactiveModeCooldown = false;
 
 // Cached DOM elements (initialized after DOMContentLoaded)
 let domElements = {
@@ -990,9 +991,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-
-// Cooldown to prevent rapid mode toggling
-let interactiveModeCooldown = false;
 
 // Exit interactive mode and allow free scrolling
 function exitInteractiveMode() {
