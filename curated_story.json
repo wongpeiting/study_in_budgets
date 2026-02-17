@@ -29,7 +29,7 @@
       "year_range": [1965, 2026],
       "header_text": "Turns out, a lot has.",
       "title": "We dissect 67 Singapore Budget Statements delivered over the past 61 years to find out how the social compact has shifted.",
-      "setup": "A Budget speech isn't just an accounting exercise.<br><br>It's one of the few moments each year when the government explains how the country is supposed to work."
+      "setup": "A Budget speech isn't just an accounting exercise.<br><br>It's one of the few moments each year when the government sets out a blueprint for the nation and how we fit into it."
     },
     {
       "id": "intro_2",
@@ -152,14 +152,14 @@
       "quote": "A key feature in this year's Budget is the Pioneer Generation Package. As the Prime Minister has stated, we are honouring this unique generation of Singaporeans who built up the country.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2014,
-      "reflection": "The state moved from exhorting sacrifice to honouring it."
+      "reflection": ""
     },
     {
       "id": "covid_crisis",
       "year_range": [2020, 2021],
       "era_label": "2020-2021",
       "title": "\"We will leave no one behind\"",
-      "setup": "Covid changed everything. The government made a promise that would have been unthinkable in 1965:",
+      "setup": "Covid-19 marked a moment when the finance minister spoke in unusually expansive terms, as the government rolled out five Budgets in 2020 in rapid succession, followed by further rounds of support in 2021:",
       "quote": "We will protect and advance the well-being and livelihoods of Singaporeans. We will take care of our people. We will leave no one behind. And we will stand with Singaporeans from all walks of life to battle this crisis together.",
       "speaker": "Heng Swee Keat",
       "year": 2020,
@@ -280,7 +280,18 @@
       "quote": "I encourage employers and workers to make the most of the support that the Government is offering. Upgrade your businesses; invest in innovation and training; reskill and upskill to stay competitive and seize new opportunities.",
       "speaker": "Lawrence Wong",
       "year": 2023,
-      "reflection": "The message? We’ll support you – now move."
+      "reflection": "The message? We'll support you – now move."
+    },
+    {
+      "id": "new_ask_3",
+      "year_range": [2020, 2026],
+      "era_label": "The new ask",
+      "title": "\"Form of social contract\"",
+      "setup": "The same logic appeared in this year's Budget, when Prime Minister Lawrence Wong described the new $500 ComLink+ payout:",
+      "quote": "These are more than financial assistance; they are a form of social contract where family coaches work with the families to set clear goals — like securing a stable job, saving towards a home, or ensuring their children enrol in and attend preschool regularly. When these milestones are achieved, the families receive additional payouts.",
+      "speaker": "Lawrence Wong",
+      "year": 2026,
+      "reflection": "What once sounded like duty now sounds like empowerment – but progress is still something citizens are expected to demonstrate."
     },
     {
       "id": "word_trends_intro",
@@ -351,7 +362,7 @@
         {"fm": "Tony Tan", "era": "1980s", "words": "automation, software, robots"},
         {"fm": "Richard Hu", "era": "1985-2001", "words": "securities, competitiveness, incentive"},
         {"fm": "Lee Hsien Loong", "era": "2000s", "words": "entrepreneurship, talent, creative"},
-        {"fm": "Tharman", "era": "2007-15", "words": "workfare, elderly, medishield"},
+        {"fm": "Tharman Shanmugaratnam", "era": "2007-15", "words": "workfare, elderly, medishield"},
         {"fm": "Heng Swee Keat", "era": "2016-21", "words": "digital, transformation, safe"},
         {"fm": "Lawrence Wong", "era": "2020s", "words": "assurance, vouchers, preschool"}
       ]
