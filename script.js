@@ -715,6 +715,60 @@ function initVisualization() {
             pinQuote();
         });
 
+    // Touch slide support for mobile - allows sliding finger across squares
+    const svgNode = svg.node();
+    let touchActive = false;
+    let lastTouchedDot = null;
+
+    svgNode.addEventListener('touchstart', function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+        touchActive = true;
+        handleTouchMove(e);
+    }, { passive: true });
+
+    svgNode.addEventListener('touchmove', function(e) {
+        if (!document.body.classList.contains('interactive-mode') || !touchActive) return;
+        handleTouchMove(e);
+    }, { passive: true });
+
+    svgNode.addEventListener('touchend', function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+        touchActive = false;
+        // Pin the last touched quote
+        if (lastTouchedDot) {
+            pinQuote();
+        }
+    }, { passive: true });
+
+    function handleTouchMove(e) {
+        if (!e.touches || e.touches.length === 0) return;
+
+        const touch = e.touches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+        // Check if element is a dot (SVG uses getAttribute for class)
+        const isDot = element && (
+            element.classList?.contains('dot') ||
+            element.getAttribute?.('class')?.includes('dot')
+        );
+
+        if (isDot && element !== lastTouchedDot) {
+            // Clear previous selection
+            if (selectedDot && selectedDot !== element) {
+                d3.select(selectedDot).classed('selected', false);
+            }
+
+            // Get the data bound to this element
+            const d = d3.select(element).datum();
+            if (d) {
+                selectedDot = element;
+                lastTouchedDot = element;
+                d3.select(element).classed('selected', true).raise();
+                showHoverPanel(d);
+            }
+        }
+    }
+
     // Highlight box - must not block pointer events on dots
     svg.append('rect')
         .attr('class', 'highlight-box')
