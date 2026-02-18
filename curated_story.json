@@ -52,6 +52,14 @@
       "reflection": "<span class='color-ref' style='background:#C44F4F'></span> = Promise to you<br><span class='color-ref' style='background:#E89898'></span> = Promise to firms<br><br><span class='color-ref' style='background:#2B4460'></span> = Ask of you<br><span class='color-ref' style='background:#6B8CAE'></span> = Ask of firms"
     },
     {
+      "id": "focus_note",
+      "type": "prose",
+      "year_range": [1965, 2026],
+      "header_text": "Turns out, a lot has.",
+      "title": " ",
+      "setup": "The lighter squares show what the government says to businesses — tax breaks, levies, grants. This story follows the darker ones: what the state promises you, and what it asks of you in return. At the end, you can explore both."
+    },
+    {
       "id": "pm_era_summary",
       "year_range": [1965, 2026],
       "era_label": "The big picture",
