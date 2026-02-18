@@ -809,10 +809,10 @@ function setupScrollTriggers() {
     if (exploreSection) {
         const exploreObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Enable interactive mode when explore section starts entering (20%+)
+                // Enable interactive mode as soon as explore section starts entering
                 // Quick transition to prevent sticky chart from scrolling away
                 // On mobile, interactive mode is enabled but CSS allows scrolling
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
                     if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
 
                         window.interactiveModeTimeout = setTimeout(() => {
@@ -876,14 +876,15 @@ function setupScrollTriggers() {
                 }
             });
         }, {
-            threshold: [0, 0.2, 0.5] // Trigger at 20% for positioning, 50% for fallback
+            threshold: [0, 0.1, 0.5] // Trigger at 10% for early catch, 50% for fallback
         });
         exploreObserver.observe(exploreSection);
     } else {
         console.error('❌ Explore section not found! Interactive mode will not work.');
     }
 
-    // Fallback: Check on scroll if we've passed the explore section (for fast scrollers)
+    // Fallback: Check on scroll if we've reached the explore section (for fast scrollers)
+    // More aggressive detection to prevent bounce-back
     let scrollCheckThrottled = false;
     window.addEventListener('scroll', () => {
         if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
@@ -893,8 +894,9 @@ function setupScrollTriggers() {
             const exploreEl = document.querySelector('[data-step="explore"]');
             if (exploreEl && !interactiveModeCooldown) {
                 const rect = exploreEl.getBoundingClientRect();
-                // If explore section is above the viewport (scrolled past it)
-                if (rect.bottom < window.innerHeight * 0.3) {
+                // Trigger as soon as explore section enters viewport (top is visible)
+                // This catches fast scrollers before they overshoot
+                if (rect.top < window.innerHeight * 0.8) {
                     document.body.classList.add('interactive-mode');
                     domElements.currentEra.textContent = 'Your turn';
                     const isMobileHeader = window.innerWidth <= 768;
@@ -904,6 +906,7 @@ function setupScrollTriggers() {
 
                     if (dots) {
                         dots.attr('opacity', 0.9);
+                        dots.style('pointer-events', 'auto');
                     }
                     if (svg) {
                         svg.select('.highlight-box').attr('opacity', 0);
