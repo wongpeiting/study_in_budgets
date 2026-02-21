@@ -80,9 +80,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         const [vizResponse, storyResponse, trendsResponse] = await Promise.all([
-            fetch('viz_data.json'),
-            fetch('curated_story.json'),
-            fetch('word_trends.json')
+            fetch('data/viz_data.json'),
+            fetch('data/curated_story.json'),
+            fetch('data/word_trends.json')
         ]);
 
         vizData = await vizResponse.json();
