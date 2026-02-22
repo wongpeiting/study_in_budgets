@@ -91,7 +91,7 @@
       "era_label": "1965–1973",
       "title": "The world does not owe us a living",
       "setup": "Singapore had just separated from Malaysia. There was no safety net. The message was clear:",
-      "quote": "This confidence must not lead our people, whether entrepreneurs, or trade unionists, into believing that the world owes us a living and that things will always be all right. They will be all right only if we are constantly alert, efficient and striving.",
+      "quote": "This confidence <mark>must not lead our people</mark>, whether entrepreneurs, or trade unionists, <mark>into believing that the world owes us a living</mark> and that things will always be all right. They will be all right only if we are constantly alert, efficient and striving.",
       "speaker": "Lim Kim San",
       "year": 1966,
       "reflection": "Security was conditional, and the burden was yours."
@@ -102,7 +102,7 @@
       "era_label": "1965–1973",
       "title": "Don't kill the goose before the golden eggs are laid",
       "setup": "Labour demands for immediate benefits were framed as risking industrialisation, with unnamed “anti-nationalist” actors accused of undermining discipline and stability:",
-      "quote": "Our workers must also be prepared for factory discipline and hard work to make costs competitive. There must be restraint and discipline... Let our industrialisation be established first before we think of sharing the gains. Anti-nationalist elements are trying to dupe workers into prematurely demanding benefits which will kill the goose even before the golden eggs are laid.",
+      "quote": "Our workers must also be prepared for factory discipline and hard work to make costs competitive. There must be restraint and discipline... Let our industrialisation be established first before we think of sharing the gains. Anti-nationalist elements are <mark>trying to dupe workers into prematurely demanding benefits which will kill the goose even before the golden eggs are laid.</mark>",
       "speaker": "Lim Kim San",
       "year": 1965,
       "reflection": "Economic restraint became a national duty – to demand too soon was to endanger progress."
@@ -113,7 +113,7 @@
       "era_label": "1965–1973",
       "title": "Away with 'rootless' values",
       "setup": "Self-interest was recast as a social problem:",
-      "quote": "The rootless, migrant and parvenu values, where each is out for himself – attitudes so prevalent at the beginning of the last decade – are giving way to more positive group values of a self-reliant people, determined to build an enduring future for themselves",
+      "quote": "The rootless, migrant and parvenu values, where each is out for himself – attitudes so prevalent at the beginning of the last decade – are giving way to <mark>more positive group values of a self-reliant people</mark>, determined to build an enduring future for themselves",
       "speaker": "Goh Keng Swee",
       "year": 1970,
       "reflection": "Collective sacrifice was the goal."
@@ -124,7 +124,7 @@
       "era_label": "1974–1989",
       "title": "\"Nothing is for free\"",
       "setup": "After a decade of rapid growth that lifted incomes severalfold, the government worried citizens were getting soft:",
-      "quote": "Our survival depends, as then, upon a robust approach to life, that the world does not owe us a living. Nothing is for free. Hence, the virtues of thrift and hard work and our resilience and capacity to adapt to changing circumstances saw us through. The question is whether we have not already been softened by the increasing affluence now so clearly and even delightfully evident in the colourful dress and appearance of our bright young things. This change in lifestyle is shown in our sombre statistics indicating a propensity to save less and consume more.",
+      "quote": "Our survival depends, as then, upon a robust approach to life, that the world does not owe us a living. Nothing is for free. Hence, the virtues of thrift and hard work and our resilience and capacity to adapt to changing circumstances saw us through. The question is whether we have <mark>not already been softened by the increasing affluence now so clearly and even delightfully evident in the colourful dress and appearance of our bright young things</mark>. This change in lifestyle is shown in our sombre statistics indicating a propensity to save less and consume more.",
       "speaker": "Hon Sui Sen",
       "year": 1974,
       "reflection": "Affluence risked eroding the discipline that made survival possible."
@@ -133,9 +133,9 @@
       "id": "nirvana",
       "year_range": [1974, 1989],
       "era_label": "1974–1989",
-      "title": "\"To achieve nirvana, you must first experience pain\"",
+      "title": "Pain before nirvana",
       "setup": "A painless Budget still came with a lecture:",
-      "quote": "It is a completely painless budget, and even mildly pleasurable. But there is a moral to this, and that is, to achieve nirvana you must first experience pain. We have all worked hard in the past. We have all made sacrifices. We have never flinched from the harsh realities of the world.",
+      "quote": "It is a completely painless budget, and even mildly pleasurable. But there is a moral to this, and that is, <mark>to achieve nirvana you must first experience pain</mark>. We have all worked hard in the past. We have all made sacrifices. We have never flinched from the harsh realities of the world.",
       "speaker": "Goh Chok Tong",
       "year": 1979,
       "reflection": "No pain, no gain."
@@ -146,7 +146,7 @@
       "era_label": "1974–1989",
       "title": "Pay cuts, CPF cuts",
       "setup": "The mid-80s recession demanded sacrifice, and workers delivered:",
-      "quote": "Our recovery from the last recession was due in no small measure to the sacrifice of our workers who took pay cuts and endured wage restraint to restore our competitiveness.",
+      "quote": "Our recovery from the last recession was due in no small measure to the <mark>sacrifice of our workers who took pay cuts and endured wage restraint</mark> to restore our competitiveness.",
       "speaker": "Richard Hu",
       "year": 1988,
       "reflection": "Personal sacrifice was framed as the engine of recovery."
@@ -165,7 +165,7 @@
       "era_label": "1990–1996",
       "title": "\"Restore CPF savings to workers\"",
       "setup": "The 1990 Budget offered one of the first answers:",
-      "quote": "The Government will restore CPF savings to workers who made sacrifices during the recession. But it will not do so in a way that damages our competitive position.",
+      "quote": "The Government will <mark>restore CPF savings</mark> to workers who made sacrifices during the recession. But it will not do so in a way that damages our competitive position.",
       "speaker": "Richard Hu",
       "year": 1990,
       "reflection": "The balance began to shift after this, as promises to citizens rose."
@@ -176,7 +176,7 @@
       "era_label": "1997–2009",
       "title": "\"Help individuals\"",
       "setup": "The shift deepened during the Asian Financial Crisis:",
-      "quote": "Government is mindful of the difficulties faced by individuals and households in the current economic downturn. The cost-cutting package announced in November 1998 was focused mainly on reducing business costs. I will therefore be announcing several measures to help individuals.",
+      "quote": "Government is mindful of the difficulties faced by individuals and households in the current economic downturn. The cost-cutting package announced in November 1998 was focused mainly on reducing business costs. I will therefore be <mark>announcing several measures to help individuals</mark>.",
       "speaker": "Richard Hu",
       "year": 1999,
       "reflection": "By the end of the 1990s, promises were directed more at citizens than businesses."
@@ -187,7 +187,7 @@
       "era_label": "2010–2019",
       "title": "\"Opportunities, not entitlements\"",
       "setup": "Months before the watershed 2011 election, the government was still drawing a firm line:",
-      "quote": "We must avoid the mistakes of the developed countries which have built up unsustainable systems of entitlements – in healthcare, unemployment insurance and pensions. These have not only meant high taxes today, but huge debts and huge unfunded government liabilities which can no longer be postponed. Worse, the over-generous social entitlements have progressively weakened the work ethic over time... Our approach must therefore remain centred on opportunities, not entitlements.",
+      "quote": "We <mark>must avoid the mistakes of the developed countries which have built up unsustainable systems of entitlements</mark> – in healthcare, unemployment insurance and pensions. These have not only meant high taxes today, but huge debts and huge unfunded government liabilities which can no longer be postponed. Worse, the over-generous social entitlements have progressively weakened the work ethic over time... Our approach must therefore remain centred on <mark>opportunities, not entitlements</mark>.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2011,
       "reflection": "Entitlements were rejected as fiscally unsustainable and corrosive to work ethic. Then came May 2011 – the People's Action Party's worst electoral showing since independence."
@@ -198,7 +198,7 @@
       "era_label": "2010–2019",
       "title": "\"Anyone who needs help can get it\"",
       "setup": "By 2013, the focus had shifted to making support easier to access:",
-      "quote": "We want citizen-centred social services that are more integrated, so that anyone who needs help can get it conveniently and need not go to different agencies.",
+      "quote": "We want citizen-centred social services that are more integrated, so that <mark>anyone who needs help can get it conveniently</mark> and need not go to different agencies.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2013,
       "reflection": "So the government started redesigning itself to deliver help more directly."
@@ -209,10 +209,10 @@
       "era_label": "2010–2019",
       "title": "\"They made today's Singapore possible\"",
       "setup": "There was also a shift in how help was explained:",
-      "quote": "We want to do more for this senior generation of Singaporeans, who worked over the years, often with low pay, to build a better future for their children. They made today's Singapore possible.",
+      "quote": "We want to <mark>do more for this senior generation of Singaporeans</mark>, who worked over the years, often with low pay, to build a better future for their children. They made today's Singapore possible.",
       "speaker": "Tharman Shanmugaratnam",
       "year": 2013,
-      "reflection": "Support was framed as something earlier generations had earned ahead of the Pioneer Generation Package's rollout in 2014."
+      "reflection": "Support was framed as something earlier generations had earned. In the next Budget, the government introduced the Pioneer Generation Package."
     },
     {
       "id": "covid_crisis",
@@ -220,10 +220,10 @@
       "era_label": "2020-2021",
       "title": "\"We will leave no one behind\"",
       "setup": "Then came Covid-19:",
-      "quote": "We will protect and advance the well-being and livelihoods of Singaporeans. We will take care of our people. We will leave no one behind. And we will stand with Singaporeans from all walks of life to battle this crisis together.",
+      "quote": "We will protect and advance the well-being and livelihoods of Singaporeans. We will take care of our people. We <mark>will leave no one behind</mark>. And we <mark>will stand with Singaporeans from all walks of life to battle this crisis together</mark>.",
       "speaker": "Heng Swee Keat",
       "year": 2020,
-      "reflection": "The government spoke in unusually expansive terms, as it rolled out five Budgets in 2020 in rapid succession, followed by further rounds of support in 2021."
+      "reflection": "The government used stronger, more sweeping language about protecting livelihoods, as it rolled out five Budgets in 2020 and further support in 2021."
     },
     {
       "id": "protect_workers",
@@ -231,7 +231,7 @@
       "era_label": "2020-2021",
       "title": "\"Government will protect every worker\"",
       "setup": "The government went on to roll out billions in wage subsidies and cash payouts over the course of the pandemic:",
-      "quote": "While we will try to preserve jobs in the midst of this crisis, we cannot protect every job. However, you have my assurance that the Government will protect every worker.",
+      "quote": "While we will try to preserve jobs in the midst of this crisis, we cannot protect every job. However, <mark>you have my assurance that the Government will protect every worker</mark>.",
       "speaker": "Heng Swee Keat",
       "year": 2020,
       "reflection": "Lose the job, not the paycheque."
@@ -242,7 +242,7 @@
       "year_range": [2022, 2026],
       "era_label": "The new normal",
       "title": " ",
-      "setup": "The Covid-19 crisis ended. The tone hasn't."
+      "setup": "The Covid-19 crisis ended. The tone continued."
     },
     {
       "id": "new_normal_2022",
@@ -250,7 +250,7 @@
       "era_label": "2022–2026",
       "title": "\"Have your backs\"",
       "setup": "",
-      "quote": "We want every Singaporean to know and feel that he or she has a stake in our society – that everyone's contributions matter and that they will not be left to fend for themselves when times are down. We want to uphold that sense of obligation to each other and strengthen the assurance that, whatever the challenges we face, we will always have each other's back.",
+      "quote": "We want every Singaporean to know and feel that he or she has a stake in our society – that everyone's contributions matter and that they will not be left to fend for themselves when times are down. We want to uphold that sense of obligation to each other and strengthen the assurance that, whatever the challenges we face, <mark>we will always have each other's back</mark>.",
       "speaker": "Lawrence Wong",
       "year": 2022,
       "reflection": "'We have your backs' became a defining line in Lawrence Wong’s Budgets. He has used it in three of five Budget statements since 2022. And when he didn’t, he reached for variations, such as 'looking out for one another' and 'supporting each other'."
@@ -261,7 +261,7 @@
       "era_label": "2022–2026",
       "title": "\"Together we will secure a brighter future for all\"",
       "setup": "In the most recent Budget speech:",
-      "quote": "This is the conviction that underpins Budget 2026. It is a Budget to support Singaporeans today, prepare our society for tomorrow, and enable us to navigate this changed world with confidence. Together we will secure a stronger, fairer, and brighter future for all.",
+      "quote": "This is the conviction that underpins Budget 2026. It is a Budget to support Singaporeans today, prepare our society for tomorrow, and enable us to navigate this changed world with confidence. <mark>Together we will secure a stronger, fairer, and brighter future for all</mark>.",
       "speaker": "Lawrence Wong",
       "year": 2026,
       "reflection": "Five years on, the language of support appears to have settled in."
