@@ -17,7 +17,7 @@
             <p class="hero-quote">"We will always have your backs."</p>
             <p class="hero-attribution">— Finance Minister Lawrence Wong, 2024</p>
             <div class="hero-spacer"></div>
-            <p class="hero-question">What changed?</by></p>
+            <p class="hero-question">What changed?</p>
             <div class="scroll-prompt">
                 <span>Scroll to explore</span>
                 <div class="scroll-arrow"></div>
@@ -106,13 +106,13 @@
     </a>
 
     <!-- Mobile back button - only visible in interactive mode on mobile -->
-    <button class="mobile-back-btn" onclick="exitInteractiveModeAndScrollTop()">
+    <button class="mobile-back-btn" id="mobile-back-btn">
         ↑ Back to top
     </button>
 
     <!-- Hover Panel for quote display -->
     <div id="hover-panel" class="hover-panel hidden">
-        <button class="hover-panel-close" onclick="unpinQuote()">&times;</button>
+        <button class="hover-panel-close" id="hover-panel-close">&times;</button>
         <div class="hover-panel-header">
             <span class="hover-panel-year"></span>
             <span class="hover-panel-fm"></span>
