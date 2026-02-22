@@ -811,7 +811,7 @@ function setupScrollTriggers() {
                 // Enable interactive mode as soon as explore section starts entering
                 // Quick transition to prevent sticky chart from scrolling away
                 // On mobile, interactive mode is enabled but CSS allows scrolling
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                     if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
 
                         window.interactiveModeTimeout = setTimeout(() => {
@@ -841,7 +841,7 @@ function setupScrollTriggers() {
                             }
 
                             window.interactiveModeTimeout = null;
-                        }, 50); // Very quick - prevents chart from scrolling out of view
+                        }, 1500); // Give time to read the "Your Turn" card
                     }
                 } else {
                     // Not intersecting - cancel pending timeout
@@ -883,33 +883,36 @@ function setupScrollTriggers() {
     }
 
     // Fallback: Check on scroll if we've reached the explore section (for fast scrollers)
-    // More aggressive detection to prevent bounce-back
+    // Uses same delay as IntersectionObserver to give time to read "Your Turn" card
     let scrollCheckThrottled = false;
     window.addEventListener('scroll', () => {
-        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
+        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown || window.interactiveModeTimeout) return;
         scrollCheckThrottled = true;
 
         requestAnimationFrame(() => {
             const exploreEl = document.querySelector('[data-step="explore"]');
-            if (exploreEl && !interactiveModeCooldown) {
+            if (exploreEl && !interactiveModeCooldown && !window.interactiveModeTimeout) {
                 const rect = exploreEl.getBoundingClientRect();
-                // Trigger as soon as explore section enters viewport (top is visible)
-                // This catches fast scrollers before they overshoot
-                if (rect.top < window.innerHeight * 0.8) {
-                    document.body.classList.add('interactive-mode');
-                    domElements.currentEra.textContent = 'Your turn';
-                    const isMobileHeader = window.innerWidth <= 768;
-                    domElements.currentContext.textContent = isMobileHeader
-                        ? 'Tap any square to see the paragraph it represents.'
-                        : 'Hover over any square to see the paragraph it represents.';
+                // Trigger when explore section is well into viewport
+                if (rect.top < window.innerHeight * 0.3) {
+                    window.interactiveModeTimeout = setTimeout(() => {
+                        if (interactiveModeCooldown) return;
+                        document.body.classList.add('interactive-mode');
+                        domElements.currentEra.textContent = 'Your turn';
+                        const isMobileHeader = window.innerWidth <= 768;
+                        domElements.currentContext.textContent = isMobileHeader
+                            ? 'Tap any square to see the paragraph it represents.'
+                            : 'Hover over any square to see the paragraph it represents.';
 
-                    if (dots) {
-                        dots.attr('opacity', 0.9);
-                        dots.style('pointer-events', 'auto');
-                    }
-                    if (svg) {
-                        svg.select('.highlight-box').attr('opacity', 0);
-                    }
+                        if (dots) {
+                            dots.attr('opacity', 0.9);
+                            dots.style('pointer-events', 'auto');
+                        }
+                        if (svg) {
+                            svg.select('.highlight-box').attr('opacity', 0);
+                        }
+                        window.interactiveModeTimeout = null;
+                    }, 1500); // Same delay as IntersectionObserver
                 }
             }
             scrollCheckThrottled = false;
@@ -1107,6 +1110,11 @@ document.addEventListener('wheel', function(e) {
     if (cumulativeWheelDelta > 500) {
         cumulativeWheelDelta = 0;
         exitInteractiveMode();
+        // Scroll to the word_trends_intro section instead of letting browser jump to top
+        const wordTrendsSection = document.getElementById('word_trends_intro');
+        if (wordTrendsSection) {
+            window.scrollTo({ top: wordTrendsSection.offsetTop, behavior: 'smooth' });
+        }
     }
 }, { passive: true });
 
