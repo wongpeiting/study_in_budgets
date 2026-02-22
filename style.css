@@ -331,6 +331,12 @@ body.interactive-mode {
     margin: 0 2px;
 }
 
+/* Conclusion section - needs extra height to prevent skipping to explore */
+#conclusion.step {
+    min-height: 100vh;
+    padding-bottom: 20vh;
+}
+
 /* Conclusion */
 .conclusion-content {
     max-width: 500px;
@@ -882,7 +888,6 @@ body.interactive-mode {
     border: 2px solid var(--accent);
     border-radius: 8px;
     background: rgba(255,255,255,0.97);
-    pointer-events: none; /* Allow clicks to pass through to chart */
     transition: opacity 0.5s ease;
 }
 
