@@ -304,6 +304,13 @@ body.interactive-mode {
     border: none;
 }
 
+/* Quote highlights - use <mark> for yellow highlighter effect */
+.quote mark {
+    background: linear-gradient(180deg, transparent 40%, #fff176 40%);
+    color: inherit;
+    padding: 0 2px;
+}
+
 /* Attribution */
 .attribution {
     font-size: 0.8rem;
