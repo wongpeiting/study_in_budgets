@@ -257,12 +257,11 @@ function generateStorySections() {
                     <h3>${section.title}</h3>
                     ${section.setup ? `<p class="setup">${section.setup}</p>` : ''}
                     <div class="sparkline-grid" data-trend-type="${section.trend_type}">
-                        ${trends.slice(0, 12).map(w => `
+                        ${trends.slice(0, 9).map(w => `
                             <div class="sparkline-item">
                                 <div class="sparkline-word">${w.word}</div>
                                 <svg class="sparkline" data-values="${w.timeseries.map(d => d.per_10k).join(',')}" data-color="${color}"></svg>
                                 <div class="sparkline-change ${section.trend_type}">${w.change > 0 ? '+' : ''}${w.change}</div>
-                                <div class="sparkline-rate">past 10 yrs: ${w.recent_per_10k.toFixed(1)}</div>
                             </div>
                         `).join('')}
                     </div>
@@ -613,7 +612,7 @@ function initVisualization() {
         ];
 
         const legendX = 30;
-        const legendY = margin.top + 20;
+        const legendY = height - margin.bottom - 90; // Position at bottom-left to avoid card overlap
         const legendSpacing = 18;
         const legendRectSize = 9;
 
