@@ -1,6 +1,27 @@
 // Singapore Budget Speeches - Storytelling Visualization
 // Inspired by Pudding.cool's democracy piece
 
+// =============================================================================
+// CONSTANTS - No more magic numbers
+// =============================================================================
+const TIMING = {
+    HOVER_PANEL_HIDE_DELAY: 500,
+    INTERACTIVE_MODE_DELAY: 1500,
+    INTERACTIVE_MODE_COOLDOWN: 1000,
+    WHEEL_RESET_TIMEOUT: 500,
+    CUMULATIVE_WHEEL_THRESHOLD: 500,
+    RESIZE_DEBOUNCE: 250
+};
+
+const DATA_URLS = {
+    VIZ: 'data/viz_data.json',
+    STORY: 'data/curated_story.json',
+    TRENDS: 'data/word_trends.json'
+};
+
+// =============================================================================
+// STATE - Module-scoped, not global window.*
+// =============================================================================
 let vizData = null;
 let storyData = null;
 let wordTrendsData = null;
@@ -10,6 +31,16 @@ let currentSection = null;
 let filteredParagraphs = null;
 let yearPositions = {};
 let interactiveModeCooldown = false;
+let interactiveModeTimeout = null;
+let hoverPanelTimeout = null;
+let selectedDot = null;
+
+// Touch event listener references for cleanup
+let touchEventListeners = {
+    start: null,
+    move: null,
+    end: null
+};
 
 // Cached DOM elements (initialized after DOMContentLoaded)
 let domElements = {
@@ -32,9 +63,6 @@ function initDomElements() {
     domElements.hoverPanel = document.getElementById('hover-panel');
     domElements.exploreSection = document.querySelector('[data-step="explore"]');
 }
-
-// Track currently selected dot for optimized hover handling
-let selectedDot = null;
 
 // Responsive sizing helper
 function getResponsiveConfig() {
@@ -62,9 +90,125 @@ function getResponsiveConfig() {
     };
 }
 
+// =============================================================================
+// TOUCH EVENT HANDLING - With proper cleanup to prevent memory leaks
+// =============================================================================
+let touchState = {
+    active: false,
+    lastTouchedDot: null
+};
+
+function handleTouchMove(e) {
+    if (!e.touches || e.touches.length === 0) return;
+
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    // Check if element is a dot (SVG uses getAttribute for class)
+    const isDot = element && (
+        element.classList?.contains('dot') ||
+        element.getAttribute?.('class')?.includes('dot')
+    );
+
+    if (isDot && element !== touchState.lastTouchedDot) {
+        // Clear previous selection
+        if (selectedDot && selectedDot !== element) {
+            d3.select(selectedDot).classed('selected', false);
+        }
+
+        // Get the data bound to this element
+        const d = d3.select(element).datum();
+        if (d) {
+            selectedDot = element;
+            touchState.lastTouchedDot = element;
+            d3.select(element).classed('selected', true).raise();
+            showHoverPanel(d);
+        }
+    }
+}
+
+function setupTouchListeners(svgNode) {
+    // Clean up any existing listeners first
+    cleanupTouchListeners();
+
+    touchState.active = false;
+    touchState.lastTouchedDot = null;
+
+    touchEventListeners.start = function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+        touchState.active = true;
+        handleTouchMove(e);
+    };
+
+    touchEventListeners.move = function(e) {
+        if (!document.body.classList.contains('interactive-mode') || !touchState.active) return;
+        handleTouchMove(e);
+    };
+
+    touchEventListeners.end = function(e) {
+        if (!document.body.classList.contains('interactive-mode')) return;
+        touchState.active = false;
+        if (touchState.lastTouchedDot) {
+            pinQuote();
+        }
+    };
+
+    // Store reference to the node for cleanup
+    touchEventListeners.node = svgNode;
+
+    svgNode.addEventListener('touchstart', touchEventListeners.start, { passive: true });
+    svgNode.addEventListener('touchmove', touchEventListeners.move, { passive: true });
+    svgNode.addEventListener('touchend', touchEventListeners.end, { passive: true });
+}
+
+function cleanupTouchListeners() {
+    if (touchEventListeners.node) {
+        if (touchEventListeners.start) {
+            touchEventListeners.node.removeEventListener('touchstart', touchEventListeners.start);
+        }
+        if (touchEventListeners.move) {
+            touchEventListeners.node.removeEventListener('touchmove', touchEventListeners.move);
+        }
+        if (touchEventListeners.end) {
+            touchEventListeners.node.removeEventListener('touchend', touchEventListeners.end);
+        }
+        touchEventListeners.node = null;
+    }
+}
+
 // Prevent browser from restoring scroll position
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
+}
+
+// =============================================================================
+// DATA FETCHING - With proper error handling
+// =============================================================================
+async function fetchJSON(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+    }
+    return response.json();
+}
+
+function showLoadingState() {
+    const container = document.getElementById('timeline-viz');
+    if (container) {
+        container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#7a7a7a;font-size:0.9rem;">Loading data...</div>';
+    }
+}
+
+function showErrorState(error) {
+    const container = document.getElementById('timeline-viz');
+    if (container) {
+        container.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#C41E3A;font-size:0.9rem;text-align:center;padding:2rem;">
+            <p style="margin-bottom:0.5rem;">Failed to load data</p>
+            <p style="font-size:0.75rem;color:#7a7a7a;">${error.message}</p>
+            <button onclick="location.reload()" style="margin-top:1rem;padding:0.5rem 1rem;border:1px solid #C41E3A;background:transparent;color:#C41E3A;border-radius:4px;cursor:pointer;">Retry</button>
+        </div>`;
+    }
+    console.error('Data loading error:', error);
 }
 
 // Initialize
@@ -78,33 +222,68 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Also scroll after a brief delay to override any browser restoration
     setTimeout(() => window.scrollTo(0, 0), 100);
 
+    // Show loading state
+    showLoadingState();
+
     try {
-        const [vizResponse, storyResponse, trendsResponse] = await Promise.all([
-            fetch('data/viz_data.json'),
-            fetch('data/curated_story.json'),
-            fetch('data/word_trends.json')
+        console.log('[Init] Fetching data...');
+        // Fetch all data with proper error handling
+        const [vizResult, storyResult, trendsResult] = await Promise.all([
+            fetchJSON(DATA_URLS.VIZ),
+            fetchJSON(DATA_URLS.STORY),
+            fetchJSON(DATA_URLS.TRENDS)
         ]);
+        console.log('[Init] Data fetched successfully');
 
-        vizData = await vizResponse.json();
-        storyData = await storyResponse.json();
-        wordTrendsData = await trendsResponse.json();
+        vizData = vizResult;
+        storyData = storyResult;
+        wordTrendsData = trendsResult;
 
-        // Only show promises and obligations, not grey neutral paragraphs
-        filteredParagraphs = vizData.paragraphs.filter(p =>
-            p.primary_value && p.primary_value !== 'none'
-        );
+        // Validate data structure
+        if (!vizData.paragraphs || !Array.isArray(vizData.paragraphs)) {
+            throw new Error('Invalid viz_data.json: missing paragraphs array');
+        }
+        if (!storyData.sections || !Array.isArray(storyData.sections)) {
+            throw new Error('Invalid curated_story.json: missing sections array');
+        }
+        console.log('[Init] Data validated');
+
+        // Add unique IDs for D3 keying if not present
+        filteredParagraphs = vizData.paragraphs
+            .filter(p => p.primary_value && p.primary_value !== 'none')
+            .map((p, idx) => ({ ...p, _uid: p.id || `para_${idx}` }));
+        console.log('[Init] Filtered paragraphs:', filteredParagraphs.length);
 
         generateStorySections();
+        console.log('[Init] Story sections generated');
+
         // Re-cache explore section after it's created by generateStorySections()
         domElements.exploreSection = document.querySelector('[data-step="explore"]');
         initVisualization();
+        console.log('[Init] Visualization initialized');
+
         setupScrollTriggers();
-        // Native D3 event handlers on dots handle hover/click
+        setupButtonListeners();
+        console.log('[Init] Complete');
 
     } catch (error) {
-        console.error('Error:', error);
+        console.error('[Init] Error:', error);
+        showErrorState(error);
     }
 });
+
+// Wire up button event listeners (replacing inline onclick)
+function setupButtonListeners() {
+    const mobileBackBtn = document.getElementById('mobile-back-btn');
+    if (mobileBackBtn) {
+        mobileBackBtn.addEventListener('click', exitInteractiveModeAndScrollTop);
+    }
+
+    const hoverPanelClose = document.getElementById('hover-panel-close');
+    if (hoverPanelClose) {
+        hoverPanelClose.addEventListener('click', unpinQuote);
+    }
+}
 
 // Generate story sections from curated data
 function generateStorySections() {
@@ -432,6 +611,10 @@ function drawSparklines() {
 // Initialize visualization
 function initVisualization() {
     const container = domElements.timelineViz;
+
+    // Clear any loading state content
+    container.innerHTML = '';
+
     const width = container.clientWidth;
 
     // Get responsive configuration
@@ -473,7 +656,7 @@ function initVisualization() {
         totalWidth += yearWidth;
     });
 
-    const scale = availableWidth / totalWidth;
+    const scale = totalWidth > 0 ? availableWidth / totalWidth : 1;
 
     let currentX = margin.left;
     yearPositions = {};
@@ -640,9 +823,9 @@ function initVisualization() {
         });
     }
 
-    // Dots - use key function for stable data binding across resize
+    // Dots - use unique ID for stable data binding across resize
     dots = svg.selectAll('.dot')
-        .data(filteredParagraphs, d => `${d.year}_${d.fm_name}_${d.text.slice(0,20)}`)
+        .data(filteredParagraphs, d => d._uid)
         .join('rect')
         .attr('class', 'dot')
         .attr('x', d => d.xPos - dotSize / 2)
@@ -674,9 +857,9 @@ function initVisualization() {
             if (!document.body.classList.contains('interactive-mode')) return;
 
             // Clear pending hide timeout
-            if (window.hoverPanelTimeout) {
-                clearTimeout(window.hoverPanelTimeout);
-                window.hoverPanelTimeout = null;
+            if (hoverPanelTimeout) {
+                clearTimeout(hoverPanelTimeout);
+                hoverPanelTimeout = null;
             }
 
             // Clear previous selection, add new selection using class
@@ -691,14 +874,14 @@ function initVisualization() {
         .on('mouseleave', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
 
-            // Delay hiding panel and removing selection (longer delay for mobile)
-            window.hoverPanelTimeout = setTimeout(() => {
+            // Delay hiding panel and removing selection
+            hoverPanelTimeout = setTimeout(() => {
                 if (selectedDot) {
                     d3.select(selectedDot).classed('selected', false);
                     selectedDot = null;
                 }
                 hideHoverPanel();
-            }, 500);
+            }, TIMING.HOVER_PANEL_HIDE_DELAY);
         })
         .on('click', function(_event, d) {
             if (!document.body.classList.contains('interactive-mode')) return;
@@ -715,58 +898,8 @@ function initVisualization() {
         });
 
     // Touch slide support for mobile - allows sliding finger across squares
-    const svgNode = svg.node();
-    let touchActive = false;
-    let lastTouchedDot = null;
-
-    svgNode.addEventListener('touchstart', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-        touchActive = true;
-        handleTouchMove(e);
-    }, { passive: true });
-
-    svgNode.addEventListener('touchmove', function(e) {
-        if (!document.body.classList.contains('interactive-mode') || !touchActive) return;
-        handleTouchMove(e);
-    }, { passive: true });
-
-    svgNode.addEventListener('touchend', function(e) {
-        if (!document.body.classList.contains('interactive-mode')) return;
-        touchActive = false;
-        // Pin the last touched quote
-        if (lastTouchedDot) {
-            pinQuote();
-        }
-    }, { passive: true });
-
-    function handleTouchMove(e) {
-        if (!e.touches || e.touches.length === 0) return;
-
-        const touch = e.touches[0];
-        const element = document.elementFromPoint(touch.clientX, touch.clientY);
-
-        // Check if element is a dot (SVG uses getAttribute for class)
-        const isDot = element && (
-            element.classList?.contains('dot') ||
-            element.getAttribute?.('class')?.includes('dot')
-        );
-
-        if (isDot && element !== lastTouchedDot) {
-            // Clear previous selection
-            if (selectedDot && selectedDot !== element) {
-                d3.select(selectedDot).classed('selected', false);
-            }
-
-            // Get the data bound to this element
-            const d = d3.select(element).datum();
-            if (d) {
-                selectedDot = element;
-                lastTouchedDot = element;
-                d3.select(element).classed('selected', true).raise();
-                showHoverPanel(d);
-            }
-        }
-    }
+    // Store references for cleanup on resize
+    setupTouchListeners(svg.node());
 
     // Highlight box - must not block pointer events on dots
     svg.append('rect')
@@ -808,116 +941,105 @@ function setupScrollTriggers() {
     if (exploreSection) {
         const exploreObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Enable interactive mode as soon as explore section starts entering
-                // Quick transition to prevent sticky chart from scrolling away
-                // On mobile, interactive mode is enabled but CSS allows scrolling
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                    if (!document.body.classList.contains('interactive-mode') && !window.interactiveModeTimeout && !interactiveModeCooldown) {
-
-                        window.interactiveModeTimeout = setTimeout(() => {
-                            if (interactiveModeCooldown) return; // Double-check cooldown
-                            document.body.classList.add('interactive-mode');
-
-                            // Update header to show explore instructions
-                            domElements.currentEra.textContent = 'Your turn';
-                            const isMobileHeader = window.innerWidth <= 768;
-                            domElements.currentContext.textContent = isMobileHeader
-                                ? 'Tap any square to see the paragraph it represents.'
-                                : 'Hover over any square to see the paragraph it represents.';
-
-                            // Make all dots fully visible and clickable
-                            if (dots) {
-                                dots.transition()
-                                    .duration(400)
-                                    .attr('opacity', 0.9);
-                                dots.style('pointer-events', 'auto');
-                            }
-                            // Remove highlight box
-                            if (svg) {
-                                svg.select('.highlight-box')
-                                    .transition()
-                                    .duration(400)
-                                    .attr('opacity', 0);
-                            }
-
-                            window.interactiveModeTimeout = null;
-                        }, 1500); // Give time to read the "Your Turn" card
-                    }
+                    // User is viewing the explore section - schedule interactive mode
+                    scheduleInteractiveMode(true);
                 } else {
                     // Not intersecting - cancel pending timeout
-                    if (window.interactiveModeTimeout) {
-                        clearTimeout(window.interactiveModeTimeout);
-                        window.interactiveModeTimeout = null;
-                    }
+                    cancelPendingInteractiveMode();
 
                     // Check if user scrolled PAST the explore section (not above it)
-                    // If past, keep/enable interactive mode so chart stays visible
                     const rect = entry.boundingClientRect;
                     const isAboveExploreSection = rect.top > window.innerHeight * 0.5;
 
-                    if (!isAboveExploreSection && !document.body.classList.contains('interactive-mode') && !interactiveModeCooldown) {
-                        // User scrolled past explore section - enable interactive mode
-                        document.body.classList.add('interactive-mode');
-                        domElements.currentEra.textContent = 'Your turn';
-                        const isMobileHeader = window.innerWidth <= 768;
-                        domElements.currentContext.textContent = isMobileHeader
-                            ? 'Tap any square to see the paragraph it represents.'
-                            : 'Hover over any square to see the paragraph it represents.';
-
-                        if (dots) {
-                            dots.attr('opacity', 0.9);
-                            dots.style('pointer-events', 'auto');
-                        }
-                        if (svg) {
-                            svg.select('.highlight-box').attr('opacity', 0);
-                        }
+                    if (!isAboveExploreSection) {
+                        // User scrolled past - enable immediately
+                        enableInteractiveMode();
                     }
                 }
             });
         }, {
-            threshold: [0, 0.1, 0.5] // Trigger at 10% for early catch, 50% for fallback
+            threshold: [0, 0.1, 0.5]
         });
         exploreObserver.observe(exploreSection);
     } else {
-        console.error('❌ Explore section not found! Interactive mode will not work.');
+        console.error('Explore section not found! Interactive mode will not work.');
     }
 
-    // Fallback: Check on scroll if we've reached the explore section (for fast scrollers)
-    // Uses same delay as IntersectionObserver to give time to read "Your Turn" card
+    // Fallback for fast scrollers
     let scrollCheckThrottled = false;
     window.addEventListener('scroll', () => {
-        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown || window.interactiveModeTimeout) return;
+        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown || interactiveModeTimeout) return;
         scrollCheckThrottled = true;
 
         requestAnimationFrame(() => {
             const exploreEl = document.querySelector('[data-step="explore"]');
-            if (exploreEl && !interactiveModeCooldown && !window.interactiveModeTimeout) {
+            if (exploreEl && !interactiveModeCooldown && !interactiveModeTimeout) {
                 const rect = exploreEl.getBoundingClientRect();
-                // Trigger when explore section is well into viewport
                 if (rect.top < window.innerHeight * 0.3) {
-                    window.interactiveModeTimeout = setTimeout(() => {
-                        if (interactiveModeCooldown) return;
-                        document.body.classList.add('interactive-mode');
-                        domElements.currentEra.textContent = 'Your turn';
-                        const isMobileHeader = window.innerWidth <= 768;
-                        domElements.currentContext.textContent = isMobileHeader
-                            ? 'Tap any square to see the paragraph it represents.'
-                            : 'Hover over any square to see the paragraph it represents.';
-
-                        if (dots) {
-                            dots.attr('opacity', 0.9);
-                            dots.style('pointer-events', 'auto');
-                        }
-                        if (svg) {
-                            svg.select('.highlight-box').attr('opacity', 0);
-                        }
-                        window.interactiveModeTimeout = null;
-                    }, 1500); // Same delay as IntersectionObserver
+                    scheduleInteractiveMode(true);
                 }
             }
             scrollCheckThrottled = false;
         });
     }, { passive: true });
+}
+
+// =============================================================================
+// INTERACTIVE MODE - Single entry point, no race conditions
+// =============================================================================
+function scheduleInteractiveMode(withDelay = false) {
+    // Already in interactive mode or cooldown active
+    if (document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
+
+    // Already scheduled
+    if (interactiveModeTimeout) return;
+
+    if (withDelay) {
+        interactiveModeTimeout = setTimeout(() => {
+            interactiveModeTimeout = null;
+            enableInteractiveMode();
+        }, TIMING.INTERACTIVE_MODE_DELAY);
+    } else {
+        enableInteractiveMode();
+    }
+}
+
+function cancelPendingInteractiveMode() {
+    if (interactiveModeTimeout) {
+        clearTimeout(interactiveModeTimeout);
+        interactiveModeTimeout = null;
+    }
+}
+
+function enableInteractiveMode() {
+    // Guard against double-entry
+    if (document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
+
+    document.body.classList.add('interactive-mode');
+
+    // Update header
+    domElements.currentEra.textContent = 'Your turn';
+    const isMobile = window.innerWidth <= 768;
+    domElements.currentContext.textContent = isMobile
+        ? 'Tap any square to see the paragraph it represents.'
+        : 'Hover over any square to see the paragraph it represents.';
+
+    // Make dots interactive
+    if (dots) {
+        dots.transition()
+            .duration(400)
+            .attr('opacity', 0.9);
+        dots.style('pointer-events', 'auto');
+    }
+
+    // Hide highlight box
+    if (svg) {
+        svg.select('.highlight-box')
+            .transition()
+            .duration(400)
+            .attr('opacity', 0);
+    }
 }
 
 function highlightYearRange(start, end) {
@@ -1011,7 +1133,10 @@ function unpinQuote() {
 
 // Resize (also handles orientation change)
 window.addEventListener('resize', debounce(() => {
-    // Proper D3 cleanup to prevent orphaned event listeners
+    // Clean up touch listeners BEFORE destroying the SVG
+    cleanupTouchListeners();
+
+    // Proper D3 cleanup
     if (svg) {
         svg.remove();
         svg = null;
@@ -1029,7 +1154,7 @@ window.addEventListener('resize', debounce(() => {
             svg.select('.highlight-box').attr('opacity', 0);
         }
     }
-}, 250));
+}, TIMING.RESIZE_DEBOUNCE));
 
 function debounce(fn, wait) {
     let t;
@@ -1076,7 +1201,7 @@ function exitInteractiveMode() {
     interactiveModeCooldown = true;
     setTimeout(() => {
         interactiveModeCooldown = false;
-    }, 1000); // 1 second cooldown
+    }, TIMING.INTERACTIVE_MODE_COOLDOWN);
 }
 
 // Exit interactive mode and scroll to top (for mobile button)
@@ -1100,14 +1225,14 @@ document.addEventListener('wheel', function(e) {
         cumulativeWheelDelta = 0;
     }
 
-    // Reset accumulator after 500ms of no scrolling
+    // Reset accumulator after timeout
     clearTimeout(wheelResetTimeout);
     wheelResetTimeout = setTimeout(() => {
         cumulativeWheelDelta = 0;
-    }, 500);
+    }, TIMING.WHEEL_RESET_TIMEOUT);
 
-    // Only exit after sustained upward scroll (500px cumulative)
-    if (cumulativeWheelDelta > 500) {
+    // Only exit after sustained upward scroll
+    if (cumulativeWheelDelta > TIMING.CUMULATIVE_WHEEL_THRESHOLD) {
         cumulativeWheelDelta = 0;
         exitInteractiveMode();
         // Scroll to the word_trends_intro section instead of letting browser jump to top
