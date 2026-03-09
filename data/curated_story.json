@@ -37,7 +37,7 @@
       "year_range": [1965, 2026],
       "header_text": "Turns out, a lot has.",
       "title": "We dissect 67 Singapore Budget Statements to trace how the language of the social compact has shifted.",
-      "setup": "Behind each policy detail is an expectation of who must tighten belts, who must innovate, and who will be cushioned. Stack all the speeches over the past 61 years together, and <strong>a pattern emerges from the language</strong>.<br><br>As the words change, so does the social contract."
+      "setup": "Behind each policy detail is an expectation of who must tighten belts, who must innovate, and who will be cushioned. Stack all the speeches over the past 61 years together, and <strong>a pattern seems to emerge from the language</strong>.<br><br>As the words change, we wonder: has the social contract changed too?"
     },
     {
       "id": "how_to_read",
@@ -65,11 +65,11 @@
       "era_label": "The big picture",
       "title": "The trend across four Prime Ministers",
       "type": "pm_era_chart",
-      "setup": "The ratio of promises to demands has grown with each tenure.",
+      "setup": "In a paragraph-level reading of the speeches, we found that the ratio of promises to demands has grown with each tenure.",
       "quote": "",
       "speaker": "",
       "year": null,
-      "reflection": "Under Lee Kuan Yew, promises barely outweighed demands.<br>By Lawrence Wong’s era, there were nearly three promises for every demand.",
+      "reflection": "Under Lee Kuan Yew, promises barely outweighed demands.<br>By Lawrence Wong’s era, there were nearly three promises for every demand.<br><span class='chart-footnote'>Note: Roughly half of all paragraphs – updates, technical explanations, fiscal details – were deemed neutral and are not shown. Lawrence Wong's tenure includes only two Budget speeches so far.</span>",
       "pm_data": [
         {"pm": "Lee Kuan Yew", "years": "1965-1990", "promises": 501, "demands": 418, "ratio": 54.5},
         {"pm": "Goh Chok Tong", "years": "1991-2004", "promises": 623, "demands": 329, "ratio": 65.4},

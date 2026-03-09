@@ -43,9 +43,11 @@ Each paragraph was classified using Google's Gemini 2.0 Flash into five categori
 | **Demand on firms** | Expectations on businesses (innovate, transform, reskill workers) |
 | **Neutral** | Factual information, procedural language, general policy discussion |
 
-Before deploying AI for full classification, more than 100 paragraphs were manually labelled to establish a validation set. These hand-coded examples were used to iteratively refine and test the classification prompt.
+Before deploying AI for full classification, we hand-classified more than 100 randomly-selected paragraphs across iterative rounds to establish a validation set. These hand-coded examples were used to iteratively refine and test the classification prompt. The final prompt was tested against a held-out set of 68 paragraphs, achieving 91.2% agreement.
 
-After 11 rounds of prompt revision, the framework peaked at an accuracy rate of 91.2% on the audited validation set on the ninth try. I manually checked the rows that were deemed to have classified wrongly in this ninth attempt, and realised that many were not straightforward errors, but borderline cases open to reasonable interpretation. I thus selected the ninth iteration of the prompt for full-corpus classification, knowing that it errs on cases of interpretive ambiguity rather than clear misclassification. In fact, this is to be expected. The residual disagreement rate reflects the limits of categorising political language into discrete buckets: some paragraphs contain both promise and demand, or imply obligation without stating it explicitly.
+The final prompt was devised through 11 rounds of prompt revision, where the framework peaked at an accuracy rate of 91.2% on the ninth try. I manually checked the rows that were deemed to have classified wrongly in this ninth attempt, and realised that many were not straightforward errors, but borderline cases open to reasonable interpretation. I thus selected the ninth iteration of the prompt for full-corpus classification, knowing that it errs on cases of interpretive ambiguity rather than clear misclassification. In fact, this is to be expected. The residual disagreement rate reflects the limits of categorising political language into discrete buckets: some paragraphs contain both promise and demand, or imply obligation without stating it explicitly.
+
+That said, I must acknowledge that the validation set is small relative to the 11,559-paragraph corpus, and that the classifier's accuracy rate on the broader corpus is unknown.
 
 <details>
 <summary><strong>View the classification prompt</strong></summary>

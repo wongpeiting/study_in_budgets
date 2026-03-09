@@ -36,7 +36,7 @@ import google.generativeai as genai
 # Configure Gemini API - set GEMINI_API_KEY environment variable
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# System and User prompts - VERSION 4
+# System and User prompts - VERSION 9 (FINAL PRODUCTION)
 SYSTEM_PROMPT = """You are an expert classifier specializing in analyzing Singapore political discourse for themes related to fiscal redistribution and civic obligation. Your sole task is to determine if a provided text articulates a PROMISE (prosperity, help, sharing, stability, recovery) or a DEMAND (discipline, participation, compliance, restraint) directed at citizens or firms, and, if so, to categorize it according to a strict set of five themes.
 
 You must adhere to four critical rules:
