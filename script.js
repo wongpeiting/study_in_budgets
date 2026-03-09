@@ -795,7 +795,7 @@ function initVisualization() {
         ];
 
         const legendX = 30;
-        const legendY = height - margin.bottom - 90; // Position at bottom-left to avoid card overlap
+        const legendY = margin.top; // Position at top-left, above promises
         const legendSpacing = 18;
         const legendRectSize = 9;
 
@@ -966,22 +966,19 @@ function setupScrollTriggers() {
         console.error('Explore section not found! Interactive mode will not work.');
     }
 
-    // Fallback for fast scrollers
-    let scrollCheckThrottled = false;
+    // Fallback for fast scrollers - no throttle, no RAF delay
     window.addEventListener('scroll', () => {
-        if (scrollCheckThrottled || document.body.classList.contains('interactive-mode') || interactiveModeCooldown || interactiveModeTimeout) return;
-        scrollCheckThrottled = true;
+        if (document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
 
-        requestAnimationFrame(() => {
-            const exploreEl = document.querySelector('[data-step="explore"]');
-            if (exploreEl && !interactiveModeCooldown && !interactiveModeTimeout) {
-                const rect = exploreEl.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.3) {
-                    scheduleInteractiveMode(true);
-                }
-            }
-            scrollCheckThrottled = false;
-        });
+        const exploreEl = document.querySelector('[data-step="explore"]');
+        if (!exploreEl) return;
+
+        const rect = exploreEl.getBoundingClientRect();
+        if (rect.bottom < window.innerHeight * 0.5) {
+            // Explore section is mostly or fully past - enable immediately
+            cancelPendingInteractiveMode();
+            enableInteractiveMode();
+        }
     }, { passive: true });
 }
 
@@ -1235,11 +1232,13 @@ document.addEventListener('wheel', function(e) {
     if (cumulativeWheelDelta > TIMING.CUMULATIVE_WHEEL_THRESHOLD) {
         cumulativeWheelDelta = 0;
         exitInteractiveMode();
-        // Scroll to the word_trends_intro section instead of letting browser jump to top
-        const wordTrendsSection = document.getElementById('word_trends_intro');
-        if (wordTrendsSection) {
-            window.scrollTo({ top: wordTrendsSection.offsetTop, behavior: 'smooth' });
-        }
+        // Scroll AFTER exiting so layout is restored first
+        requestAnimationFrame(() => {
+            const conclusionSection = document.querySelector('[data-step="conclusion"]');
+            if (conclusionSection) {
+                window.scrollTo({ top: conclusionSection.offsetTop, behavior: 'instant' });
+            }
+        });
     }
 }, { passive: true });
 

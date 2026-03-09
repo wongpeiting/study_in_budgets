@@ -34,7 +34,7 @@ body.interactive-mode {
 
 @media (max-width: 768px) {
     body.interactive-mode {
-        overflow: auto;
+        overflow: hidden;
     }
 }
 
@@ -131,7 +131,7 @@ body.interactive-mode {
 /* Scrollytelling */
 .scrolly-container {
     position: relative;
-    padding-bottom: 300vh; /* Keeps sticky alive because it's inside the container */
+    padding-bottom: 50vh; /* Keeps sticky alive until interactive mode locks in */
 }
 
 .sticky-viz {
@@ -350,9 +350,9 @@ body.interactive-mode {
 }
 
 /* Conclusion section - needs extra height to prevent skipping to explore */
-#conclusion.step {
-    min-height: 100vh;
-    padding-bottom: 20vh;
+[data-step="conclusion"].step {
+    min-height: 80vh;
+    padding-bottom: 5vh;
 }
 
 /* Conclusion */
@@ -895,7 +895,7 @@ body.interactive-mode {
 .step-explore {
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .step-explore .explore-content {
@@ -910,13 +910,21 @@ body.interactive-mode {
 }
 
 /* Hide explore content when interactive mode is active */
-body.interactive-mode .explore-content {
-    opacity: 0;
+body.interactive-mode .step-explore {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 400;
+    min-height: auto;
+    padding: 0;
     pointer-events: none;
 }
 
-body.interactive-mode .step-explore {
-    display: none;
+body.interactive-mode .explore-content {
+    pointer-events: none;
+    opacity: 0.95;
 }
 
 .explore-content h3 {
@@ -1248,9 +1256,9 @@ body.interactive-mode .dot:hover {
 
 /* Scroll spacer - maintains scroll height for sticky chart transition */
 .scroll-spacer {
-    height: 200vh;
-    background: var(--bg);
-    pointer-events: none; /* Don't block taps on the fixed chart below */
+    height: 100vh;
+    background: transparent;
+    pointer-events: none; /* Don't block taps on the sticky chart below */
 }
 
 /* Credits and Methodology Section */
@@ -1685,7 +1693,7 @@ body.interactive-mode .methodology-link {
 
     /* Scrolly container - less bottom padding */
     .scrolly-container {
-        padding-bottom: 150vh;
+        padding-bottom: 50vh;
     }
 
     /* Sticky viz container - extra top padding to show all dots */
