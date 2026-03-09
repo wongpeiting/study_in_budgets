@@ -6,7 +6,7 @@
 // =============================================================================
 const TIMING = {
     HOVER_PANEL_HIDE_DELAY: 500,
-    INTERACTIVE_MODE_DELAY: 1500,
+    INTERACTIVE_MODE_DELAY: 300,
     INTERACTIVE_MODE_COOLDOWN: 1000,
     WHEEL_RESET_TIMEOUT: 500,
     CUMULATIVE_WHEEL_THRESHOLD: 500,
@@ -974,8 +974,8 @@ function setupScrollTriggers() {
         if (!exploreEl) return;
 
         const rect = exploreEl.getBoundingClientRect();
-        if (rect.bottom < window.innerHeight * 0.5) {
-            // Explore section is mostly or fully past - enable immediately
+        if (rect.top < window.innerHeight * 0.5) {
+            // Explore section has entered upper half of viewport - enable immediately
             cancelPendingInteractiveMode();
             enableInteractiveMode();
         }
@@ -1013,30 +1013,36 @@ function enableInteractiveMode() {
     // Guard against double-entry
     if (document.body.classList.contains('interactive-mode') || interactiveModeCooldown) return;
 
-    document.body.classList.add('interactive-mode');
+    // Scroll to top so sticky-viz and fixed-viz look identical (no flicker)
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Update header
-    domElements.currentEra.textContent = 'Your turn';
-    const isMobile = window.innerWidth <= 768;
-    domElements.currentContext.textContent = isMobile
-        ? 'Tap any square to see the paragraph it represents.'
-        : 'Hover over any square to see the paragraph it represents.';
+    // Toggle class on next frame after scroll settles
+    requestAnimationFrame(() => {
+        document.body.classList.add('interactive-mode');
 
-    // Make dots interactive
-    if (dots) {
-        dots.transition()
-            .duration(400)
-            .attr('opacity', 0.9);
-        dots.style('pointer-events', 'auto');
-    }
+        // Update header
+        domElements.currentEra.textContent = 'Your turn';
+        const isMobile = window.innerWidth <= 768;
+        domElements.currentContext.textContent = isMobile
+            ? 'Tap any square to see the paragraph it represents.'
+            : 'Hover over any square to see the paragraph it represents.';
 
-    // Hide highlight box
-    if (svg) {
-        svg.select('.highlight-box')
-            .transition()
-            .duration(400)
-            .attr('opacity', 0);
-    }
+        // Make dots interactive
+        if (dots) {
+            dots.transition()
+                .duration(400)
+                .attr('opacity', 0.9);
+            dots.style('pointer-events', 'auto');
+        }
+
+        // Hide highlight box
+        if (svg) {
+            svg.select('.highlight-box')
+                .transition()
+                .duration(400)
+                .attr('opacity', 0);
+        }
+    });
 }
 
 function highlightYearRange(start, end) {
