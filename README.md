@@ -423,9 +423,7 @@ At the end of the narrative, the chart becomes interactive: readers can hover ov
 
 ## Credits
 
-This project lived many lives during its three production weeks. In one of the earlier explorations, Bhuvan Anantham (LSE '28) helped with data cleaning and metadata generation, contributing greatly to the polish of this final iteration. 
-
-Charmaine Yap (Columbia Law '26), without whom this project would not have materialised, and Elliot Poh contributed extensive editorial inputs, while my professors at Columbia Journalism School. Jonathan Soma and Dhrumil Mehta, oversaw the production of this piece, including attending to my cries for help in the middle of the day/ night.
+This project lived many lives during its three production weeks. In one of the earlier explorations, Bhuvan Anantham (LSE '28) helped with data cleaning and metadata generation, contributing greatly to the polish of this final iteration. Charmaine Yap (Columbia Law '26), without whom this project would not have materialised, and Elliot Poh made editorial inputs. 
 
 --- 
 
