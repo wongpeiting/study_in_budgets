@@ -460,16 +460,16 @@ body.interactive-mode {
 
 .bar {
     height: 20px;
-    border-radius: 3px;
+    border-radius: 0;
     transition: width 0.6s ease;
 }
 
 .bar-then {
-    background: var(--slate);
+    background: #8C7E72;
 }
 
 .bar-now {
-    background: var(--coral);
+    background: #8C7E72;
 }
 
 .bar-value {
@@ -482,7 +482,7 @@ body.interactive-mode {
     text-align: center;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: #8C7E72;
     margin-top: 0.75rem;
 }
 
@@ -514,13 +514,12 @@ body.interactive-mode {
 
 /* Stat Highlight */
 .stat-highlight-content {
-    border-left-color: var(--coral);
+    border-left-color: #8C7E72;
 }
 
 .stat-highlight-content h3 {
-    font-size: 1.4rem;
-    color: var(--coral);
-    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .trends-content {
@@ -633,7 +632,7 @@ body.interactive-mode {
     flex: 1;
     height: 32px;
     background: #f0efeb;
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -652,12 +651,12 @@ body.interactive-mode {
 
 .pm-era-bar-segment.promises {
     background: var(--coral);
-    border-radius: 4px 0 0 4px;
+    border-radius: 0;
 }
 
 .pm-era-bar-segment.demands {
     background: var(--slate);
-    border-radius: 0 4px 4px 0;
+    border-radius: 0;
 }
 
 .segment-label {
@@ -729,7 +728,7 @@ body.interactive-mode {
     flex: 1;
     height: 28px;
     background: #eee;
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -748,12 +747,12 @@ body.interactive-mode {
 
 .decade-bar-segment.promises {
     background: var(--coral);
-    border-radius: 4px 0 0 4px;
+    border-radius: 0;
 }
 
 .decade-bar-segment.demands {
     background: var(--slate);
-    border-radius: 0 4px 4px 0;
+    border-radius: 0;
 }
 
 .decade-legend {

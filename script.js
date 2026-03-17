@@ -832,7 +832,7 @@ function initVisualization() {
         .attr('y', d => d.yPos - dotSize / 2)
         .attr('width', dotSize - 0.5)
         .attr('height', dotSize - 0.5)
-        .attr('rx', 0.5)
+        .attr('rx', 0)
         .attr('fill', d => {
             // Grey for none/other paragraphs
             if (!d.primary_value || d.primary_value === 'none') return '#CCCCCC';
